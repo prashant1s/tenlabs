@@ -10,6 +10,11 @@ export const navLinks = [
 export const partnersList = [
 ]  as const;
 
+// Stock photography (Unsplash) standing in for real project/post imagery
+// until there are real client shots to swap in.
+const unsplash = (id: string) =>
+  `https://images.unsplash.com/${id}?q=80&w=1200&auto=format&fit=crop`;
+
 export const partners = [
   { name: "Shopify Partner", logo: "/partners/1.png" },
   { name: "Amazon Ads Advanced Partner", logo: "/partners/2.png" },
@@ -29,7 +34,7 @@ export const projects = [
     category: "Retail",
     desc: "3.2× ROAS in 90 days with full-funnel performance creative.",
     date: "2026-03-01",
-    coverImage: "",
+    coverImage: unsplash("photo-1583847268964-b28dc8f51f92"),
     cardMetrics: [
       { value: "3.2×", label: "ROAS in 90 Days" },
       { value: "40%", label: "Lower CAC" },
@@ -40,7 +45,7 @@ export const projects = [
     heroPostTitle: " Scale With Full-Funnel Creative.",
     description:
       "Luxe Living Co. needed a performance engine that didn't sacrifice brand feel. We rebuilt their funnel end to end — from ad creative through to checkout — and turned it into a predictable growth channel.",
-    bannerImage: "",
+    bannerImage: unsplash("photo-1583847268964-b28dc8f51f92"),
     stats: [
       { stat: "3.2×", label: "ROAS in 90 Days" },
       { stat: "40%", label: "Lower CAC" },
@@ -71,7 +76,7 @@ export const projects = [
     category: "Hospitality & Food",
     desc: "68% increase in direct bookings through brand refresh & CRO.",
     date: "2026-02-10",
-    coverImage: "",
+    coverImage: unsplash("photo-1551882547-ff40c63fe5fa"),
     cardMetrics: [
       { value: "68%", label: "More Direct Bookings" },
       { value: "2.1×", label: "Site Conversion" },
@@ -82,7 +87,7 @@ export const projects = [
     heroPostTitle: " Win Back Direct Bookings.",
     description:
       "Nova Hospitality was losing margin to OTA commissions. We refreshed the brand, rebuilt the booking flow, and shifted demand back to their own site.",
-    bannerImage: "",
+    bannerImage: unsplash("photo-1551882547-ff40c63fe5fa"),
     stats: [
       { stat: "68%", label: "Increase in Direct Bookings" },
       { stat: "2.1×", label: "Website Conversion Rate" },
@@ -113,7 +118,7 @@ export const projects = [
     category: "Fashion & Lifestyle",
     desc: "2.5M impressions & 40% lift in brand recall across India.",
     date: "2026-01-18",
-    coverImage: "",
+    coverImage: unsplash("photo-1758995115682-1452a1a9e35b"),
     cardMetrics: [
       { value: "2.5M", label: "Impressions" },
       { value: "40%", label: "Brand Recall Lift" },
@@ -124,7 +129,7 @@ export const projects = [
     heroPostTitle: " Build National Brand Recall.",
     description:
       "Aura Jewels wanted to move beyond performance ads and build a brand people actually remembered. We built a campaign system around storytelling, not just discounts.",
-    bannerImage: "",
+    bannerImage: unsplash("photo-1758995115682-1452a1a9e35b"),
     stats: [
       { stat: "2.5M", label: "Campaign Impressions" },
       { stat: "40%", label: "Lift in Brand Recall" },
@@ -155,7 +160,7 @@ export const projects = [
     category: "E-commerce",
     desc: "3× online revenue in one year through Shopify migration & performance media.",
     date: "2025-12-05",
-    coverImage: "",
+    coverImage: unsplash("photo-1618259181324-86a49fe68099"),
     cardMetrics: [
       { value: "3×", label: "Online Revenue" },
       { value: "55%", label: "Faster Site Speed" },
@@ -166,7 +171,7 @@ export const projects = [
     heroPostTitle: " Triple Online Revenue.",
     description:
       "Nimbus Activewear was outgrowing their storefront and their ad spend wasn't keeping pace with growth. We migrated them to Shopify and rebuilt acquisition from the ground up.",
-    bannerImage: "",
+    bannerImage: unsplash("photo-1618259181324-86a49fe68099"),
     stats: [
       { stat: "3×", label: "Online Revenue in 12 Months" },
       { stat: "55%", label: "Faster Page Load" },
@@ -205,7 +210,7 @@ export const insightPosts = [
     publishedAt: "2026-03-12",
     author: "TenLabs Team",
     readTime: "6 min read",
-    image: "",
+    image: unsplash("photo-1523875194681-bedd468c58bf"),
     body: [
       "The brands scaling fastest in 2026 aren't the ones with the biggest budgets — they're the ones treating creative as a testing system rather than a one-off asset.",
       "That means shipping variants weekly, reading performance data honestly, and being willing to retire a 'winning' ad the moment its returns start to decay.",
@@ -221,7 +226,7 @@ export const insightPosts = [
     publishedAt: "2026-02-28",
     author: "TenLabs Team",
     readTime: "5 min read",
-    image: "",
+    image: unsplash("photo-1487014679447-9f8336841d58"),
     body: [
       "Most Shopify storefronts lose conversion long before checkout — in the product grid and product page, where small friction compounds fast.",
       "The patterns that consistently move add-to-cart rates: sticky add-to-cart on mobile, honest stock and shipping messaging above the fold, and product imagery that shows scale and context, not just the item on white.",
@@ -237,7 +242,7 @@ export const insightPosts = [
     publishedAt: "2026-02-10",
     author: "TenLabs Team",
     readTime: "4 min read",
-    image: "",
+    image: unsplash("photo-1561070791-2526d30994b5"),
     body: [
       "A single viral moment rarely builds a brand people remember — it builds a spike in a graph that flattens out within weeks.",
       "Recall comes from consistency: the same visual language, tone, and promise showing up in the same way across every touchpoint for long enough that it becomes recognizable without a logo attached.",

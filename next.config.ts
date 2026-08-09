@@ -11,6 +11,7 @@ const nextConfig: NextConfig = {
     qualities: [75, 100],
     remotePatterns: [
       { protocol: "https", hostname: "img.youtube.com" },
+      { protocol: "https", hostname: "images.unsplash.com" },
     ],
   },
 };
