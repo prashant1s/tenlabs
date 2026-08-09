@@ -11,16 +11,11 @@ import {
   MapPin,
   Phone,
   Sparkles,
-  AlertCircle,
 } from "lucide-react";
-import { Turnstile, type TurnstileInstance } from "@marsidev/react-turnstile";
 
 gsap.registerPlugin(ScrollTrigger);
 
-// Inlined at build time. When it's absent the widget is skipped entirely and
-// the form still submits — the route does the same with TURNSTILE_SECRET_KEY,
-// so a missing env var degrades instead of bricking the contact page.
-const TURNSTILE_SITE_KEY = process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY;
+const CONTACT_EMAIL = "sales@tenlabs.online";
 
 export default function ContactClient({ splineSlot }: { splineSlot: React.ReactNode }) {
   const heroRef = useRef<HTMLDivElement>(null);
@@ -85,73 +80,25 @@ export default function ContactClient({ splineSlot }: { splineSlot: React.ReactN
     return () => ctx.revert();
   }, []);
 
-  // --- FORM STATE & RESEND LOGIC ---
-  const [isSubmitting, setIsSubmitting] = useState(false);
+  // --- FORM STATE ---
+  // No backend: submitting just hands the message to the visitor's own mail
+  // client via a mailto: link, so there's nothing here to rate-limit or spam-check.
   const [isSuccess, setIsSuccess] = useState(false);
-  const [errorMessage, setErrorMessage] = useState("");
 
-  const [turnstileToken, setTurnstileToken] = useState("");
-  const turnstileRef = useRef<TurnstileInstance>(null);
-
-  // When the form mounted — the route rejects anything submitted within 3s of
-  // this. Stamped in an effect rather than during render because Date.now() is
-  // impure and would drift on re-render.
-  const startedAt = useRef(0);
-  useEffect(() => {
-    startedAt.current = Date.now();
-  }, []);
-
-  // Nothing to wait for when Turnstile isn't configured.
-  const captchaReady = !TURNSTILE_SITE_KEY || Boolean(turnstileToken);
-
-  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
-    if (!captchaReady) {
-      setErrorMessage("Please wait a moment for the security check to finish.");
-      return;
-    }
-
-    setIsSubmitting(true);
-    setErrorMessage("");
-
     const formData = new FormData(e.currentTarget);
-    const data = Object.fromEntries(formData);
+    const firstName = String(formData.get("firstName") ?? "");
+    const lastName = String(formData.get("lastName") ?? "");
+    const email = String(formData.get("email") ?? "");
+    const message = String(formData.get("message") ?? "");
 
-    try {
-      const response = await fetch("/api/contact", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          ...data,
-          startedAt: startedAt.current,
-          turnstileToken,
-        }),
-      });
+    const subject = encodeURIComponent(`New Project Inquiry from ${firstName} ${lastName}`);
+    const body = encodeURIComponent(`${message}\n\n---\nFrom: ${firstName} ${lastName}\nEmail: ${email}`);
 
-      // Parse the JSON response to read custom backend errors
-      const result = await response.json();
-
-      if (!response.ok) {
-        throw new Error(result.error || "Failed to send message");
-      }
-
-      setIsSuccess(true);
-    } catch (error: unknown) {
-      console.error(error);
-      setErrorMessage(
-        error instanceof Error
-          ? error.message
-          : "Something went wrong. Please try again."
-      );
-      // A Turnstile token is single-use — reset so a retry can succeed.
-      turnstileRef.current?.reset();
-      setTurnstileToken("");
-    } finally {
-      setIsSubmitting(false);
-    }
+    window.location.href = `mailto:${CONTACT_EMAIL}?subject=${subject}&body=${body}`;
+    setIsSuccess(true);
   };
 
   return (
@@ -270,39 +217,18 @@ export default function ContactClient({ splineSlot }: { splineSlot: React.ReactN
                     <div className="w-20 h-20 bg-green-500/20 rounded-full flex items-center justify-center mb-6 border border-green-500/50">
                       <Sparkles className="w-10 h-10 text-green-400" />
                     </div>
-                    <h3 className="text-3xl font-bold text-white mb-2">Message Sent!</h3>
-                    <p className="text-gray-400">Our team is reviewing it now. Talk soon.</p>
+                    <h3 className="text-3xl font-bold text-white mb-2">Almost there!</h3>
+                    <p className="text-gray-400">
+                      Your email app should now be open with your message ready to go —
+                      just hit send. If nothing opened, write to us directly at{" "}
+                      <a href={`mailto:${CONTACT_EMAIL}`} className="text-[#79C267] underline underline-offset-2">
+                        {CONTACT_EMAIL}
+                      </a>
+                      .
+                    </p>
                   </div>
                 ) : (
                   <form onSubmit={handleSubmit} className="relative z-10 space-y-6">
-                    {errorMessage && (
-                      <div className="flex items-center gap-2 text-red-400 bg-red-400/10 border border-red-400/20 p-4 rounded-xl text-sm font-medium">
-                        <AlertCircle className="w-4 h-4" />
-                        {errorMessage}
-                      </div>
-                    )}
-
-                    {/*
-                      Honeypot. Positioned off-screen rather than hidden with
-                      `display:none` — better bots skip fields they can tell are
-                      invisible. Named `website` because Chrome autofills a
-                      `company` field from the saved address profile, which
-                      would silently drop real leads.
-                    */}
-                    <div
-                      aria-hidden="true"
-                      className="absolute -left-[9999px] top-0 w-px h-px overflow-hidden"
-                    >
-                      <label htmlFor="website">Website</label>
-                      <input
-                        id="website"
-                        name="website"
-                        type="text"
-                        tabIndex={-1}
-                        autoComplete="off"
-                      />
-                    </div>
-
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                       <div className="space-y-2 group">
                         <label htmlFor="firstName" className="text-sm font-medium text-gray-400 group-focus-within:text-[#79C267] transition-colors">First Name</label>
@@ -324,28 +250,11 @@ export default function ContactClient({ splineSlot }: { splineSlot: React.ReactN
                       <textarea id="message" name="message" required rows={4} className="w-full bg-white/5 border border-white/10 rounded-xl px-5 py-4 text-white placeholder-gray-600 focus:outline-none focus:ring-2 focus:ring-[#79C267] focus:bg-white/10 transition-all resize-none" placeholder="Tell us about your project..."></textarea>
                     </div>
 
-                    {TURNSTILE_SITE_KEY && (
-                      <Turnstile
-                        ref={turnstileRef}
-                        siteKey={TURNSTILE_SITE_KEY}
-                        onSuccess={setTurnstileToken}
-                        onExpire={() => setTurnstileToken("")}
-                        onError={() =>
-                          setErrorMessage(
-                            "Security check failed. Please refresh the page."
-                          )
-                        }
-                        options={{ theme: "dark", size: "flexible" }}
-                        className="w-full"
-                      />
-                    )}
-
                     <button
                       type="submit"
-                      disabled={isSubmitting || !captchaReady}
-                      className="w-full relative overflow-hidden group bg-gradient-to-r from-[#2F7D4E] to-[#79C267] text-white rounded-xl py-4 font-bold text-base transition-all hover:scale-[1.02] active:scale-[0.98] disabled:opacity-70 disabled:cursor-not-allowed"
+                      className="w-full relative overflow-hidden group bg-gradient-to-r from-[#2F7D4E] to-[#79C267] text-white rounded-xl py-4 font-bold text-base transition-all hover:scale-[1.02] active:scale-[0.98]"
                     >
-                      {isSubmitting ? "Sending..." : "Send Message"}
+                      Send Message
                       <div className="absolute inset-0 bg-white/20 translate-y-full group-hover:translate-y-0 transition-transform duration-300 ease-in-out" />
                     </button>
                   </form>

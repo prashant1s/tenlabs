@@ -1,5 +1,6 @@
 "use client";
 
+import { useEffect, useRef } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { motion } from "framer-motion";
@@ -21,12 +22,51 @@ function MediaCard({
 }
 
 export function Hero() {
+  const videoRef = useRef<HTMLVideoElement>(null);
+
+  // Blur filters and infinite JS-driven animations are cheap to paint once,
+  // but Lenis repaints the whole viewport every frame while smooth-scrolling —
+  // so an always-decoding video is what actually caused the scroll jank.
+  // Pausing it once the hero leaves the viewport (and resuming on the way
+  // back) keeps the decode cost off the main thread while it's offscreen.
+  useEffect(() => {
+    const video = videoRef.current;
+    if (!video) return;
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          video.play().catch(() => {});
+        } else {
+          video.pause();
+        }
+      },
+      { threshold: 0.2 }
+    );
+
+    observer.observe(video);
+    return () => observer.disconnect();
+  }, []);
+
   return (
     <section
       className="relative flex min-h-screen flex-col items-center justify-center overflow-hidden bg-white pb-16 pt-28 font-sora md:pt-32"
     >
-      {/* Ambient glow behind the showcase */}
-      <div className="pointer-events-none absolute top-1/2 left-1/2 -z-0 h-[500px] w-[900px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-[#6495ED]/10 blur-[140px]" />
+      <style dangerouslySetInnerHTML={{ __html: `
+        @keyframes heroFloatUp {
+          0%, 100% { transform: translateY(0px); }
+          50% { transform: translateY(-10px); }
+        }
+        @keyframes heroFloatDown {
+          0%, 100% { transform: translateY(0px); }
+          50% { transform: translateY(10px); }
+        }
+      `}} />
+
+      {/* Ambient glow behind the showcase — a radial-gradient reads the same
+          as a blurred div but skips the (expensive, repainted-every-scroll-
+          frame-under-Lenis) filter: blur() pass entirely. */}
+      <div className="pointer-events-none absolute top-1/2 left-1/2 z-0 h-[500px] w-[900px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-[radial-gradient(circle,rgba(100,149,237,0.18)_0%,rgba(100,149,237,0)_70%)]" />
 
       {/* Centered Content Container */}
       <div className="relative z-10 flex w-full max-w-5xl flex-col items-center justify-center px-6 text-center">
@@ -70,10 +110,8 @@ export function Hero() {
         className="relative z-10 mt-14 hidden w-full items-center justify-center gap-6 sm:flex md:mt-20 lg:gap-8"
       >
         {/* Left design */}
-        <motion.div
-          animate={{ y: [0, -10, 0] }}
-          transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
-          className="hidden lg:block lg:-translate-x-10 xl:-translate-x-16"
+        <div
+          className="hidden animate-[heroFloatUp_5s_ease-in-out_infinite] lg:block lg:-translate-x-10 xl:-translate-x-16"
         >
           <MediaCard className="-rotate-3 scale-[0.92] opacity-80">
             <Image
@@ -84,26 +122,26 @@ export function Hero() {
               sizes="440px"
             />
           </MediaCard>
-        </motion.div>
+        </div>
 
         {/* Center video */}
         <MediaCard className="z-10 aspect-video w-[380px] shadow-[0_30px_70px_-20px_rgba(0,0,0,0.3)] sm:w-[460px] lg:w-[520px]">
           <video
+            ref={videoRef}
             src="/video-in-center.mp4"
             autoPlay
             muted
             loop
             playsInline
-            preload="auto"
+            preload="metadata"
             className="h-full w-full object-cover"
           />
         </MediaCard>
 
         {/* Right design */}
-        <motion.div
-          animate={{ y: [0, 10, 0] }}
-          transition={{ duration: 5.5, repeat: Infinity, ease: "easeInOut", delay: 0.4 }}
-          className="hidden lg:block lg:translate-x-10 xl:translate-x-16"
+        <div
+          className="hidden animate-[heroFloatDown_5.5s_ease-in-out_infinite] lg:block lg:translate-x-10 xl:translate-x-16"
+          style={{ animationDelay: "0.4s" }}
         >
           <MediaCard className="rotate-3 scale-[0.92] opacity-80">
             <Image
@@ -114,7 +152,7 @@ export function Hero() {
               sizes="440px"
             />
           </MediaCard>
-        </motion.div>
+        </div>
       </motion.div>
     </section>
   );

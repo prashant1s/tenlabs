@@ -97,6 +97,8 @@ export const metadata: Metadata = {
   manifest: "/manifest.json",
 };
 
+const gaId = process.env.NEXT_PUBLIC_GA_ID;
+
 export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
@@ -109,7 +111,7 @@ export default function RootLayout({
         {children}
         <Analytics />
         <SpeedInsights />
-        <GoogleAnalytics gaId="G-2TE1DNHCG7" />
+        {gaId && <GoogleAnalytics gaId={gaId} />}
       </body>
     </html>
   );
