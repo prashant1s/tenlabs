@@ -20,21 +20,21 @@ export default async function Image({ params }: { params: Promise<{ slug: string
     (
       <div
         style={{
-          background: '#0A0A0A', // Dark background
+          background: '#07070a', // Dark background
           width: '100%',
           height: '100%',
           display: 'flex',
           flexDirection: 'column',
           justifyContent: 'space-between',
           padding: '80px',
-          borderTop: '16px solid #6495ED', // Brand blue accent line
+          borderTop: '16px solid #6D7CF7', // Brand blue accent line
         }}
       >
         {/* Top Header */}
         <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
           <span
             style={{
-              color: '#6495ED',
+              color: '#6D7CF7',
               fontSize: 32,
               fontWeight: 700,
               letterSpacing: '0.1em',
@@ -43,7 +43,7 @@ export default async function Image({ params }: { params: Promise<{ slug: string
           >
             TenLabs
           </span>
-          <span style={{ color: '#555555', fontSize: 32, fontWeight: 500 }}>
+          <span style={{ color: '#6e7480', fontSize: 32, fontWeight: 500 }}>
             / Insights
           </span>
         </div>
@@ -63,7 +63,7 @@ export default async function Image({ params }: { params: Promise<{ slug: string
         </div>
 
         {/* Bottom Website Tag */}
-        <div style={{ display: 'flex', color: '#888888', fontSize: 28 }}>
+        <div style={{ display: 'flex', color: '#9aa0ac', fontSize: 28 }}>
           tenlabs.online
         </div>
       </div>

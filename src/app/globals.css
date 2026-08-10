@@ -6,51 +6,77 @@
 
 :root {
 
-  --brand-blue: #2563eb;
-  --brand-blue-dark: #1d4ed8;
-  --brand-blue-light: #60a5fa;
-  --brand-navy: #0c1a3a;
+  /* ── TenLabs Design System v2 — "Linear-Grade Dark" ──────────────────
+     Deep, premium, indigo-accented dark UI. Every custom-styled component
+     should pull from these tokens instead of one-off hex values. */
 
-  --glass-bg: rgba(255, 255, 255, 0.55);
-  --glass-border: rgba(255, 255, 255, 0.65);
+  /* Background scale */
+  --bg-deep: #07070a;
+  --bg-base: #0a0a0e;
+  --bg-elevated: #101218;
+  --bg-elevated-2: #161925;
 
-  --hero-bg: 220 45% 7%;
-  --hero-foreground: 0 0% 96%;
-  --hero-primary: 217 91% 60%;
-  --hero-primary-foreground: 220 50% 6%;
-  --hero-muted-foreground: 215 15% 58%;
-  --background: oklch(1 0 0);
-  --foreground: oklch(0.145 0 0);
-  --card: oklch(1 0 0);
-  --card-foreground: oklch(0.145 0 0);
-  --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.145 0 0);
-  --primary: oklch(0.205 0 0);
-  --primary-foreground: oklch(0.985 0 0);
-  --secondary: oklch(0.97 0 0);
-  --secondary-foreground: oklch(0.205 0 0);
-  --muted: oklch(0.97 0 0);
-  --muted-foreground: oklch(0.556 0 0);
-  --accent: oklch(0.97 0 0);
-  --accent-foreground: oklch(0.205 0 0);
+  /* Glass / surface */
+  --surface: rgba(255, 255, 255, 0.045);
+  --surface-hover: rgba(255, 255, 255, 0.075);
+  --border-subtle: rgba(255, 255, 255, 0.08);
+  --border-strong: rgba(255, 255, 255, 0.16);
+
+  /* Text */
+  --fg: #f3f4f6;
+  --fg-muted: #9aa0ac;
+  --fg-subtle: #6e7480;
+
+  /* Brand accent — indigo-blue */
+  --brand-blue: #6d7cf7;
+  --brand-blue-dark: #5566e0;
+  --brand-blue-light: #9fb0ff;
+  --brand-navy: #07070a;
+  --accent-glow: rgba(109, 124, 247, 0.35);
+  --accent-soft: rgba(109, 124, 247, 0.12);
+  --accent-violet: #8b5cf6;
+
+  --glass-bg: rgba(16, 18, 24, 0.7);
+  --glass-border: rgba(255, 255, 255, 0.1);
+
+  --hero-bg: 233 24% 5%;
+  --hero-foreground: 220 20% 96%;
+  --hero-primary: 233 88% 70%;
+  --hero-primary-foreground: 233 30% 8%;
+  --hero-muted-foreground: 220 10% 62%;
+
+  --background: #07070a;
+  --foreground: #f3f4f6;
+  --card: #101218;
+  --card-foreground: #f3f4f6;
+  --popover: #101218;
+  --popover-foreground: #f3f4f6;
+  --primary: #f3f4f6;
+  --primary-foreground: #101218;
+  --secondary: #161925;
+  --secondary-foreground: #f3f4f6;
+  --muted: #161925;
+  --muted-foreground: #9aa0ac;
+  --accent: #161925;
+  --accent-foreground: #f3f4f6;
   --destructive: oklch(0.577 0.245 27.325);
-  --border: oklch(0.922 0 0);
-  --input: oklch(0.922 0 0);
-  --ring: oklch(0.708 0 0);
+  --border: rgba(255, 255, 255, 0.1);
+  --input: rgba(255, 255, 255, 0.12);
+  --ring: #6d7cf7;
   --chart-1: oklch(0.87 0 0);
   --chart-2: oklch(0.556 0 0);
   --chart-3: oklch(0.439 0 0);
   --chart-4: oklch(0.371 0 0);
   --chart-5: oklch(0.269 0 0);
-  --radius: 0.625rem;
-  --sidebar: oklch(0.985 0 0);
-  --sidebar-foreground: oklch(0.145 0 0);
-  --sidebar-primary: oklch(0.205 0 0);
-  --sidebar-primary-foreground: oklch(0.985 0 0);
-  --sidebar-accent: oklch(0.97 0 0);
-  --sidebar-accent-foreground: oklch(0.205 0 0);
-  --sidebar-border: oklch(0.922 0 0);
-  --sidebar-ring: oklch(0.708 0 0);
+  --radius: 1rem;
+  --sidebar: #101218;
+  --sidebar-foreground: #f3f4f6;
+  --sidebar-primary: #6d7cf7;
+  --sidebar-primary-foreground: #f3f4f6;
+  --sidebar-accent: #161925;
+  --sidebar-accent-foreground: #f3f4f6;
+  --sidebar-border: rgba(255, 255, 255, 0.1);
+  --sidebar-ring: #6d7cf7;
 }
 
 @theme inline {
@@ -147,15 +173,15 @@ body {
   width: 8px;
 }
 ::-webkit-scrollbar-track {
-  background: #0A0A0A; 
+  background: var(--bg-deep);
 }
 ::-webkit-scrollbar-thumb {
-  background-color: #6495ED; 
+  background-color: var(--brand-blue);
   border-radius: 20px;
-  border: 2px solid #0A0A0A; 
+  border: 2px solid var(--bg-deep);
 }
 ::-webkit-scrollbar-thumb:hover {
-  background-color: #4F7DF3; 
+  background-color: var(--brand-blue-dark);
 }
 
 
@@ -173,10 +199,23 @@ img, video, canvas, svg {
 
 
 .glass-dark {
-  background: rgba(12, 26, 58, 0.45);
-  backdrop-filter: blur(14px) saturate(150%);
-  -webkit-backdrop-filter: blur(14px) saturate(150%);
-  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: var(--glass-bg);
+  backdrop-filter: blur(20px) saturate(150%);
+  -webkit-backdrop-filter: blur(20px) saturate(150%);
+  border: 1px solid var(--glass-border);
+}
+
+/* Frosted surface for cards sitting on the deep background */
+.glass-surface {
+  background: var(--surface);
+  backdrop-filter: blur(20px) saturate(150%);
+  -webkit-backdrop-filter: blur(20px) saturate(150%);
+  border: 1px solid var(--border-subtle);
+}
+
+/* Soft ambient glow, used behind heroes/CTAs instead of filter: blur() */
+.glow-accent {
+  background: radial-gradient(circle, var(--accent-glow) 0%, rgba(109, 124, 247, 0) 70%);
 }
 
 
@@ -201,7 +240,7 @@ img, video, canvas, svg {
   pointer-events: none;
   background: radial-gradient(
     circle at 50% 0%,
-    rgba(100, 149, 237, 0.25),
+    var(--accent-glow),
     transparent 65%
   );
 }

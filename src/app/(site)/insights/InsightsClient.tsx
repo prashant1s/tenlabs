@@ -71,9 +71,9 @@ export default function InsightsClient({
   return (
     <>
       {/* <Header /> */}
-      <main className="min-h-screen bg-[#FAFAFA]">
+      <main className="min-h-screen bg-[#07070a]">
         {/* 1. HERO SECTION */}
-        <section className="relative min-h-[80vh] overflow-hidden bg-[#0A0A0A]">
+        <section className="relative min-h-[80vh] overflow-hidden bg-[#07070a]">
           {/* Background Image */}
           <div className="absolute inset-0 z-0">
             <Image
@@ -92,17 +92,17 @@ export default function InsightsClient({
           {/* Content */}
           <div className="relative z-10 mx-auto flex min-h-[80vh] max-w-7xl items-center px-6 md:px-4 lg:px-3">
             <div className="max-w-3xl">
-              <p className="text-sm font-semibold uppercase tracking-[0.2em] text-[#6495ED]">
+              <p className="text-sm font-semibold uppercase tracking-[0.2em] text-[#6D7CF7]">
                 The TenLabs Journal
               </p>
 
               <h1 className="mt-6 text-4xl md:text-5xl lg:text-6xl font-semibold leading-[1.05] tracking-tight text-white">
                 Ideas, strategies & lessons
                 <br />
-                that <span className="text-[#6495ED]">Drive Growth</span>
+                that <span className="text-[#6D7CF7]">Drive Growth</span>
               </h1>
 
-              <p className="mt-6 max-w-2xl text-base md:text-lg leading-relaxed text-gray-300">
+              <p className="mt-6 max-w-2xl text-base md:text-lg leading-relaxed text-[#9aa0ac]">
                 Real insights from the trenches of performance, branding,
                 commerce and
                 <br />
@@ -114,17 +114,17 @@ export default function InsightsClient({
 
         {/* 1. LIGHT HERO SECTION */}
 
-        {/* <section className="bg-[#ffffff] pt-32 pb-20 md:pt-40 md:pb-24 px-6 rounded-b-[2rem] md:rounded-b-[4rem]">
-        
+        {/* <section className="bg-[#07070a] pt-32 pb-20 md:pt-40 md:pb-24 px-6 rounded-b-[2rem] md:rounded-b-[4rem]">
+
           <div className="mx-auto max-w-7xl">
-            <p className="text-sm font-bold uppercase tracking-[0.2em] text-[#6495ED]">
+            <p className="text-sm font-bold uppercase tracking-[0.2em] text-[#6D7CF7]">
               The GoDigital Journal
             </p>
-            <h1 className="mt-6 text-4xl font-bold leading-tight tracking-tight text-gray-900 md:text-6xl lg:text-[4rem] max-w-3xl">
+            <h1 className="mt-6 text-4xl font-bold leading-tight tracking-tight text-[#f3f4f6] md:text-6xl lg:text-[4rem] max-w-3xl">
               Ideas, strategies & lessons that{" "}
-              <span className="text-[#6495ED]">drive growth.</span>
+              <span className="text-[#6D7CF7]">drive growth.</span>
             </h1>
-            <p className="mt-6 text-lg text-gray-600 max-w-md">
+            <p className="mt-6 text-lg text-[#9aa0ac] max-w-md">
               Real insights from the trenches of performance, branding, commerce
               and growth systems.
             </p>
@@ -132,7 +132,7 @@ export default function InsightsClient({
         </section>   */}
 
         {/* 2. FILTER & SORT BAR */}
-        <section className="mx-auto max-w-7xl px-6 py-10 border-b border-gray-200">
+        <section className="mx-auto max-w-7xl px-6 py-10 border-b border-white/10">
           <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
             {/* Pill Filters */}
             <div className="flex flex-wrap gap-4 md:gap-8 items-center w-full overflow-x-auto no-scrollbar">
@@ -142,12 +142,12 @@ export default function InsightsClient({
                   onClick={() => setActiveCategory(cat)}
                   className={`whitespace-nowrap text-sm transition-colors flex items-center gap-2 ${
                     activeCategory === cat
-                      ? "text-[#0A0A0A] font-bold border border-gray-200 px-4 py-2 rounded-full shadow-sm bg-white"
-                      : "text-gray-500 font-semibold hover:text-[#0A0A0A]"
+                      ? "text-white font-bold border border-white/10 px-4 py-2 rounded-full shadow-sm bg-white/10"
+                      : "text-[#9aa0ac] font-semibold hover:text-white"
                   }`}
                 >
                   {activeCategory === cat && (
-                    <span className="w-2 h-2 rounded-full bg-[#6495ED]"></span>
+                    <span className="w-2 h-2 rounded-full bg-[#6D7CF7]"></span>
                   )}
                   {cat}
                 </button>
@@ -158,7 +158,7 @@ export default function InsightsClient({
             <div className="relative shrink-0 z-20">
               <button
                 onClick={() => setSortDropdownOpen(!sortDropdownOpen)}
-                className="flex items-center gap-4 rounded-2xl border border-[#1e293b] bg-[#0A0F1C] px-5 py-3 transition-colors hover:border-white/20 text-left shadow-lg"
+                className="flex items-center gap-4 rounded-2xl border border-[#161925] bg-[#101218] px-5 py-3 transition-colors hover:border-white/20 text-left shadow-lg"
               >
                 <div className="flex flex-col">
                   <span className="text-[12px] font-semibold text-white/60 leading-none mb-1">
@@ -185,14 +185,14 @@ export default function InsightsClient({
                       animate={{ opacity: 1, y: 0 }}
                       exit={{ opacity: 0, y: 10 }}
                       transition={{ duration: 0.2 }}
-                      className="absolute right-0 top-full z-40 mt-2 w-full min-w-[160px] overflow-hidden rounded-xl border border-[#1e293b] bg-[#0A0F1C] shadow-2xl"
+                      className="absolute right-0 top-full z-40 mt-2 w-full min-w-[160px] overflow-hidden rounded-xl border border-[#161925] bg-[#101218] shadow-2xl"
                     >
                       <button
                         onClick={() => {
                           setSortOrder("newest");
                           setSortDropdownOpen(false);
                         }}
-                        className={`block w-full px-4 py-3 text-left text-sm font-bold transition-colors hover:bg-white/5 ${sortOrder === "newest" ? "text-white" : "text-gray-400"}`}
+                        className={`block w-full px-4 py-3 text-left text-sm font-bold transition-colors hover:bg-white/5 ${sortOrder === "newest" ? "text-white" : "text-[#6e7480]"}`}
                       >
                         Newest
                       </button>
@@ -201,7 +201,7 @@ export default function InsightsClient({
                           setSortOrder("oldest");
                           setSortDropdownOpen(false);
                         }}
-                        className={`block w-full px-4 py-3 text-left text-sm font-bold transition-colors hover:bg-white/5 ${sortOrder === "oldest" ? "text-white" : "text-gray-400"}`}
+                        className={`block w-full px-4 py-3 text-left text-sm font-bold transition-colors hover:bg-white/5 ${sortOrder === "oldest" ? "text-white" : "text-[#6e7480]"}`}
                       >
                         Oldest
                       </button>
@@ -216,7 +216,7 @@ export default function InsightsClient({
         {/* 3. UNIFIED INSIGHTS GRID */}
         <section className="mx-auto max-w-7xl px-6 py-16 md:py-20">
           {paginatedPosts.length === 0 ? (
-            <div className="py-20 text-center text-gray-500">
+            <div className="py-20 text-center text-[#9aa0ac]">
               No insights found in this category.
             </div>
           ) : (
@@ -236,11 +236,11 @@ export default function InsightsClient({
                   >
                     <Link
                       href={`/insights/${post.slug}`}
-                      className="group relative flex flex-col justify-between h-full w-full rounded-[24px] bg-[#111622] overflow-hidden border border-white/5 transition-all duration-300 hover:border-[#6495ED]/40 hover:-translate-y-1 hover:shadow-[0_12px_30px_rgba(0,0,0,0.15)]"
+                      className="group relative flex flex-col justify-between h-full w-full rounded-[24px] bg-[#101218] overflow-hidden border border-white/5 transition-all duration-300 hover:border-[#6D7CF7]/40 hover:-translate-y-1 hover:shadow-[0_12px_30px_rgba(0,0,0,0.15)]"
                     >
                       {/* Top Image Area */}
 
-                      <div className="relative h-56 w-full bg-[#1A2235] overflow-hidden shrink-0">
+                      <div className="relative h-56 w-full bg-[#161925] overflow-hidden shrink-0">
                         {post.image && (
                           <Image
                             src={post.image}
@@ -254,10 +254,10 @@ export default function InsightsClient({
                       {/* Bottom Content Area */}
                       <div className="flex flex-1 flex-col p-6 md:p-8">
                         <div className="flex items-center justify-between mb-6">
-                          <span className="rounded-full border border-[#2a3e63] bg-transparent px-4 py-1.5 text-[10px] font-bold uppercase tracking-widest text-[#6495ED]">
+                          <span className="rounded-full border border-[#262b42] bg-transparent px-4 py-1.5 text-[10px] font-bold uppercase tracking-widest text-[#6D7CF7]">
                             {post.categories?.[0] || "Insight"}
                           </span>
-                          <span className="text-[12px] font-medium text-gray-400">
+                          <span className="text-[12px] font-medium text-[#6e7480]">
                             {new Date(post.publishedAt).toLocaleDateString(
                               "en-US",
                               {
@@ -269,12 +269,12 @@ export default function InsightsClient({
                           </span>
                         </div>
 
-                        <h3 className="text-xl md:text-2xl font-bold text-white leading-snug group-hover:text-[#6495ED] transition-colors mb-3 line-clamp-2">
+                        <h3 className="text-xl md:text-2xl font-bold text-white leading-snug group-hover:text-[#6D7CF7] transition-colors mb-3 line-clamp-2">
                           {post.title}
                         </h3>
 
                         {/* Description excerpt */}
-                        <p className="text-sm text-gray-400 leading-relaxed line-clamp-2 mb-8 font-medium">
+                        <p className="text-sm text-[#6e7480] leading-relaxed line-clamp-2 mb-8 font-medium">
                           {post.author
                             ? `By ${post.author}`
                             : "Discover the strategies that are driving digital growth forward."}
@@ -282,10 +282,10 @@ export default function InsightsClient({
 
                         {/* Footer */}
                         <div className="mt-auto flex items-center justify-between pt-4 border-t border-white/5">
-                          <p className="text-sm font-bold text-gray-400">
+                          <p className="text-sm font-bold text-[#6e7480]">
                             {post.readTime || "5 min read"}
                           </p>
-                          <ArrowUpRight className="w-5 h-5 text-gray-500 group-hover:text-[#6495ED] transition-colors" />
+                          <ArrowUpRight className="w-5 h-5 text-[#9aa0ac] group-hover:text-[#6D7CF7] transition-colors" />
                         </div>
                       </div>
                     </Link>
@@ -305,8 +305,8 @@ export default function InsightsClient({
                 onClick={() => setCurrentPage(i + 1)}
                 className={`flex h-11 w-11 items-center justify-center rounded-xl text-sm font-bold transition-all ${
                   currentPage === i + 1
-                    ? "bg-[#6495ED] text-white shadow-lg shadow-[#6495ED]/20"
-                    : "border border-gray-200 bg-white text-gray-600 hover:bg-gray-50 hover:text-[#0A0A0A]"
+                    ? "bg-[#6D7CF7] text-white shadow-lg shadow-[#6D7CF7]/20"
+                    : "border border-white/10 bg-white/5 text-[#9aa0ac] hover:bg-white/10 hover:text-white"
                 }`}
               >
                 {i + 1}
@@ -316,7 +316,7 @@ export default function InsightsClient({
             {currentPage < totalPages && (
               <button
                 onClick={() => setCurrentPage((prev) => prev + 1)}
-                className="flex h-11 w-11 items-center justify-center rounded-xl border border-gray-200 bg-white text-gray-600 transition-all hover:bg-gray-50 hover:text-[#0A0A0A]"
+                className="flex h-11 w-11 items-center justify-center rounded-xl border border-white/10 bg-white/5 text-[#9aa0ac] transition-all hover:bg-white/10 hover:text-white"
               >
                 <ArrowRight className="h-4 w-4" />
               </button>
@@ -326,16 +326,16 @@ export default function InsightsClient({
 
         {/* 4. NEWSLETTER BANNER */}
         <section className="mx-auto mt-14 max-w-7xl px-6 md:px-8">
-          <div className="flex flex-col items-center justify-between gap-8 rounded-3xl border border-white/10 bg-gradient-to-r from-[#111827] to-[#0A0A0A] p-8 shadow-2xl md:flex-row md:p-12">
+          <div className="flex flex-col items-center justify-between gap-8 rounded-3xl border border-white/10 bg-gradient-to-r from-[#101218] to-[#07070a] p-8 shadow-2xl md:flex-row md:p-12">
             <div className="flex items-center gap-6">
-              <div className="flex h-16 w-16 shrink-0 items-center justify-center rounded-2xl bg-[#6495ED]/10">
-                <TrendingUp className="h-8 w-8 text-[#6495ED]" />
+              <div className="flex h-16 w-16 shrink-0 items-center justify-center rounded-2xl bg-[#6D7CF7]/10">
+                <TrendingUp className="h-8 w-8 text-[#6D7CF7]" />
               </div>
               <div>
                 <h3 className="text-2xl font-bold text-white">
                   Ready to Be Our Next Success Story?
                 </h3>
-                <p className="mt-2 text-gray-400">
+                <p className="mt-2 text-[#6e7480]">
                   Let's grow your brand with performance-driven strategies.
                 </p>
               </div>
@@ -343,7 +343,7 @@ export default function InsightsClient({
 
             <Link
               href="/contact"
-              className="group flex shrink-0 items-center gap-2 rounded-xl bg-white px-8 py-4 text-sm font-bold text-[#0A0A0A] transition-all hover:bg-gray-200"
+              className="group flex shrink-0 items-center gap-2 rounded-xl bg-[#6D7CF7] px-8 py-4 text-sm font-bold text-white transition-all hover:bg-[#5566E0]"
             >
               Start Your Project
               <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />

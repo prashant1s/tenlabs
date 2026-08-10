@@ -48,7 +48,7 @@ export default function CommerceSystemsPage() {
   return (
     <>
       {/* <Header /> */}
-      <main className="min-h-screen bg-white">
+      <main className="min-h-screen bg-[#07070a]">
         {/* 1. HERO SECTION */}
         <section className="relative min-h-screen w-full overflow-hidden bg-black font-sans">
           <style
@@ -84,7 +84,7 @@ export default function CommerceSystemsPage() {
                 BUILD,
                 <br />
                 SELL &<br />
-                <span className="font-serif italic text-[#6495ED] font-light">
+                <span className="font-serif italic text-[#6D7CF7] font-light">
                   SCALE.
                 </span>
               </h1>
@@ -96,7 +96,7 @@ export default function CommerceSystemsPage() {
               <div className="flex flex-wrap items-center gap-4 sm:gap-6 animate-[fadeSlideUp_0.8s_ease_0.9s_both]">
                 <Link
                   href="/contact"
-                  className="inline-flex items-center gap-2 rounded-lg bg-white px-5 py-2.5 sm:px-6 sm:py-3 text-sm font-medium text-black hover:scale-105 transition-transform"
+                  className="inline-flex items-center gap-2 rounded-xl bg-white px-5 py-2.5 sm:px-6 sm:py-3 text-sm font-medium text-black hover:scale-105 transition-transform"
                 >
                   Start Building <ArrowRight className="w-4 h-4" />
                 </Link>
@@ -104,7 +104,7 @@ export default function CommerceSystemsPage() {
             </div>
 
             {/* Hero Stats */}
-            <div className="w-full lg:w-1/2 relative h-[500px] mt-12 lg:mt-0 hidden md:block animate-[fadeSlideUp_0.8s_ease_0.9s_both]">
+            <div className="w-full lg:w-1/2 relative h-125 mt-12 lg:mt-0 hidden md:block animate-[fadeSlideUp_0.8s_ease_0.9s_both]">
               <div className="absolute top-4 left-4 lg:left-12 w-64 bg-black/50 backdrop-blur-xl border border-white/20 rounded-2xl p-5 shadow-2xl z-30 transition-transform hover:scale-105">
                 <p className="text-xs text-gray-300 mb-1 font-medium">
                   Platform GMV Processed
@@ -116,15 +116,15 @@ export default function CommerceSystemsPage() {
                 <svg className="w-full h-8" viewBox="0 0 100 30" fill="none">
                   <path
                     d="M0 25C10 25 15 15 25 15C35 15 40 20 50 10C60 0 65 15 75 5C85 -5 95 10 100 5"
-                    stroke="#6495ED"
+                    stroke="#6D7CF7"
                     strokeWidth="2"
                     strokeLinecap="round"
                     strokeLinejoin="round"
                   />
-                  <circle cx="100" cy="5" r="2" fill="#6495ED" />
+                  <circle cx="100" cy="5" r="2" fill="#6D7CF7" />
                 </svg>
               </div>
-              <div className="absolute top-[220px] left-0 lg:left-4 w-48 bg-black/50 backdrop-blur-xl border border-white/20 rounded-2xl p-5 shadow-2xl z-20 transition-transform hover:scale-105">
+              <div className="absolute top-55 left-0 lg:left-4 w-48 bg-black/50 backdrop-blur-xl border border-white/20 rounded-2xl p-5 shadow-2xl z-20 transition-transform hover:scale-105">
                 <p className="text-xs text-gray-300 mb-1 font-medium">
                   Avg Conversion Uplift
                 </p>
@@ -185,28 +185,28 @@ export default function CommerceSystemsPage() {
         {/* 2. THE FUNNEL */}
         <section
           id="process"
-          className="py-20 bg-[#FAFAFA] border-b border-gray-200"
+          className="py-20 bg-[#0a0a0e] border-b border-white/10"
         >
           <div className="mx-auto max-w-7xl px-6">
             <div className="flex flex-col lg:flex-row gap-16 items-start">
               <div className="w-full lg:w-1/3 shrink-0">
-                <span className="text-xs font-bold uppercase tracking-[0.2em] text-[#6495ED] mb-4 block">
+                <span className="text-xs font-bold uppercase tracking-[0.2em] text-[#6D7CF7] mb-4 block">
                   OUR COMMERCE ENGINE
                 </span>
-                <h2 className="text-3xl md:text-4xl font-serif text-[#0A0A0A] leading-tight mb-6">
+                <h2 className="text-3xl md:text-4xl font-serif text-[#f3f4f6] leading-tight mb-6">
                   Built for scale,
                   <br />
-                  <span className="italic text-gray-600 font-light">
+                  <span className="italic text-[#9aa0ac] font-light">
                     engineered for speed.
                   </span>
                 </h2>
-                <p className="text-gray-600 mb-8">
+                <p className="text-[#9aa0ac] mb-8">
                   From custom storefronts to marketplace domination and backend
                   ops.
                 </p>
               </div>
               <div className="w-full lg:w-2/3 flex flex-wrap md:flex-nowrap justify-between relative mt-8 lg:mt-0">
-                <div className="absolute top-6 left-12 right-12 h-[1px] border-t border-dashed border-gray-300 hidden md:block z-0"></div>
+                <div className="absolute top-6 left-12 right-12 h-px border-t border-dashed border-white/10 hidden md:block z-0"></div>
                 {[
                   {
                     num: "01",
@@ -237,16 +237,16 @@ export default function CommerceSystemsPage() {
                     key={i}
                     className="relative z-10 flex flex-col items-center text-center w-1/2 md:w-1/4 px-2 mb-10 md:mb-0"
                   >
-                    <div className="w-12 h-12 bg-white rounded-full flex items-center justify-center text-[#6495ED] shadow-md border border-gray-100 mb-4">
+                    <div className="w-12 h-12 bg-[#101218] rounded-full flex items-center justify-center text-[#6D7CF7] shadow-md border border-white/10 mb-4">
                       <step.icon className="w-5 h-5" />
                     </div>
-                    <span className="text-xs font-bold text-gray-400 mb-2">
+                    <span className="text-xs font-bold text-[#6e7480] mb-2">
                       {step.num}
                     </span>
-                    <h3 className="text-sm font-black text-[#0A0A0A] tracking-wider mb-2">
+                    <h3 className="text-sm font-black text-[#f3f4f6] tracking-wider mb-2">
                       {step.title}
                     </h3>
-                    <p className="text-xs text-gray-500 leading-relaxed">
+                    <p className="text-xs text-[#9aa0ac] leading-relaxed">
                       {step.desc}
                     </p>
                   </div>
@@ -257,10 +257,10 @@ export default function CommerceSystemsPage() {
         </section>
 
         {/* 3. WHAT WE DO */}
-        <section className="py-15 bg-white">
+        <section className="py-15 bg-[#07070a]">
           <div className="mx-auto max-w-7xl px-6 mt-16">
-            <div className="bg-[#0A0A0A] rounded-[2rem] p-8 md:p-12 shadow-2xl">
-              <span className="text-xs font-bold uppercase tracking-[0.2em] text-[#6495ED] mb-2 block">
+            <div className="bg-[#101218] rounded-[2rem] p-8 md:p-12 shadow-2xl">
+              <span className="text-xs font-bold uppercase tracking-[0.2em] text-[#6D7CF7] mb-2 block">
                 WHAT WE DO
               </span>
               <h2 className="text-3xl font-bold text-white mb-10">
@@ -270,7 +270,7 @@ export default function CommerceSystemsPage() {
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
                 {/* Shopify */}
                 {/* Shopify */}
-                <div className="bg-[#111111] border border-white/5 rounded-2xl p-6 flex flex-col justify-between group hover:border-[#96BF48]/30 transition-colors">
+                <div className="bg-[#161925] border border-white/5 rounded-2xl p-6 flex flex-col justify-between group hover:border-[#96BF48]/30 transition-colors">
                   <div>
                     {/* Faint/Dark icon at the top to match the screenshot */}
                     <div className="w-10 h-10 flex items-center justify-center rounded-lg bg-white/5 text-white mb-6">
@@ -302,7 +302,7 @@ export default function CommerceSystemsPage() {
                 </div>
 
                 {/* Custom Dev */}
-                <div className="bg-[#111111] border border-white/5 rounded-2xl p-6 flex flex-col justify-between group hover:border-blue-500/30 transition-colors">
+                <div className="bg-[#161925] border border-white/5 rounded-2xl p-6 flex flex-col justify-between group hover:border-blue-500/30 transition-colors">
                   <div>
                     <div className="w-10 h-10 flex items-center justify-center rounded-lg bg-blue-500/10 text-blue-400 mb-6">
                       <Code className="w-5 h-5" />
@@ -346,7 +346,7 @@ export default function CommerceSystemsPage() {
                 </div>
 
                 {/* Marketplaces */}
-                <div className="bg-[#111111] border border-white/5 rounded-2xl p-6 flex flex-col justify-between group hover:border-orange-500/30 transition-colors">
+                <div className="bg-[#161925] border border-white/5 rounded-2xl p-6 flex flex-col justify-between group hover:border-orange-500/30 transition-colors">
                   <div>
                     <div className="w-10 h-10 flex items-center justify-center rounded-lg bg-orange-500/10 text-orange-400 mb-6">
                       <Store className="w-5 h-5" />
@@ -380,7 +380,7 @@ export default function CommerceSystemsPage() {
                 </div>
 
                 {/* Operations */}
-                <div className="bg-[#111111] border border-white/5 rounded-2xl p-6 flex flex-col justify-between group hover:border-purple-500/30 transition-colors">
+                <div className="bg-[#161925] border border-white/5 rounded-2xl p-6 flex flex-col justify-between group hover:border-purple-500/30 transition-colors">
                   <div>
                     <div className="w-10 h-10 flex items-center justify-center rounded-lg bg-purple-500/10 text-purple-400 mb-6">
                       <Settings className="w-5 h-5" />
@@ -407,7 +407,7 @@ export default function CommerceSystemsPage() {
         {/* ========================================= */}
         {/* 4. RESULTS THAT MATTER (CASE STUDIES) */}
         {/* ========================================= */}
-        <section className="bg-[#0A0A0A] px-6 py-24 md:py-32">
+        <section className="bg-[#07070a] px-6 py-24 md:py-32">
           <div className="mx-auto max-w-7xl">
             <motion.div
               initial="hidden"
@@ -421,7 +421,7 @@ export default function CommerceSystemsPage() {
                 variants={staggerContainer}
                 className="md:col-span-4 lg:col-span-3 flex flex-col justify-center"
               >
-                <h3 className="text-xs font-bold uppercase tracking-widest text-[#6495ED] mb-8">
+                <h3 className="text-xs font-bold uppercase tracking-widest text-[#6D7CF7] mb-8">
                   Our Work
                 </h3>
                 <h2 className="text-4xl md:text-5xl font-serif text-white leading-[1.1] mb-6">
@@ -433,10 +433,10 @@ export default function CommerceSystemsPage() {
                 </p>
                 <Link
                   href="/work"
-                  className="group flex items-center gap-4 text-sm font-bold text-white transition-colors hover:text-[#6495ED]"
+                  className="group flex items-center gap-4 text-sm font-bold text-white transition-colors hover:text-[#6D7CF7]"
                 >
                   Explore Case Studies
-                  <span className="flex h-10 w-10 items-center justify-center rounded-full border border-white/20 transition-all group-hover:border-[#6495ED]">
+                  <span className="flex h-10 w-10 items-center justify-center rounded-full border border-white/20 transition-all group-hover:border-[#6D7CF7]">
                     <ArrowUpRight className="h-4 w-4" />
                   </span>
                 </Link>
@@ -452,7 +452,7 @@ export default function CommerceSystemsPage() {
                     <Link
                       href={`/work/${item.slug}`}
                       key={idx}
-                      className="group relative aspect-[4/3] md:aspect-[5/4] w-full overflow-hidden bg-[#111111] block border border-white/5"
+                      className="group relative aspect-4/3 md:aspect-5/4 w-full overflow-hidden bg-[#101218] block border border-white/5"
                     >
                       {item.img && (
                         <Image
@@ -483,7 +483,7 @@ export default function CommerceSystemsPage() {
                     Array.from({ length: 6 }).map((_, idx) => (
                       <div
                         key={`skeleton-${idx}`}
-                        className="relative aspect-[4/3] md:aspect-[5/4] w-full bg-[#111111] animate-pulse border border-white/5"
+                        className="relative aspect-4/3 md:aspect-5/4 w-full bg-[#101218] animate-pulse border border-white/5"
                       />
                     ))}
                 </div>
@@ -495,11 +495,11 @@ export default function CommerceSystemsPage() {
         {/* ========================================= */}
         {/* 5. FINAL CTA SECTION */}
         {/* ========================================= */}
-        <section className="py-16 md:py-24 bg-white">
+        <section className="py-16 md:py-24 bg-[#0a0a0e]">
           <div className="mx-auto max-w-7xl px-6">
-            <div className="bg-[#0A0A0A] rounded-[2rem] p-10 md:p-16 flex flex-col md:flex-row items-center justify-between gap-10 relative overflow-hidden shadow-2xl">
+            <div className="bg-[#101218] rounded-[2rem] p-10 md:p-16 flex flex-col md:flex-row items-center justify-between gap-10 relative overflow-hidden shadow-2xl">
               <div className="absolute right-0 top-0 bottom-0 w-1/2 pointer-events-none opacity-40 mix-blend-screen">
-                <div className="absolute top-1/2 left-1/2 -translate-y-1/2 w-[300px] h-[200px] bg-blue-600 rounded-full blur-[100px]"></div>
+                <div className="absolute top-1/2 left-1/2 -translate-y-1/2 w-75 h-50 bg-blue-600 rounded-full blur-[100px]"></div>
                 <svg
                   className="absolute inset-0 w-full h-full"
                   viewBox="0 0 100 100"
@@ -507,19 +507,19 @@ export default function CommerceSystemsPage() {
                 >
                   <path
                     d="M0,50 Q25,20 50,50 T100,50"
-                    stroke="rgba(100,149,237,0.3)"
+                    stroke="rgba(109,124,247,0.3)"
                     strokeWidth="0.5"
                     fill="none"
                   />
                   <path
                     d="M0,60 Q30,80 60,50 T100,60"
-                    stroke="rgba(100,149,237,0.2)"
+                    stroke="rgba(109,124,247,0.2)"
                     strokeWidth="0.5"
                     fill="none"
                   />
                   <path
                     d="M0,40 Q40,10 70,50 T100,40"
-                    stroke="rgba(100,149,237,0.4)"
+                    stroke="rgba(109,124,247,0.4)"
                     strokeWidth="0.5"
                     fill="none"
                   />
@@ -541,7 +541,7 @@ export default function CommerceSystemsPage() {
               <div className="relative z-10 flex flex-col sm:flex-row items-center gap-4 w-full md:w-auto shrink-0">
                 <Link
                   href="/contact"
-                  className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-transparent text-white px-6 py-3.5 rounded-lg font-bold text-sm border border-white/20 hover:bg-white/5 transition-colors"
+                  className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-transparent text-white px-6 py-3.5 rounded-xl font-bold text-sm border border-white/20 hover:bg-white/5 transition-colors"
                 >
                   Write to Us <Mail className="w-4 h-4 opacity-50" />
                 </Link>

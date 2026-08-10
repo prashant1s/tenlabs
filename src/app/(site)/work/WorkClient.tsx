@@ -80,10 +80,10 @@ export default function WorkClient({ initialCaseStudies }: { initialCaseStudies:
   return (
     <>
       {/* <Header /> */}
-      <main className="min-h-screen bg-[#0A0A0A] pb-24">
-        
-        {/* HERO SECTION WITH WHITE BACKGROUND */}
-        <div className="bg-white pt-32 pb-20 lg:pb-32 rounded-b-[2rem] lg:rounded-b-[4rem]">
+      <main className="min-h-screen bg-[#07070a] pb-24">
+
+        {/* HERO SECTION */}
+        <div className="bg-[#101218] pt-32 pb-20 lg:pb-32 rounded-b-[2rem] lg:rounded-b-[4rem]">
           <section className="mx-auto max-w-7xl px-6 md:px-8">
             <div className="grid items-center gap-12 lg:grid-cols-2 lg:gap-8">
               {/* Left Content */}
@@ -93,29 +93,29 @@ export default function WorkClient({ initialCaseStudies }: { initialCaseStudies:
                 variants={staggerContainer}
                 className="max-w-2xl pt-10"
               >
-                <motion.p variants={fadeUpVariant} className="text-sm font-bold uppercase tracking-[0.2em] text-[#6495ED]">
+                <motion.p variants={fadeUpVariant} className="text-sm font-bold uppercase tracking-[0.2em] text-[#6D7CF7]">
                   Our Work
                 </motion.p>
-                <motion.h1 variants={fadeUpVariant} className="mt-6 text-4xl font-bold leading-tight tracking-tight text-gray-900 md:text-6xl lg:text-[4rem]">
-                  Case Studies That Speak for <span className="text-[#6495ED]">Results</span>
+                <motion.h1 variants={fadeUpVariant} className="mt-6 text-4xl font-bold leading-tight tracking-tight text-[#f3f4f6] md:text-6xl lg:text-[4rem]">
+                  Case Studies That Speak for <span className="text-[#6D7CF7]">Results</span>
                 </motion.h1>
-                <motion.p variants={fadeUpVariant} className="mt-6 text-lg text-gray-600">
+                <motion.p variants={fadeUpVariant} className="mt-6 text-lg text-[#9aa0ac]">
                   We help ambitious brands grow with data-driven Meta Ads, Google Ads, and e-commerce strategies that deliver real business outcomes.
                 </motion.p>
 
                 {/* Icon Grid */}
                 <motion.div variants={fadeUpVariant} className="mt-10 grid grid-cols-4 gap-4 text-center">
                   {[
-                    { icon: <BarChart3 className="mx-auto mb-3 h-6 w-6 text-[#6495ED]" />, label: "Data-Driven\nStrategies" },
-                    { icon: <TrendingUp className="mx-auto mb-3 h-6 w-6 text-[#6495ED]" />, label: "Proven\nResults" },
-                    { icon: <ShieldCheck className="mx-auto mb-3 h-6 w-6 text-[#6495ED]" />, label: "Transparent\nReporting" },
-                    { icon: <Target className="mx-auto mb-3 h-6 w-6 text-[#6495ED]" />, label: "Growth\nFocused" },
+                    { icon: <BarChart3 className="mx-auto mb-3 h-6 w-6 text-[#6D7CF7]" />, label: "Data-Driven\nStrategies" },
+                    { icon: <TrendingUp className="mx-auto mb-3 h-6 w-6 text-[#6D7CF7]" />, label: "Proven\nResults" },
+                    { icon: <ShieldCheck className="mx-auto mb-3 h-6 w-6 text-[#6D7CF7]" />, label: "Transparent\nReporting" },
+                    { icon: <Target className="mx-auto mb-3 h-6 w-6 text-[#6D7CF7]" />, label: "Growth\nFocused" },
                   ].map((item, i) => (
                     <div key={i} className="flex flex-col items-center">
-                      <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-[#6495ED]/10">
+                      <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-[#6D7CF7]/10">
                         {item.icon}
                       </div>
-                      <span className="mt-3 whitespace-pre-line text-xs font-bold text-gray-700">{item.label}</span>
+                      <span className="mt-3 whitespace-pre-line text-xs font-bold text-[#9aa0ac]">{item.label}</span>
                     </div>
                   ))}
                 </motion.div>
@@ -129,8 +129,8 @@ export default function WorkClient({ initialCaseStudies }: { initialCaseStudies:
                 className="relative hidden h-[600px] w-full lg:block"
               >
                 <div className="absolute inset-0 flex items-center justify-center">
-                  <div className="relative h-[450px] w-[350px] overflow-hidden rounded-[3rem] bg-gradient-to-b from-gray-100 to-gray-200 shadow-2xl border border-gray-200">
-                    
+                  <div className="relative h-[450px] w-[350px] overflow-hidden rounded-[3rem] bg-gradient-to-b from-[#161925] to-[#101218] shadow-2xl shadow-black/40 border border-white/10">
+
                     <Image 
                       src="/header/workbanner.webp"
                       alt="Work case studies presentation"
@@ -199,8 +199,8 @@ export default function WorkClient({ initialCaseStudies }: { initialCaseStudies:
                   onClick={() => setActiveFilter(cat)}
                   className={`rounded-full border px-5 py-2 text-sm font-semibold transition-all duration-300 ${
                     activeFilter === cat
-                      ? "border-[#6495ED] bg-[#6495ED] text-white shadow-lg shadow-[#6495ED]/20"
-                      : "border-white/10 bg-transparent text-gray-400 hover:border-[#6495ED]/50 hover:text-white"
+                      ? "border-[#6D7CF7] bg-[#6D7CF7] text-white shadow-lg shadow-[#6D7CF7]/20"
+                      : "border-white/10 bg-transparent text-[#6e7480] hover:border-[#6D7CF7]/50 hover:text-white"
                   }`}
                 >
                   {cat}
@@ -212,10 +212,10 @@ export default function WorkClient({ initialCaseStudies }: { initialCaseStudies:
             <div className="relative">
               <button 
                 onClick={() => setSortDropdownOpen(!sortDropdownOpen)}
-                className="flex items-center gap-2 rounded-xl border border-[#1e293b] bg-[#111827] px-5 py-2.5 text-sm font-semibold text-white transition-colors hover:border-white/20"
+                className="flex items-center gap-2 rounded-xl border border-[#161925] bg-[#101218] px-5 py-2.5 text-sm font-semibold text-white transition-colors hover:border-white/20"
               >
                 Sort by: {sortOrder === "newest" ? "Newest" : "Oldest"}
-                <ChevronDown className={`h-4 w-4 text-gray-400 transition-transform ${sortDropdownOpen ? 'rotate-180' : ''}`} />
+                <ChevronDown className={`h-4 w-4 text-[#6e7480] transition-transform ${sortDropdownOpen ? 'rotate-180' : ''}`} />
               </button>
 
               <AnimatePresence>
@@ -230,17 +230,17 @@ export default function WorkClient({ initialCaseStudies }: { initialCaseStudies:
                       animate={{ opacity: 1, y: 0 }}
                       exit={{ opacity: 0, y: 10 }}
                       transition={{ duration: 0.2 }}
-                      className="absolute right-0 top-full z-50 mt-2 w-full min-w-[160px] overflow-hidden rounded-xl border border-[#1e293b] bg-[#111827] shadow-xl"
+                      className="absolute right-0 top-full z-50 mt-2 w-full min-w-[160px] overflow-hidden rounded-xl border border-[#161925] bg-[#101218] shadow-xl shadow-black/40"
                     >
                       <button
                         onClick={() => { setSortOrder("newest"); setSortDropdownOpen(false); }}
-                        className={`block w-full px-4 py-3 text-left text-sm font-medium transition-colors hover:bg-white/5 ${sortOrder === "newest" ? "text-[#6495ED]" : "text-gray-300"}`}
+                        className={`block w-full px-4 py-3 text-left text-sm font-medium transition-colors hover:bg-white/5 ${sortOrder === "newest" ? "text-[#6D7CF7]" : "text-gray-300"}`}
                       >
                         Newest
                       </button>
                       <button
                         onClick={() => { setSortOrder("oldest"); setSortDropdownOpen(false); }}
-                        className={`block w-full px-4 py-3 text-left text-sm font-medium transition-colors hover:bg-white/5 ${sortOrder === "oldest" ? "text-[#6495ED]" : "text-gray-300"}`}
+                        className={`block w-full px-4 py-3 text-left text-sm font-medium transition-colors hover:bg-white/5 ${sortOrder === "oldest" ? "text-[#6D7CF7]" : "text-gray-300"}`}
                       >
                         Oldest
                       </button>
@@ -255,7 +255,7 @@ export default function WorkClient({ initialCaseStudies }: { initialCaseStudies:
         {/* CASE STUDY GRID */}
         <section className="mx-auto mt-12 max-w-6xl px-6 md:px-8">
           {paginatedStudies.length === 0 ? (
-            <div className="py-20 text-center text-gray-500">No case studies found in this category.</div>
+            <div className="py-20 text-center text-[#9aa0ac]">No case studies found in this category.</div>
           ) : (
             <motion.div layout className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
               <AnimatePresence mode="popLayout">
@@ -267,10 +267,10 @@ export default function WorkClient({ initialCaseStudies }: { initialCaseStudies:
                     exit={{ opacity: 0, scale: 0.9 }}
                     transition={{ duration: 0.4 }}
                     key={study.id}
-                    className="group flex flex-col overflow-hidden rounded-3xl border border-white/5 bg-[#111827] shadow-lg transition-colors hover:border-[#6495ED]/40"
+                    className="group flex flex-col overflow-hidden rounded-3xl border border-white/5 bg-[#101218] shadow-lg shadow-black/40 transition-colors hover:border-[#6D7CF7]/40"
                   >
                     {/* Image Top Half */}
-                    <div className="relative aspect-3/2 w-full overflow-hidden bg-gray-900 border-b border-[#1F2937]">
+                    <div className="relative aspect-3/2 w-full overflow-hidden bg-[#101218] border-b border-[#161925]">
                       <div className="absolute left-4 top-4 z-10 rounded-full border border-white/10 bg-black/40 px-3 py-1 text-xs font-semibold text-white backdrop-blur-md">
                         {study.category}
                       </div>
@@ -282,7 +282,7 @@ export default function WorkClient({ initialCaseStudies }: { initialCaseStudies:
                           className="object-cover transition-transform duration-700 group-hover:scale-105"
                         />
                       ) : (
-                        <div className="absolute inset-0 flex items-center justify-center text-sm font-medium text-slate-600 transition-transform duration-700 group-hover:scale-105">
+                        <div className="absolute inset-0 flex items-center justify-center text-sm font-medium text-[#6e7480] transition-transform duration-700 group-hover:scale-105">
                           [ Image Placeholder ]
                         </div>
                       )}
@@ -291,7 +291,7 @@ export default function WorkClient({ initialCaseStudies }: { initialCaseStudies:
                     {/* Content Bottom Half */}
                     <div className="flex flex-1 flex-col p-3">
                       <h3 className="text-xl font-semibold text-white">{study.title}</h3>
-                      <p className="mt-1 text-sm text-gray-400">{study.desc}</p>
+                      <p className="mt-1 text-sm text-[#6e7480]">{study.desc}</p>
 
                       {/* Dynamic Metric Stats Grid (Fixed for Text Overflow) */}
                       {study.metrics && study.metrics.length > 0 && (
@@ -299,10 +299,10 @@ export default function WorkClient({ initialCaseStudies }: { initialCaseStudies:
                           <div className="grid grid-cols-2 gap-x-4 gap-y-4 border-t border-white/10 pt-4">
                             {study.metrics.map((metric, idx) => (
                               <div key={idx} className="flex flex-col">
-                                <span className={`text-base md:text-lg font-semibold leading-tight break-words ${idx === study.metrics.length - 1 ? 'text-[#6495ED]' : 'text-white'}`}>
+                                <span className={`text-base md:text-lg font-semibold leading-tight wrap-break-word ${idx === study.metrics.length - 1 ? 'text-[#6D7CF7]' : 'text-white'}`}>
                                   {metric.value}
                                 </span>
-                                <span className="mt-1 text-[11px] font-medium tracking-wider text-gray-400 break-words line-clamp-2">
+                                <span className="mt-1 text-[11px] font-medium tracking-wider text-[#6e7480] wrap-break-word line-clamp-2">
                                   {metric.label}
                                 </span>
                               </div>
@@ -316,7 +316,7 @@ export default function WorkClient({ initialCaseStudies }: { initialCaseStudies:
                         className="mt-3 flex items-center justify-between text-sm font-semibold text-gray-300 transition-colors group-hover:text-white"
                       >
                         View Case Study
-                        <ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-1 group-hover:text-[#6495ED]" />
+                        <ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-1 group-hover:text-[#6D7CF7]" />
                       </Link>
                     </div>
                   </motion.div>
@@ -335,8 +335,8 @@ export default function WorkClient({ initialCaseStudies }: { initialCaseStudies:
                 onClick={() => setCurrentPage(i + 1)}
                 className={`flex h-11 w-11 items-center justify-center rounded-xl text-sm font-bold transition-all ${
                   currentPage === i + 1
-                    ? "bg-[#6495ED] text-white shadow-lg shadow-[#6495ED]/20"
-                    : "border border-white/10 bg-transparent text-gray-400 hover:bg-white/5 hover:text-white"
+                    ? "bg-[#6D7CF7] text-white shadow-lg shadow-[#6D7CF7]/20"
+                    : "border border-white/10 bg-transparent text-[#6e7480] hover:bg-white/5 hover:text-white"
                 }`}
               >
                 {i + 1}
@@ -346,7 +346,7 @@ export default function WorkClient({ initialCaseStudies }: { initialCaseStudies:
             {currentPage < totalPages && (
               <button 
                 onClick={() => setCurrentPage((prev) => prev + 1)}
-                className="flex h-11 w-11 items-center justify-center rounded-xl border border-white/10 bg-transparent text-gray-400 transition-all hover:bg-white/5 hover:text-white"
+                className="flex h-11 w-11 items-center justify-center rounded-xl border border-white/10 bg-transparent text-[#6e7480] transition-all hover:bg-white/5 hover:text-white"
               >
                 <ArrowRight className="h-4 w-4" />
               </button>
@@ -356,20 +356,20 @@ export default function WorkClient({ initialCaseStudies }: { initialCaseStudies:
 
         {/* BOTTOM CTA BAR */}
         <section className="mx-auto mt-24 max-w-7xl px-6 md:px-8">
-          <div className="flex flex-col items-center justify-between gap-8 rounded-3xl border border-white/10 bg-gradient-to-r from-[#111827] to-[#0A0A0A] p-8 shadow-2xl md:flex-row md:p-12">
+          <div className="flex flex-col items-center justify-between gap-8 rounded-3xl border border-white/10 bg-gradient-to-r from-[#101218] to-[#07070a] p-8 shadow-2xl shadow-black/40 md:flex-row md:p-12">
             <div className="flex items-center gap-6">
-              <div className="flex h-16 w-16 shrink-0 items-center justify-center rounded-2xl bg-[#6495ED]/10">
-                <TrendingUp className="h-8 w-8 text-[#6495ED]" />
+              <div className="flex h-16 w-16 shrink-0 items-center justify-center rounded-2xl bg-[#6D7CF7]/10">
+                <TrendingUp className="h-8 w-8 text-[#6D7CF7]" />
               </div>
               <div>
                 <h3 className="text-2xl font-bold text-white">Ready to Be Our Next Success Story?</h3>
-                <p className="mt-2 text-gray-400">Let's grow your brand with performance-driven strategies.</p>
+                <p className="mt-2 text-[#9aa0ac]">Let's grow your brand with performance-driven strategies.</p>
               </div>
             </div>
-            
-            <Link 
+
+            <Link
               href="/contact"
-              className="group flex shrink-0 items-center gap-2 rounded-xl bg-white px-8 py-4 text-sm font-bold text-[#0A0A0A] transition-all hover:bg-gray-200"
+              className="group flex shrink-0 items-center gap-2 rounded-xl bg-[#6D7CF7] px-8 py-4 text-sm font-bold text-white transition-all hover:bg-[#5566E0]"
             >
               Start Your Project
               <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />

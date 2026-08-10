@@ -15,7 +15,7 @@ function MediaCard({
 }) {
   return (
     <div
-      className={`relative aspect-[4/3] w-[340px] shrink-0 overflow-hidden rounded-2xl border border-black/5 bg-[#0A0A0A] shadow-2xl transition-all duration-500 sm:w-[400px] lg:w-[440px] ${className}`}
+      className={`relative aspect-[4/3] w-[340px] shrink-0 overflow-hidden rounded-2xl border border-white/10 bg-[#101218] shadow-2xl transition-all duration-500 sm:w-[400px] lg:w-[440px] ${className}`}
     >
       {children}
     </div>
@@ -28,7 +28,7 @@ function MediaCard({
 function CardGlowRing({ hoverClass = "" }: { hoverClass?: string }) {
   return (
     <div
-      className={`absolute -inset-1 -z-10 rounded-[22px] bg-gradient-to-br from-[#6495ED] to-[#8B5CF6] opacity-0 blur-md transition-opacity duration-500 ${hoverClass}`}
+      className={`absolute -inset-1 -z-10 rounded-[22px] bg-gradient-to-br from-[#6D7CF7] to-[#8B5CF6] opacity-0 blur-md transition-opacity duration-500 ${hoverClass}`}
     />
   );
 }
@@ -81,7 +81,7 @@ export function Hero() {
 
   return (
     <section
-      className="relative flex min-h-screen flex-col items-center justify-center overflow-hidden bg-white pb-16 pt-28 font-sora md:pt-32"
+      className="relative flex min-h-screen flex-col items-center justify-center overflow-hidden bg-[#07070a] pb-16 pt-28 font-sora md:pt-32"
     >
       <style dangerouslySetInnerHTML={{ __html: `
         @keyframes heroFloatUp {
@@ -98,7 +98,7 @@ export function Hero() {
       <div
         className="pointer-events-none absolute inset-0 z-0 opacity-70"
         style={{
-          backgroundImage: "radial-gradient(rgba(10,10,10,0.09) 1px, transparent 1px)",
+          backgroundImage: "radial-gradient(rgba(255,255,255,0.08) 1px, transparent 1px)",
           backgroundSize: "26px 26px",
           WebkitMaskImage: "radial-gradient(ellipse 65% 55% at 50% 35%, black 40%, transparent 90%)",
           maskImage: "radial-gradient(ellipse 65% 55% at 50% 35%, black 40%, transparent 90%)",
@@ -107,36 +107,36 @@ export function Hero() {
 
       {/* Ambient two-tone glow — radial-gradients read like blurred blobs
           without the filter: blur() repaint cost. */}
-      <div className="pointer-events-none absolute top-[38%] left-1/2 z-0 h-[500px] w-[900px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-[radial-gradient(circle,rgba(100,149,237,0.20)_0%,rgba(100,149,237,0)_70%)]" />
-      <div className="pointer-events-none absolute bottom-[8%] right-[8%] z-0 h-[380px] w-[480px] rounded-full bg-[radial-gradient(circle,rgba(139,92,246,0.16)_0%,rgba(139,92,246,0)_70%)]" />
-      <div className="pointer-events-none absolute bottom-[10%] left-[6%] z-0 h-[320px] w-[420px] rounded-full bg-[radial-gradient(circle,rgba(100,149,237,0.12)_0%,rgba(100,149,237,0)_70%)]" />
+      <div className="pointer-events-none absolute top-[38%] left-1/2 z-0 h-125 w-225 -translate-x-1/2 -translate-y-1/2 rounded-full bg-[radial-gradient(circle,rgba(109,124,247,0.30)_0%,rgba(109,124,247,0)_70%)]" />
+      <div className="pointer-events-none absolute bottom-[8%] right-[8%] z-0 h-95 w-120 rounded-full bg-[radial-gradient(circle,rgba(139,92,246,0.22)_0%,rgba(139,92,246,0)_70%)]" />
+      <div className="pointer-events-none absolute bottom-[10%] left-[6%] z-0 h-80 w-105 rounded-full bg-[radial-gradient(circle,rgba(109,124,247,0.16)_0%,rgba(109,124,247,0)_70%)]" />
 
       {/* Centered Content Container */}
       <div className="relative z-10 flex w-full max-w-5xl flex-col items-center justify-center px-6 text-center">
 
         {/* Eyebrow */}
         <div
-          className="animate-fade-up mb-6 inline-flex items-center gap-2 rounded-full border border-[#6495ED]/25 bg-[#6495ED]/5 px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.15em] text-[#4F7DF3] opacity-0"
+          className="animate-fade-up mb-6 inline-flex items-center gap-2 rounded-full border border-[#6D7CF7]/25 bg-[#6D7CF7]/10 px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.15em] text-[#9fb0ff] opacity-0"
         >
           <Sparkles className="h-3.5 w-3.5" />
           Websites That Convert
         </div>
 
-        {/* Headline: Black text with gradient highlight */}
+        {/* Headline: light text with gradient highlight */}
         <h1
-          className="animate-fade-up mb-4 text-[clamp(2.5rem,5.5vw,5.5rem)] font-bold leading-[1.1] tracking-[-0.02em] text-[#0A0A0A] opacity-0 md:mb-6"
+          className="animate-fade-up mb-4 text-[clamp(2.5rem,5.5vw,5.5rem)] font-bold leading-[1.1] tracking-[-0.02em] text-[#f3f4f6] opacity-0 md:mb-6"
           style={{ animationDelay: "0.2s" }}
         >
           A{" "}
-          <span className="bg-gradient-to-r from-[#6495ED] to-[#8B5CF6] bg-clip-text text-transparent">
+          <span className="bg-gradient-to-r from-[#6D7CF7] to-[#8B5CF6] bg-clip-text text-transparent">
             website
           </span>
           <br className="hidden md:block" /> makes it real.
         </h1>
 
-        {/* Subheading: Dark grey text for contrast against white background */}
+        {/* Subheading: muted light-grey text for contrast against the dark background */}
         <p
-          className="animate-fade-up mb-10 text-[clamp(1.25rem,2.5vw,1.75rem)] font-light text-gray-600 opacity-0 md:mb-12"
+          className="animate-fade-up mb-10 text-[clamp(1.25rem,2.5vw,1.75rem)] font-light text-[#9aa0ac] opacity-0 md:mb-12"
           style={{ animationDelay: "0.4s" }}
         >
           Strategy. Creativity. Growth.
@@ -149,7 +149,7 @@ export function Hero() {
         >
           <Link
             href="/contact"
-            className="group relative inline-flex items-center justify-center gap-2 overflow-hidden rounded-lg bg-gradient-to-r from-[#6495ED] to-[#5A79E0] px-8 py-4 text-base font-medium text-white shadow-[0_10px_30px_rgba(100,149,237,0.35)] transition-all duration-300 hover:scale-[1.03] hover:shadow-[0_14px_40px_rgba(100,149,237,0.5)] active:scale-[0.98]"
+            className="group relative inline-flex items-center justify-center gap-2 overflow-hidden rounded-xl bg-gradient-to-r from-[#6D7CF7] to-[#5A6EE0] px-8 py-4 text-base font-medium text-white shadow-[0_10px_30px_rgba(109,124,247,0.4)] transition-all duration-300 hover:scale-[1.03] hover:shadow-[0_14px_40px_rgba(109,124,247,0.55)] active:scale-[0.98]"
           >
             <span className="relative z-10">Get in Touch</span>
             <ArrowRight className="relative z-10 h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
@@ -170,7 +170,7 @@ export function Hero() {
         <div className="hidden animate-[heroFloatUp_5s_ease-in-out_infinite] lg:block lg:-translate-x-10 xl:-translate-x-16">
           <div className="group/card relative">
             <CardGlowRing hoverClass="group-hover/card:opacity-100" />
-            <MediaCard className="-rotate-3 scale-[0.92] opacity-80 group-hover/card:z-20 group-hover/card:-translate-y-2 group-hover/card:rotate-0 group-hover/card:scale-100 group-hover/card:opacity-100 group-hover/card:shadow-[0_25px_60px_-12px_rgba(100,149,237,0.45)]">
+            <MediaCard className="-rotate-3 scale-[0.92] opacity-80 group-hover/card:z-20 group-hover/card:-translate-y-2 group-hover/card:rotate-0 group-hover/card:scale-100 group-hover/card:opacity-100 group-hover/card:shadow-[0_25px_60px_-12px_rgba(109,124,247,0.45)]">
               <Image
                 src="/design1.webp"
                 alt="Syngri — digital product studio website design"
@@ -186,7 +186,7 @@ export function Hero() {
         {/* Center video */}
         <div className="group/video relative">
           <CardGlowRing hoverClass="group-hover/video:opacity-100" />
-          <MediaCard className="z-10 aspect-video w-[380px] shadow-[0_30px_70px_-20px_rgba(0,0,0,0.3)] group-hover/video:scale-[1.04] group-hover/video:shadow-[0_35px_80px_-15px_rgba(100,149,237,0.5)] sm:w-[460px] lg:w-[520px]">
+          <MediaCard className="z-10 aspect-video w-[380px] shadow-[0_30px_70px_-20px_rgba(0,0,0,0.3)] group-hover/video:scale-[1.04] group-hover/video:shadow-[0_35px_80px_-15px_rgba(109,124,247,0.5)] sm:w-[460px] lg:w-[520px]">
             <video
               ref={videoRef}
               src="/video-in-center.mp4"
@@ -216,7 +216,7 @@ export function Hero() {
         >
           <div className="group/card relative">
             <CardGlowRing hoverClass="group-hover/card:opacity-100" />
-            <MediaCard className="rotate-3 scale-[0.92] opacity-80 group-hover/card:z-20 group-hover/card:-translate-y-2 group-hover/card:rotate-0 group-hover/card:scale-100 group-hover/card:opacity-100 group-hover/card:shadow-[0_25px_60px_-12px_rgba(100,149,237,0.45)]">
+            <MediaCard className="rotate-3 scale-[0.92] opacity-80 group-hover/card:z-20 group-hover/card:-translate-y-2 group-hover/card:rotate-0 group-hover/card:scale-100 group-hover/card:opacity-100 group-hover/card:shadow-[0_25px_60px_-12px_rgba(109,124,247,0.45)]">
               <Image
                 src="/design2.webp"
                 alt="Budgeting app website design"

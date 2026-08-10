@@ -28,7 +28,7 @@ export default function ContactClient({ splineSlot }: { splineSlot: React.ReactN
   const mouseX = useMotionValue(0);
   const mouseY = useMotionValue(0);
   const springConfig = { damping: 25, stiffness: 150, mass: 0.5 };
-  
+
   // Parallax values for the floating cards
   const floatX1 = useSpring(useTransform(mouseX, [-0.5, 0.5], [-15, 15]), springConfig);
   const floatY1 = useSpring(useTransform(mouseY, [-0.5, 0.5], [-15, 15]), springConfig);
@@ -46,15 +46,15 @@ export default function ContactClient({ splineSlot }: { splineSlot: React.ReactN
   useEffect(() => {
     const ctx = gsap.context(() => {
       const tl = gsap.timeline();
-      
+
       // 1. Spline Entrance
       tl.fromTo(splineRef.current,
         { y: 80, scale: 0.85, opacity: 0 },
         { y: 0, scale: 1, opacity: 1, duration: 1.8, ease: "power3.out" }
       )
       // 2. Headline
-      .fromTo(headlineRef.current, 
-        { y: 20, opacity: 0 }, 
+      .fromTo(headlineRef.current,
+        { y: 20, opacity: 0 },
         { y: 0, opacity: 1, duration: 1, ease: "power4.out" },
         "-=1.2"
       )
@@ -103,33 +103,33 @@ export default function ContactClient({ splineSlot }: { splineSlot: React.ReactN
 
   return (
     <ReactLenis root options={{ lerp: 0.08, smoothWheel: true }}>
-      <main 
-        className="min-h-screen bg-black overflow-hidden font-sans selection:bg-[#79C267] selection:text-white"
+      <main
+        className="min-h-screen bg-[#07070a] overflow-hidden font-sans selection:bg-[#6D7CF7] selection:text-white"
         onMouseMove={handleMouseMove}
       >
         {/* HERO SECTION */}
-        <section 
-          ref={heroRef} 
-          className="relative h-screen min-h-[600px] w-full flex flex-col items-center justify-start pt-28 md:pt-36 bg-[#112A1B] overflow-hidden"
+        <section
+          ref={heroRef}
+          className="relative h-screen min-h-[600px] w-full flex flex-col items-center justify-start pt-28 md:pt-36 bg-[#101218] overflow-hidden"
         >
-          <div className="absolute inset-0 bg-gradient-to-b from-[#112A1B] via-[#1B432B] to-[#0A160F] z-0" />
-          <div className="absolute top-[20%] left-1/2 -translate-x-1/2 w-[800px] h-[500px] bg-[#4EA868]/15 rounded-full blur-[120px] pointer-events-none z-0" />
+          <div className="absolute inset-0 bg-gradient-to-b from-[#101218] via-[#161925] to-[#07070a] z-0" />
+          <div className="absolute top-[20%] left-1/2 -translate-x-1/2 w-[800px] h-[500px] bg-[#6D7CF7]/15 rounded-full blur-[120px] pointer-events-none z-0" />
           <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-20 mix-blend-overlay pointer-events-none z-0" />
           <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[600px] h-[300px] bg-purple-500/10 rounded-full blur-[140px] pointer-events-none z-0" />
 
           <div className="relative z-20 flex flex-col items-center text-center px-6 w-full max-w-[1200px] mx-auto">
-            <h1 
-              ref={headlineRef} 
+            <h1
+              ref={headlineRef}
               className="text-[34px] md:text-[48px] lg:text-[64px] font-bold tracking-tight text-white leading-[1] max-w-[700px] mb-8 drop-shadow-xl"
             >
               Let's Build <br/>
-              <span className="text-transparent bg-clip-text bg-gradient-to-b from-[#E2F5D7] to-[#8FD37B]">Something Amazing.</span>
+              <span className="text-transparent bg-clip-text bg-gradient-to-b from-[#9fb0ff] to-[#6D7CF7]">Something Amazing.</span>
             </h1>
 
             <div ref={buttonsRef} className="flex flex-col sm:flex-row items-center gap-5">
-              <button 
+              <button
                 onClick={() => document.getElementById('contact-form')?.scrollIntoView({ behavior: 'smooth' })}
-                className="group relative inline-flex items-center justify-center gap-2 px-6 py-3 bg-white text-[#112A1B] rounded-full font-bold text-sm hover:scale-105 transition-all duration-300 shadow-[0_0_30px_rgba(255,255,255,0.15)]"
+                className="group relative inline-flex items-center justify-center gap-2 px-6 py-3 bg-white text-[#07070a] rounded-full font-bold text-sm hover:scale-105 transition-all duration-300 shadow-[0_0_30px_rgba(255,255,255,0.15)]"
               >
                 Send Message
                 <Send className="w-4 h-4 transition-transform group-hover:translate-x-1 group-hover:-translate-y-1" />
@@ -137,44 +137,44 @@ export default function ContactClient({ splineSlot }: { splineSlot: React.ReactN
             </div>
           </div>
 
-          <div 
+          <div
             ref={splineRef}
             className="absolute left-1/2 -translate-x-1/2 bottom-[-5vh] w-full max-w-[1000px] h-[70vh] flex justify-center items-end pointer-events-none z-10"
           >
             <motion.div style={{ x: floatX1, y: floatY1 }} className="absolute top-[30%] left-[20%] lg:left-[28%] z-20 hidden md:block">
               <FloatingCard icon={<Mail className="w-4 h-4 text-white"/>} label="sales@tenlabs.online" delay={0} />
             </motion.div>
-            
+
             <motion.div style={{ x: floatX2, y: floatY2 }} className="absolute top-[50%] right-[20%] lg:right-[28%] z-20 hidden md:block">
               <FloatingCard icon={<Phone className="w-4 h-4 text-white"/>} label="+91 8076625588" delay={1} />
             </motion.div>
 
             <motion.div style={{ x: floatX2, y: floatY1 }} className="absolute top-[70%] left-[12%] lg:left-[20%] z-20 hidden md:block">
-              <FloatingCard 
-                delay={0.6} 
+              <FloatingCard
+                delay={0.6}
                 icon={
                   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-4 h-4 text-white">
                     <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" />
                     <rect width="4" height="12" x="2" y="9" />
                     <circle cx="4" cy="4" r="2" />
                   </svg>
-                } 
-                label="@godigitalagencyy" 
+                }
+                label="@godigitalagencyy"
                 href="https://www.linkedin.com/company/go-digital-agencyy/"
               />
             </motion.div>
 
             <motion.div style={{ x: floatX1, y: floatY2 }} className="absolute top-[75%] right-[15%] lg:right-[22%] z-20 hidden md:block">
-              <FloatingCard 
-                delay={0.8} 
+              <FloatingCard
+                delay={0.8}
                 icon={
                   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-4 h-4 text-white">
                     <rect width="20" height="20" x="2" y="2" rx="5" ry="5"/>
                     <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/>
                     <line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/>
                   </svg>
-                } 
-                label="@go_digital_agency.in" 
+                }
+                label="@go_digital_agency.in"
                 href="https://www.instagram.com/go_digital_agency.in"
               />
             </motion.div>
@@ -186,22 +186,22 @@ export default function ContactClient({ splineSlot }: { splineSlot: React.ReactN
         </section>
 
         {/* CONTACT FORM SECTION */}
-        <section id="contact-form" className="relative py-24 md:py-32 px-6 bg-[#0A0A0A]">
+        <section id="contact-form" className="relative py-24 md:py-32 px-6 bg-[#07070a]">
           <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8">
-            
+
             <div className="lg:col-span-5 flex flex-col justify-center text-white">
               <h2 className="text-4xl md:text-5xl font-bold mb-6">Drop us a line.</h2>
-              <p className="text-gray-400 mb-12 text-lg">
+              <p className="text-[#6e7480] mb-12 text-lg">
                 Fill out the form and our team will get back to you within 24 hours. We can't wait to hear from you.
               </p>
 
               <div className="space-y-8">
                 <div className="flex items-start gap-4">
-                  <div className="w-12 h-12 rounded-full bg-[#2F7D4E]/20 flex items-center justify-center shrink-0 border border-[#2F7D4E]/30">
-                    <MapPin className="w-5 h-5 text-[#79C267]" />
+                  <div className="w-12 h-12 rounded-full bg-[#6D7CF7]/20 flex items-center justify-center shrink-0 border border-[#6D7CF7]/30">
+                    <MapPin className="w-5 h-5 text-[#6D7CF7]" />
                   </div>
                   <div>
-                    <p className="text-sm text-gray-500 font-medium mb-1">Visit Studio</p>
+                    <p className="text-sm text-[#9aa0ac] font-medium mb-1">Visit Studio</p>
                     <p className="text-lg font-semibold text-white">123 Innovation Drive,<br/>Tech City, 400001</p>
                   </div>
                 </div>
@@ -209,19 +209,19 @@ export default function ContactClient({ splineSlot }: { splineSlot: React.ReactN
             </div>
 
             <div ref={formRef} className="lg:col-span-7">
-              <div className="bg-[#111111]/80 backdrop-blur-xl border border-white/10 rounded-[2rem] p-8 md:p-12 shadow-2xl relative overflow-hidden">
-                <div className="absolute top-0 right-0 w-64 h-64 bg-[#79C267]/10 rounded-full blur-[80px] pointer-events-none" />
+              <div className="bg-[#101218]/80 backdrop-blur-xl border border-white/10 rounded-[2rem] p-8 md:p-12 shadow-2xl relative overflow-hidden">
+                <div className="absolute top-0 right-0 w-64 h-64 bg-[#6D7CF7]/10 rounded-full blur-[80px] pointer-events-none" />
 
                 {isSuccess ? (
                   <div className="flex flex-col items-center justify-center h-full py-20 text-center animate-in fade-in zoom-in duration-500">
-                    <div className="w-20 h-20 bg-green-500/20 rounded-full flex items-center justify-center mb-6 border border-green-500/50">
-                      <Sparkles className="w-10 h-10 text-green-400" />
+                    <div className="w-20 h-20 bg-[#6D7CF7]/20 rounded-full flex items-center justify-center mb-6 border border-[#6D7CF7]/50">
+                      <Sparkles className="w-10 h-10 text-[#6D7CF7]" />
                     </div>
                     <h3 className="text-3xl font-bold text-white mb-2">Almost there!</h3>
-                    <p className="text-gray-400">
+                    <p className="text-[#6e7480]">
                       Your email app should now be open with your message ready to go —
                       just hit send. If nothing opened, write to us directly at{" "}
-                      <a href={`mailto:${CONTACT_EMAIL}`} className="text-[#79C267] underline underline-offset-2">
+                      <a href={`mailto:${CONTACT_EMAIL}`} className="text-[#6D7CF7] underline underline-offset-2">
                         {CONTACT_EMAIL}
                       </a>
                       .
@@ -231,28 +231,28 @@ export default function ContactClient({ splineSlot }: { splineSlot: React.ReactN
                   <form onSubmit={handleSubmit} className="relative z-10 space-y-6">
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                       <div className="space-y-2 group">
-                        <label htmlFor="firstName" className="text-sm font-medium text-gray-400 group-focus-within:text-[#79C267] transition-colors">First Name</label>
-                        <input id="firstName" name="firstName" required type="text" className="w-full bg-white/5 border border-white/10 rounded-xl px-5 py-4 text-white placeholder-gray-600 focus:outline-none focus:ring-2 focus:ring-[#79C267] focus:bg-white/10 transition-all" placeholder="John" />
+                        <label htmlFor="firstName" className="text-sm font-medium text-[#9aa0ac] group-focus-within:text-[#6D7CF7] transition-colors">First Name</label>
+                        <input id="firstName" name="firstName" required type="text" className="w-full bg-white/5 border border-white/10 rounded-xl px-5 py-4 text-white placeholder-[#6e7480] focus:outline-none focus:ring-2 focus:ring-[#6D7CF7]/30 focus:border-[#6D7CF7] focus:bg-white/10 transition-all" placeholder="John" />
                       </div>
                       <div className="space-y-2 group">
-                        <label htmlFor="lastName" className="text-sm font-medium text-gray-400 group-focus-within:text-[#79C267] transition-colors">Last Name</label>
-                        <input id="lastName" name="lastName" required type="text" className="w-full bg-white/5 border border-white/10 rounded-xl px-5 py-4 text-white placeholder-gray-600 focus:outline-none focus:ring-2 focus:ring-[#79C267] focus:bg-white/10 transition-all" placeholder="Doe" />
+                        <label htmlFor="lastName" className="text-sm font-medium text-[#9aa0ac] group-focus-within:text-[#6D7CF7] transition-colors">Last Name</label>
+                        <input id="lastName" name="lastName" required type="text" className="w-full bg-white/5 border border-white/10 rounded-xl px-5 py-4 text-white placeholder-[#6e7480] focus:outline-none focus:ring-2 focus:ring-[#6D7CF7]/30 focus:border-[#6D7CF7] focus:bg-white/10 transition-all" placeholder="Doe" />
                       </div>
                     </div>
 
                     <div className="space-y-2 group">
-                      <label htmlFor="email" className="text-sm font-medium text-gray-400 group-focus-within:text-[#79C267] transition-colors">Email Address</label>
-                      <input id="email" name="email" required type="email" className="w-full bg-white/5 border border-white/10 rounded-xl px-5 py-4 text-white placeholder-gray-600 focus:outline-none focus:ring-2 focus:ring-[#79C267] focus:bg-white/10 transition-all" placeholder="john@company.com" />
+                      <label htmlFor="email" className="text-sm font-medium text-[#9aa0ac] group-focus-within:text-[#6D7CF7] transition-colors">Email Address</label>
+                      <input id="email" name="email" required type="email" className="w-full bg-white/5 border border-white/10 rounded-xl px-5 py-4 text-white placeholder-[#6e7480] focus:outline-none focus:ring-2 focus:ring-[#6D7CF7]/30 focus:border-[#6D7CF7] focus:bg-white/10 transition-all" placeholder="john@company.com" />
                     </div>
 
                     <div className="space-y-2 group">
-                      <label htmlFor="message" className="text-sm font-medium text-gray-400 group-focus-within:text-[#79C267] transition-colors">Your Message</label>
-                      <textarea id="message" name="message" required rows={4} className="w-full bg-white/5 border border-white/10 rounded-xl px-5 py-4 text-white placeholder-gray-600 focus:outline-none focus:ring-2 focus:ring-[#79C267] focus:bg-white/10 transition-all resize-none" placeholder="Tell us about your project..."></textarea>
+                      <label htmlFor="message" className="text-sm font-medium text-[#9aa0ac] group-focus-within:text-[#6D7CF7] transition-colors">Your Message</label>
+                      <textarea id="message" name="message" required rows={4} className="w-full bg-white/5 border border-white/10 rounded-xl px-5 py-4 text-white placeholder-[#6e7480] focus:outline-none focus:ring-2 focus:ring-[#6D7CF7]/30 focus:border-[#6D7CF7] focus:bg-white/10 transition-all resize-none" placeholder="Tell us about your project..."></textarea>
                     </div>
 
                     <button
                       type="submit"
-                      className="w-full relative overflow-hidden group bg-gradient-to-r from-[#2F7D4E] to-[#79C267] text-white rounded-xl py-4 font-bold text-base transition-all hover:scale-[1.02] active:scale-[0.98]"
+                      className="w-full relative overflow-hidden group bg-gradient-to-r from-[#5566E0] to-[#6D7CF7] text-white rounded-xl py-4 font-bold text-base transition-all hover:scale-[1.02] active:scale-[0.98]"
                     >
                       Send Message
                       <div className="absolute inset-0 bg-white/20 translate-y-full group-hover:translate-y-0 transition-transform duration-300 ease-in-out" />

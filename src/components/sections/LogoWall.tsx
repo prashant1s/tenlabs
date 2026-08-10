@@ -15,7 +15,7 @@ export function LogoWall() {
         ease: [0.22, 1, 0.36, 1],
       }}
       // Replaced 'section-padding' with explicit smaller padding (py-12 md:py-16)
-      className="border-y border-slate-100 bg-white py-12 md:py-12"
+      className="border-y border-white/8 bg-[#07070a] py-12 md:py-12"
     >
       <div className="mx-auto max-w-8xl">
         <motion.p
@@ -24,7 +24,7 @@ export function LogoWall() {
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
           // Reduced margin-bottom from mb-12 to mb-8
-          className="mb-8 text-center text-sm font-semibold uppercase tracking-[0.2em] text-slate-400"
+          className="mb-8 text-center text-sm font-semibold uppercase tracking-[0.2em] text-[#6e7480]"
         >
           Our Partners
         </motion.p>
@@ -38,20 +38,20 @@ export function LogoWall() {
             return (
               <div
                 key={`${partner.name}-${i}`}
-                className="flex shrink-0 items-center justify-center"
+                className="flex shrink-0 items-center justify-center rounded-xl bg-white/95 px-4 py-2 backdrop-blur-sm transition-opacity hover:opacity-90"
               >
                 <Image
                   src={partner.logo}
                   alt={partner.name}
                   // Increased base resolution again to maintain maximum crispness
-                  width={500} 
+                  width={500}
                   height={200}
                   quality={100}
                   // Bumped up the rendering heights, but scaling down JioHotstar
                   className={`w-auto object-contain transition-all ${
-                    isHeavyLogo 
-                      ? "h-12 md:h-16 lg:h-20 rounded-xl shadow-sm" 
-                      : "h-24 md:h-32 lg:h-40"                       
+                    isHeavyLogo
+                      ? "h-10 md:h-14 lg:h-16 rounded-lg"
+                      : "h-16 md:h-20 lg:h-24"
                   }`}
                 />
               </div>

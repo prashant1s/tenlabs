@@ -5,15 +5,15 @@ import { motion } from "framer-motion";
 
 export function GlobalPresence() {
   return (
-    <section className="bg-white py-2 md:py-2">
-      <div className="w-full px-0.5 md:px-1">
+    <section className="bg-[#07070a] py-6 md:py-8">
+      <div className="mx-auto w-full max-w-8xl px-4 md:px-6">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.2 }}
           transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
           // Keeps the rounded corners and subtle shadow visible
-          className="relative w-full overflow-hidden rounded-[1.5rem] md:rounded-[2rem] shadow-2xl shadow-slate-200/50"
+          className="relative w-full overflow-hidden rounded-[1.5rem] border border-white/8 shadow-2xl shadow-black/40 md:rounded-[2rem]"
         >
           <Image
             src="/global-presence.png"

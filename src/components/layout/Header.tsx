@@ -67,8 +67,8 @@ export function Header() {
         <nav
           className={`relative mx-auto flex max-w-7xl items-center justify-between rounded-2xl px-5 py-3 transition-all duration-500 border ${
             scrolled || mobileOpen
-              ? "bg-[#0A0A0A]/90 backdrop-blur-xl border-white/10 shadow-lg shadow-black/40"
-              : "bg-[#0A0A0A]/50 backdrop-blur-md border-white/10 shadow-md shadow-black/10" 
+              ? "bg-[#0a0a0e]/90 backdrop-blur-xl border-white/10 shadow-lg shadow-black/40"
+              : "bg-[#0a0a0e]/50 backdrop-blur-md border-white/10 shadow-md shadow-black/10"
           }`}
         >
           <Link
@@ -77,7 +77,7 @@ export function Header() {
             className="group flex items-center gap-2"
           >
             <span className="text-2xl font-semibold tracking-tight text-white">
-              Ten<span className="text-[#6495ED]">Labs</span>
+              Ten<span className="text-[#6D7CF7]">Labs</span>
             </span>
           </Link>
 
@@ -96,8 +96,8 @@ export function Header() {
                   <Link
                     href={link.href}
                     onClick={link.href === "/" ? handleHomeClick : undefined}
-                    className={`flex items-center gap-1.5 px-3.5 py-2 text-sm font-medium transition-colors hover:text-[#6495ED] ${
-                      isActive ? "text-[#6495ED]" : "text-white"
+                    className={`flex items-center gap-1.5 px-3.5 py-2 text-sm font-medium transition-colors hover:text-[#6D7CF7] ${
+                      isActive ? "text-[#6D7CF7]" : "text-white"
                     }`}
                   >
                     {link.label}
@@ -119,28 +119,28 @@ export function Header() {
                           transition={{ duration: 0.2, ease: "easeOut" }}
                           className="absolute left-0 right-0 top-full pt-6"
                         >
-                          <div className="flex w-full overflow-hidden rounded-3xl border border-white/10 bg-[#111827]/95 backdrop-blur-xl shadow-2xl shadow-black/60">
+                          <div className="flex w-full overflow-hidden rounded-3xl border border-white/10 bg-[#101218]/95 backdrop-blur-xl shadow-2xl shadow-black/60">
                             
                             {/* Left Column - Navigation Links */}
-                            <div className="flex w-1/3 flex-col justify-center gap-8 border-r border-white/5 bg-[#0A0A0A]/80 p-12">
+                            <div className="flex w-1/3 flex-col justify-center gap-8 border-r border-white/5 bg-[#07070a]/80 p-12">
                               {/* FIXED: Point to dedicated pages instead of hashes */}
                               <Link
                                 href="/solutions/growth-systems"
-                                className="group flex items-center gap-3 text-2xl font-bold text-white transition-colors hover:text-[#6495ED]"
+                                className="group flex items-center gap-3 text-2xl font-bold text-white transition-colors hover:text-[#6D7CF7]"
                               >
                                 Growth Systems
                                 <ArrowRight className="h-5 w-5 opacity-0 transition-all group-hover:translate-x-2 group-hover:opacity-100" />
                               </Link>
                               <Link
                                 href="/solutions/commerce-systems"
-                                className="group flex items-center gap-3 text-2xl font-bold text-white transition-colors hover:text-[#6495ED]"
+                                className="group flex items-center gap-3 text-2xl font-bold text-white transition-colors hover:text-[#6D7CF7]"
                               >
                                 Commerce Systems
                                 <ArrowRight className="h-5 w-5 opacity-0 transition-all group-hover:translate-x-2 group-hover:opacity-100" />
                               </Link>
                               <Link
                                 href="/solutions/brand-systems"
-                                className="group flex items-center gap-3 text-2xl font-bold text-white transition-colors hover:text-[#6495ED]"
+                                className="group flex items-center gap-3 text-2xl font-bold text-white transition-colors hover:text-[#6D7CF7]"
                               >
                                 Brand Systems
                                 <ArrowRight className="h-5 w-5 opacity-0 transition-all group-hover:translate-x-2 group-hover:opacity-100" />
@@ -192,7 +192,7 @@ export function Header() {
           {/* Desktop CTA */}
           <a
             href="mailto:sales@tenlabs.online"
-            className="group hidden items-center gap-2 rounded-lg bg-[#6495ED] px-5 py-2.5 text-sm font-medium text-white transition-all hover:bg-[#4F7DF3] lg:inline-flex"
+            className="group hidden items-center gap-2 rounded-xl bg-[#6D7CF7] px-5 py-2.5 text-sm font-medium text-white transition-all hover:bg-[#5566E0] lg:inline-flex"
           >
             <Mail className="h-4 w-4" />
             sales@tenlabs.online
@@ -235,7 +235,7 @@ export function Header() {
             animate={{ x: 0 }}
             exit={{ x: "100%" }}
             transition={{ type: "spring", damping: 30, stiffness: 300 }}
-            className="fixed right-0 top-0 z-40 flex h-full w-[75vw] max-w-sm flex-col overflow-y-auto bg-[#0A0A0A] pt-24 lg:hidden"
+            className="fixed right-0 top-0 z-40 flex h-full w-[75vw] max-w-sm flex-col overflow-y-auto bg-[#07070a] pt-24 lg:hidden"
           >
             <nav className="flex flex-col gap-1 px-6 pb-20">
               {navLinks.map((link, i) => {
@@ -253,8 +253,8 @@ export function Header() {
                       <div className="flex flex-col">
                         <button
                           onClick={() => setMobileSolutionsOpen(!mobileSolutionsOpen)}
-                          className={`flex w-full items-center justify-between py-4 pr-4 text-lg font-medium transition-colors hover:text-[#6495ED] ${
-                            isActive ? "text-[#6495ED]" : "text-white"
+                          className={`flex w-full items-center justify-between py-4 pr-4 text-lg font-medium transition-colors hover:text-[#6D7CF7] ${
+                            isActive ? "text-[#6D7CF7]" : "text-white"
                           }`}
                         >
                           {link.label}
@@ -295,8 +295,8 @@ export function Header() {
                           setMobileOpen(false);
                           if (link.href === "/") handleHomeClick();
                         }}
-                        className={`block py-4 pr-4 text-lg font-medium transition-colors hover:text-[#6495ED] ${
-                          isActive ? "text-[#6495ED]" : "text-white"
+                        className={`block py-4 pr-4 text-lg font-medium transition-colors hover:text-[#6D7CF7] ${
+                          isActive ? "text-[#6D7CF7]" : "text-white"
                         }`}
                       >
                         {link.label}
@@ -311,7 +311,7 @@ export function Header() {
               <a
                 href="mailto:sales@tenlabs.online"
                 onClick={() => setMobileOpen(false)}
-                className="group flex w-full items-center justify-center gap-2 rounded-lg bg-[#6495ED] px-6 py-3.5 text-sm font-bold text-white transition-all hover:bg-[#4F7DF3] active:scale-[0.98]"
+                className="group flex w-full items-center justify-center gap-2 rounded-xl bg-[#6D7CF7] px-6 py-3.5 text-sm font-bold text-white transition-all hover:bg-[#5566E0] active:scale-[0.98]"
               >
                 <Mail className="h-4 w-4" />
                 sales@tenlabs.online

@@ -107,7 +107,7 @@ export default function RootLayout({
       lang="en"
       className={`${geistSans.variable} ${geistMono.variable} ${instrumentSerif.variable} ${sora.variable} h-full antialiased`}
     >
-      <body className="min-h-full bg-background text-foreground overflow-x-hidden selection:bg-[#6495ED] selection:text-white">
+      <body className="min-h-full bg-background text-foreground overflow-x-hidden selection:bg-[#6D7CF7] selection:text-white">
         {children}
         <Analytics />
         <SpeedInsights />
