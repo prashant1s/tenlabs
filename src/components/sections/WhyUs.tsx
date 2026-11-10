@@ -69,7 +69,7 @@ export function WhyUs() {
             <motion.div
               variants={cardVariants}
               key={item.title}
-              // Dark cards matching the Insights/Work sections with smooth glass hover states
+              // Dark cards matching the Insights/Work sections with polished glass hover states
               className="group flex gap-6 rounded-3xl border border-white/5 bg-[#101218]/60 p-8 backdrop-blur-sm transition-all duration-300 hover:border-[#6D7CF7]/50 hover:bg-[#101218] hover:shadow-lg hover:shadow-[#6D7CF7]/10"
             >
               {/* Stats / Numbers: Blue */}

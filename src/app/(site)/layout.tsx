@@ -1,4 +1,3 @@
-import { SmoothScroll } from "@/components/layout/SmoothScroll";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 
@@ -28,10 +27,8 @@ export default function SiteLayout({
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
       <Header />
-      <SmoothScroll>
-        {children}
-        <Footer />
-      </SmoothScroll>
+      {children}
+      <Footer />
     </>
   );
 }

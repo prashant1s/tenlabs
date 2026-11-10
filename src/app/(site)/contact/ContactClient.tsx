@@ -1,7 +1,6 @@
 "use client";
 
 import React, { useEffect, useRef, useState } from "react";
-import { ReactLenis } from "@studio-freight/react-lenis";
 import { motion, useTransform, useSpring, useMotionValue } from "framer-motion";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -102,11 +101,10 @@ export default function ContactClient({ splineSlot }: { splineSlot: React.ReactN
   };
 
   return (
-    <ReactLenis root options={{ lerp: 0.08, smoothWheel: true }}>
-      <main
-        className="min-h-screen bg-[#07070a] overflow-hidden font-sans selection:bg-[#6D7CF7] selection:text-white"
-        onMouseMove={handleMouseMove}
-      >
+    <main
+      className="min-h-screen bg-[#07070a] overflow-hidden font-sans selection:bg-[#6D7CF7] selection:text-white"
+      onMouseMove={handleMouseMove}
+    >
         {/* HERO SECTION */}
         <section
           ref={heroRef}
@@ -128,7 +126,7 @@ export default function ContactClient({ splineSlot }: { splineSlot: React.ReactN
 
             <div ref={buttonsRef} className="flex flex-col sm:flex-row items-center gap-5">
               <button
-                onClick={() => document.getElementById('contact-form')?.scrollIntoView({ behavior: 'smooth' })}
+                onClick={() => document.getElementById('contact-form')?.scrollIntoView()}
                 className="group relative inline-flex items-center justify-center gap-2 px-6 py-3 bg-white text-[#07070a] rounded-full font-bold text-sm hover:scale-105 transition-all duration-300 shadow-[0_0_30px_rgba(255,255,255,0.15)]"
               >
                 Send Message
@@ -263,8 +261,7 @@ export default function ContactClient({ splineSlot }: { splineSlot: React.ReactN
             </div>
           </div>
         </section>
-      </main>
-    </ReactLenis>
+    </main>
   );
 }
 

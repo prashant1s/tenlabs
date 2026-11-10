@@ -1,234 +1,93 @@
-"use client";
-
-import { useEffect, useRef, useState } from "react";
-import Link from "next/link";
 import Image from "next/image";
-import { motion } from "framer-motion";
-import { ArrowRight, Sparkles, Volume2, VolumeX } from "lucide-react";
-
-function MediaCard({
-  children,
-  className = "",
-}: {
-  children: React.ReactNode;
-  className?: string;
-}) {
-  return (
-    <div
-      className={`relative aspect-[4/3] w-[340px] shrink-0 overflow-hidden rounded-2xl border border-white/10 bg-[#101218] shadow-2xl transition-all duration-500 sm:w-[400px] lg:w-[440px] ${className}`}
-    >
-      {children}
-    </div>
-  );
-}
-
-// Gradient glow ring — a sibling of MediaCard so it can bleed past its
-// rounded edges. Hover state is pure CSS via a `group/card` wrapper, no
-// per-frame JS, same reasoning as the scroll-jank fix.
-function CardGlowRing({ hoverClass = "" }: { hoverClass?: string }) {
-  return (
-    <div
-      className={`absolute -inset-1 -z-10 rounded-[22px] bg-gradient-to-br from-[#6D7CF7] to-[#8B5CF6] opacity-0 blur-md transition-opacity duration-500 ${hoverClass}`}
-    />
-  );
-}
-
-// Glass shine + label tag — rendered as MediaCard's own children so its
-// overflow-hidden/rounded-2xl clips them to the card shape instead of
-// squaring off the corners.
-function CardShine({ tag, hoverClass = "" }: { tag: string; hoverClass?: string }) {
-  return (
-    <>
-      <div
-        className={`pointer-events-none absolute inset-0 z-10 bg-gradient-to-br from-white/25 via-transparent to-transparent opacity-0 transition-opacity duration-500 ${hoverClass}`}
-      />
-      <span
-        className={`pointer-events-none absolute left-3 top-3 z-10 rounded-full bg-black/50 px-3 py-1 text-[10px] font-semibold uppercase tracking-wide text-white opacity-0 backdrop-blur-sm transition-opacity duration-300 ${hoverClass}`}
-      >
-        {tag}
-      </span>
-    </>
-  );
-}
+import Link from "next/link";
+import { ArrowRight, ArrowUpRight } from "lucide-react";
 
 export function Hero() {
-  const videoRef = useRef<HTMLVideoElement>(null);
-  const [isMuted, setIsMuted] = useState(true);
-
-  // Blur filters and infinite JS-driven animations are cheap to paint once,
-  // but Lenis repaints the whole viewport every frame while smooth-scrolling —
-  // so an always-decoding video is what actually caused the scroll jank.
-  // Pausing it once the hero leaves the viewport (and resuming on the way
-  // back) keeps the decode cost off the main thread while it's offscreen.
-  useEffect(() => {
-    const video = videoRef.current;
-    if (!video) return;
-
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          video.play().catch(() => {});
-        } else {
-          video.pause();
-        }
-      },
-      { threshold: 0.2 }
-    );
-
-    observer.observe(video);
-    return () => observer.disconnect();
-  }, []);
-
   return (
-    <section
-      className="relative flex min-h-screen flex-col items-center justify-center overflow-hidden bg-[#07070a] pb-16 pt-28 font-sora md:pt-32"
-    >
-      <style dangerouslySetInnerHTML={{ __html: `
-        @keyframes heroFloatUp {
-          0%, 100% { transform: translateY(0px); }
-          50% { transform: translateY(-10px); }
-        }
-        @keyframes heroFloatDown {
-          0%, 100% { transform: translateY(0px); }
-          50% { transform: translateY(10px); }
-        }
-      `}} />
-
-      {/* Soft dot-grid texture, faded toward the edges via a mask */}
+    <section className="relative overflow-hidden border-b border-white/[0.06] bg-[#07070a] pb-20 pt-32 sm:pb-24 sm:pt-36">
       <div
-        className="pointer-events-none absolute inset-0 z-0 opacity-70"
+        aria-hidden="true"
+        className="pointer-events-none absolute inset-0 opacity-70"
         style={{
-          backgroundImage: "radial-gradient(rgba(255,255,255,0.08) 1px, transparent 1px)",
-          backgroundSize: "26px 26px",
-          WebkitMaskImage: "radial-gradient(ellipse 65% 55% at 50% 35%, black 40%, transparent 90%)",
-          maskImage: "radial-gradient(ellipse 65% 55% at 50% 35%, black 40%, transparent 90%)",
+          backgroundImage:
+            "linear-gradient(rgba(255,255,255,0.045) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.045) 1px, transparent 1px)",
+          backgroundSize: "56px 56px",
+          WebkitMaskImage:
+            "radial-gradient(ellipse 82% 68% at 50% 26%, black 15%, transparent 78%)",
+          maskImage:
+            "radial-gradient(ellipse 82% 68% at 50% 26%, black 15%, transparent 78%)",
         }}
       />
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute left-1/2 top-20 h-[560px] w-[min(94vw,1100px)] -translate-x-1/2 rounded-full bg-[radial-gradient(circle,rgba(64,112,255,0.19)_0%,rgba(7,7,10,0)_70%)]"
+      />
 
-      {/* Ambient two-tone glow — radial-gradients read like blurred blobs
-          without the filter: blur() repaint cost. */}
-      <div className="pointer-events-none absolute top-[38%] left-1/2 z-0 h-125 w-225 -translate-x-1/2 -translate-y-1/2 rounded-full bg-[radial-gradient(circle,rgba(109,124,247,0.30)_0%,rgba(109,124,247,0)_70%)]" />
-      <div className="pointer-events-none absolute bottom-[8%] right-[8%] z-0 h-95 w-120 rounded-full bg-[radial-gradient(circle,rgba(139,92,246,0.22)_0%,rgba(139,92,246,0)_70%)]" />
-      <div className="pointer-events-none absolute bottom-[10%] left-[6%] z-0 h-80 w-105 rounded-full bg-[radial-gradient(circle,rgba(109,124,247,0.16)_0%,rgba(109,124,247,0)_70%)]" />
-
-      {/* Centered Content Container */}
-      <div className="relative z-10 flex w-full max-w-5xl flex-col items-center justify-center px-6 text-center">
-
-        {/* Eyebrow */}
-        <div
-          className="animate-fade-up mb-6 inline-flex items-center gap-2 rounded-full border border-[#6D7CF7]/25 bg-[#6D7CF7]/10 px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.15em] text-[#9fb0ff] opacity-0"
-        >
-          <Sparkles className="h-3.5 w-3.5" />
-          Websites That Convert
+      <div className="relative mx-auto flex w-full max-w-6xl flex-col items-center px-5 text-center sm:px-8">
+        <div className="inline-flex max-w-full items-center rounded-full border border-[#70a0ff]/35 bg-gradient-to-r from-[#2768ec] to-[#5b65ef] px-4 py-2 text-center text-[10px] font-semibold uppercase tracking-[0.12em] text-white shadow-[0_10px_35px_rgba(47,103,235,0.28)] sm:text-xs sm:tracking-[0.14em]">
+          <span className="sm:hidden">Strategy · Creative · Growth</span>
+          <span className="hidden sm:inline">
+            Strategy · Creative · Performance · Commerce
+          </span>
         </div>
 
-        {/* Headline: light text with gradient highlight */}
-        <h1
-          className="animate-fade-up mb-4 text-[clamp(2.5rem,5.5vw,5.5rem)] font-bold leading-[1.1] tracking-[-0.02em] text-[#f3f4f6] opacity-0 md:mb-6"
-          style={{ animationDelay: "0.2s" }}
-        >
-          A{" "}
-          <span className="bg-gradient-to-r from-[#6D7CF7] to-[#8B5CF6] bg-clip-text text-transparent">
-            website
+        <h1 className="mt-7 max-w-5xl text-balance text-[clamp(2.65rem,5.3vw,4.8rem)] font-bold leading-[0.99] tracking-[-0.055em] text-white">
+          Build a brand people notice.
+          <span className="block bg-gradient-to-r from-[#5b8dff] via-[#7488ff] to-[#9b7cff] bg-clip-text text-transparent">
+            Turn attention into growth.
           </span>
-          <br className="hidden md:block" /> makes it real.
         </h1>
 
-        {/* Subheading: muted light-grey text for contrast against the dark background */}
-        <p
-          className="animate-fade-up mb-10 text-[clamp(1.25rem,2.5vw,1.75rem)] font-light text-[#9aa0ac] opacity-0 md:mb-12"
-          style={{ animationDelay: "0.4s" }}
-        >
-          Strategy. Creativity. Growth.
+        <p className="mt-6 max-w-3xl text-pretty text-base leading-7 text-[#a3a8b3] sm:text-lg sm:leading-8">
+          TenLabs brings strategy, creative, performance media, and commerce
+          together—so every touchpoint moves the same business goal.
         </p>
 
-        {/* CTA Button */}
-        <div
-          className="animate-fade-up opacity-0"
-          style={{ animationDelay: "0.6s" }}
-        >
+        <figure className="mt-10 w-full overflow-hidden rounded-[1.35rem] border border-white/12 bg-[#111218] p-1.5 shadow-[0_30px_100px_-35px_rgba(55,105,255,0.55)] sm:mt-12 sm:rounded-[1.75rem] sm:p-2.5">
+          <div className="flex h-10 items-center justify-between rounded-t-[0.95rem] border-b border-white/[0.07] bg-[#0d0e13] px-4 sm:h-12 sm:rounded-t-[1.2rem] sm:px-5">
+            <div className="flex items-center gap-1.5" aria-hidden="true">
+              <span className="h-2.5 w-2.5 rounded-full bg-[#ff665c]" />
+              <span className="h-2.5 w-2.5 rounded-full bg-[#f5bf4f]" />
+              <span className="h-2.5 w-2.5 rounded-full bg-[#62c454]" />
+            </div>
+            <figcaption className="text-[10px] font-medium uppercase tracking-[0.16em] text-[#767c89] sm:text-xs">
+              Digital experience · TenLabs
+            </figcaption>
+            <span className="h-2.5 w-11" aria-hidden="true" />
+          </div>
+          <div className="relative aspect-[2/1] overflow-hidden rounded-b-[0.95rem] bg-[#090910] sm:rounded-b-[1.2rem]">
+            <Image
+              src="/design2.webp"
+              alt="A polished digital product interface designed by TenLabs"
+              fill
+              priority
+              className="object-cover object-top"
+              sizes="(min-width: 1152px) 1120px, calc(100vw - 40px)"
+            />
+            <div className="pointer-events-none absolute inset-0 ring-1 ring-inset ring-white/[0.06]" />
+          </div>
+        </figure>
+
+        <div className="mt-8 flex w-full flex-col items-center gap-3 sm:w-auto sm:flex-row">
           <Link
             href="/contact"
-            className="group relative inline-flex items-center justify-center gap-2 overflow-hidden rounded-xl bg-gradient-to-r from-[#6D7CF7] to-[#5A6EE0] px-8 py-4 text-base font-medium text-white shadow-[0_10px_30px_rgba(109,124,247,0.4)] transition-all duration-300 hover:scale-[1.03] hover:shadow-[0_14px_40px_rgba(109,124,247,0.55)] active:scale-[0.98]"
+            className="group inline-flex min-h-13 w-full items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-[#2f73ef] to-[#5b6df1] px-7 py-3.5 text-sm font-semibold text-white shadow-[0_14px_38px_rgba(47,115,239,0.32)] transition-[transform,box-shadow] duration-200 hover:-translate-y-0.5 hover:shadow-[0_18px_45px_rgba(47,115,239,0.45)] sm:w-auto sm:text-base"
           >
-            <span className="relative z-10">Get in Touch</span>
-            <ArrowRight className="relative z-10 h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
-            {/* Shine sweep on hover */}
-            <span className="absolute inset-0 -translate-x-[120%] skew-x-[-20deg] bg-gradient-to-r from-transparent via-white/35 to-transparent transition-transform duration-700 ease-out group-hover:translate-x-[120%]" />
+            Start a growth conversation
+            <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
+          </Link>
+          <Link
+            href="/work"
+            className="group inline-flex min-h-13 w-full items-center justify-center gap-2 rounded-xl border border-white/12 bg-white/[0.045] px-7 py-3.5 text-sm font-semibold text-white transition-colors hover:border-white/25 hover:bg-white/[0.075] sm:w-auto sm:text-base"
+          >
+            Explore our work
+            <ArrowUpRight className="h-4 w-4 transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
           </Link>
         </div>
+        <p className="mt-3 text-xs text-[#707581] sm:text-sm">
+          Tell us what&apos;s stuck. We&apos;ll help you find the next move.
+        </p>
       </div>
-
-      {/* Website Showcase Carousel */}
-      <motion.div
-        initial={{ opacity: 0, y: 50 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 1, delay: 0.7, ease: [0.22, 1, 0.36, 1] }}
-        className="relative z-10 mt-14 hidden w-full items-center justify-center gap-6 sm:flex md:mt-20 lg:gap-8"
-      >
-        {/* Left design */}
-        <div className="hidden animate-[heroFloatUp_5s_ease-in-out_infinite] lg:block lg:-translate-x-10 xl:-translate-x-16">
-          <div className="group/card relative">
-            <CardGlowRing hoverClass="group-hover/card:opacity-100" />
-            <MediaCard className="-rotate-3 scale-[0.92] opacity-80 group-hover/card:z-20 group-hover/card:-translate-y-2 group-hover/card:rotate-0 group-hover/card:scale-100 group-hover/card:opacity-100 group-hover/card:shadow-[0_25px_60px_-12px_rgba(109,124,247,0.45)]">
-              <Image
-                src="/design1.webp"
-                alt="Syngri — digital product studio website design"
-                fill
-                className="object-cover"
-                sizes="440px"
-              />
-              <CardShine tag="Digital Studio" hoverClass="group-hover/card:opacity-100" />
-            </MediaCard>
-          </div>
-        </div>
-
-        {/* Center video */}
-        <div className="group/video relative">
-          <CardGlowRing hoverClass="group-hover/video:opacity-100" />
-          <MediaCard className="z-10 aspect-video w-[380px] shadow-[0_30px_70px_-20px_rgba(0,0,0,0.3)] group-hover/video:scale-[1.04] group-hover/video:shadow-[0_35px_80px_-15px_rgba(109,124,247,0.5)] sm:w-[460px] lg:w-[520px]">
-            <video
-              ref={videoRef}
-              src="/video-in-center.mp4"
-              autoPlay
-              muted={isMuted}
-              loop
-              playsInline
-              preload="metadata"
-              className="h-full w-full object-cover"
-            />
-            <CardShine tag="Live Site" hoverClass="group-hover/video:opacity-100" />
-            <button
-              type="button"
-              onClick={() => setIsMuted((m) => !m)}
-              aria-label={isMuted ? "Unmute video" : "Mute video"}
-              className="absolute bottom-3 right-3 z-20 flex h-9 w-9 items-center justify-center rounded-full bg-black/50 text-white opacity-0 backdrop-blur-sm transition-all duration-300 hover:bg-black/70 group-hover/video:opacity-100"
-            >
-              {isMuted ? <VolumeX className="h-4 w-4" /> : <Volume2 className="h-4 w-4" />}
-            </button>
-          </MediaCard>
-        </div>
-
-        {/* Right design */}
-        <div
-          className="hidden animate-[heroFloatDown_5.5s_ease-in-out_infinite] lg:block lg:translate-x-10 xl:translate-x-16"
-          style={{ animationDelay: "0.4s" }}
-        >
-          <div className="group/card relative">
-            <CardGlowRing hoverClass="group-hover/card:opacity-100" />
-            <MediaCard className="rotate-3 scale-[0.92] opacity-80 group-hover/card:z-20 group-hover/card:-translate-y-2 group-hover/card:rotate-0 group-hover/card:scale-100 group-hover/card:opacity-100 group-hover/card:shadow-[0_25px_60px_-12px_rgba(109,124,247,0.45)]">
-              <Image
-                src="/design2.webp"
-                alt="Budgeting app website design"
-                fill
-                className="object-cover"
-                sizes="440px"
-              />
-              <CardShine tag="SaaS Product" hoverClass="group-hover/card:opacity-100" />
-            </MediaCard>
-          </div>
-        </div>
-      </motion.div>
     </section>
   );
 }

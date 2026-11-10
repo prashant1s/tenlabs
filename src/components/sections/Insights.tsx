@@ -107,6 +107,7 @@ function InsightTiltCard({ post }: { post: any }) {
                 src={post.image}
                 alt={post.title}
                 fill
+                sizes="(min-width: 768px) 400px, 85vw"
                 className="object-cover transition-transform duration-700 group-hover:scale-105 opacity-90 group-hover:opacity-100"
               />
             ) : (
@@ -158,14 +159,14 @@ export function Insights({ posts = [] }: { posts?: any[] }) {
   const scrollRight = () => {
     if (scrollRef.current) {
       const scrollAmount = window.innerWidth < 768 ? window.innerWidth * 0.85 : 424;
-      scrollRef.current.scrollBy({ left: scrollAmount, behavior: "smooth" });
+      scrollRef.current.scrollBy({ left: scrollAmount });
     }
   };
 
   const scrollLeft = () => {
     if (scrollRef.current) {
       const scrollAmount = window.innerWidth < 768 ? window.innerWidth * 0.85 : 424;
-      scrollRef.current.scrollBy({ left: -scrollAmount, behavior: "smooth" });
+      scrollRef.current.scrollBy({ left: -scrollAmount });
     }
   };
 

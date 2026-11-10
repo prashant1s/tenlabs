@@ -1,325 +1,159 @@
 "use client";
 
-import { useEffect, useState, useCallback } from "react";
-import { motion, AnimatePresence } from "framer-motion";
-import { ArrowRight, Menu, X, ChevronDown, Mail } from "lucide-react";
-import { usePathname } from "next/navigation";
-import Image from "next/image";
-import { navLinks } from "@/lib/data";
+import { useEffect, useState } from "react";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
+import { ArrowRight, ChevronDown, Menu, X } from "lucide-react";
+import { navLinks } from "@/lib/data";
+
+const solutionLinks = [
+  { label: "Growth Systems", href: "/solutions/growth-systems" },
+  { label: "Commerce Systems", href: "/solutions/commerce-systems" },
+  { label: "Brand Systems", href: "/solutions/brand-systems" },
+] as const;
 
 export function Header() {
-  const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
-  const [hoveredNav, setHoveredNav] = useState<string | null>(null);
-  const [mobileSolutionsOpen, setMobileSolutionsOpen] = useState(false);
   const pathname = usePathname();
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 40);
-    onScroll();
-    window.addEventListener("scroll", onScroll, { passive: true });
-    return () => window.removeEventListener("scroll", onScroll);
-  }, []);
-
-  // Close mobile menu on route change
-  useEffect(() => {
     setMobileOpen(false);
-    setMobileSolutionsOpen(false);
-    setHoveredNav(null);
   }, [pathname]);
 
-  // Close mobile menu on escape key
   useEffect(() => {
-    const handleEsc = (e: KeyboardEvent) => {
-      if (e.key === "Escape") setMobileOpen(false);
-    };
-    document.addEventListener("keydown", handleEsc);
-    return () => document.removeEventListener("keydown", handleEsc);
-  }, []);
+    if (!mobileOpen) return;
 
-  // Lock body scroll when mobile menu is open
-  useEffect(() => {
-    if (mobileOpen) {
-      document.body.style.overflow = "hidden";
-    } else {
-      document.body.style.overflow = "";
-    }
-    return () => {
-      document.body.style.overflow = "";
+    const closeOnEscape = (event: KeyboardEvent) => {
+      if (event.key === "Escape") setMobileOpen(false);
     };
+
+    document.addEventListener("keydown", closeOnEscape);
+    return () => document.removeEventListener("keydown", closeOnEscape);
   }, [mobileOpen]);
 
-  const handleHomeClick = useCallback(() => {
-    if (pathname === "/") {
-      window.scrollTo({ top: 0, behavior: "smooth" });
-    }
-  }, [pathname]);
-
   return (
-    <>
-      <motion.header
-        initial={{ y: -100, opacity: 0 }}
-        animate={{ y: 0, opacity: 1 }}
-        transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
-        className="fixed inset-x-0 top-0 z-50 px-4 pt-4 md:px-8"
-      >
-        <nav
-          className={`relative mx-auto flex max-w-7xl items-center justify-between rounded-2xl px-5 py-3 transition-all duration-500 border ${
-            scrolled || mobileOpen
-              ? "bg-[#0a0a0e]/90 backdrop-blur-xl border-white/10 shadow-lg shadow-black/40"
-              : "bg-[#0a0a0e]/50 backdrop-blur-md border-white/10 shadow-md shadow-black/10"
-          }`}
-        >
+    <header className="fixed inset-x-0 top-0 z-50 px-3 pt-3 sm:px-5 sm:pt-4">
+      <nav className="relative mx-auto max-w-6xl rounded-2xl border border-white/10 bg-[#090a0e]/88 px-4 py-3 shadow-[0_12px_45px_rgba(0,0,0,0.28)] backdrop-blur-xl sm:px-5">
+        <div className="flex items-center justify-between">
           <Link
             href="/"
-            onClick={handleHomeClick}
-            className="group flex items-center gap-2"
+            className="rounded-md text-xl font-semibold tracking-[-0.04em] text-white outline-none focus-visible:ring-2 focus-visible:ring-[#6d7cf7] sm:text-2xl"
+            aria-label="TenLabs home"
           >
-            <span className="text-2xl font-semibold tracking-tight text-white">
-              Ten<span className="text-[#6D7CF7]">Labs</span>
-            </span>
+            Ten<span className="text-[#7184ff]">Labs</span>
           </Link>
 
-          {/* Desktop Nav */}
-          <ul className="hidden items-center gap-2 lg:flex">
+          <ul className="hidden items-center gap-1 lg:flex">
             {navLinks.map((link) => {
-              const isActive = link.href === "/" ? pathname === "/" : pathname.startsWith(link.href);
-              
+              const active =
+                link.href === "/"
+                  ? pathname === "/"
+                  : pathname.startsWith(link.href);
+              const isSolutions = link.label === "Solutions";
+
               return (
                 <li
                   key={link.href}
-                  className=""
-                  onMouseEnter={() => setHoveredNav(link.label)}
-                  onMouseLeave={() => setHoveredNav(null)}
+                  className={isSolutions ? "group/solutions relative" : "relative"}
                 >
                   <Link
                     href={link.href}
-                    onClick={link.href === "/" ? handleHomeClick : undefined}
-                    className={`flex items-center gap-1.5 px-3.5 py-2 text-sm font-medium transition-colors hover:text-[#6D7CF7] ${
-                      isActive ? "text-[#6D7CF7]" : "text-white"
+                    className={`flex items-center gap-1.5 rounded-lg px-3.5 py-2 text-sm font-medium outline-none transition-colors focus-visible:ring-2 focus-visible:ring-[#6d7cf7] ${
+                      active
+                        ? "bg-white/[0.06] text-white"
+                        : "text-[#a5aab5] hover:bg-white/[0.04] hover:text-white"
                     }`}
                   >
                     {link.label}
-                    {link.label === "Solutions" && (
-                      <ChevronDown
-                        className={`h-4 w-4 transition-transform duration-300 ${hoveredNav === "Solutions" ? "rotate-180" : ""}`}
-                      />
+                    {isSolutions && (
+                      <ChevronDown className="h-3.5 w-3.5 transition-transform group-hover/solutions:rotate-180 group-focus-within/solutions:rotate-180" />
                     )}
                   </Link>
 
-                  {/* FULL-WIDTH MEGA MENU DROPDOWN */}
-                  {link.label === "Solutions" && (
-                    <AnimatePresence>
-                      {hoveredNav === "Solutions" && (
-                        <motion.div
-                          initial={{ opacity: 0, y: 10, scale: 0.98 }}
-                          animate={{ opacity: 1, y: 0, scale: 1 }}
-                          exit={{ opacity: 0, y: 5, scale: 0.98 }}
-                          transition={{ duration: 0.2, ease: "easeOut" }}
-                          className="absolute left-0 right-0 top-full pt-6"
-                        >
-                          <div className="flex w-full overflow-hidden rounded-3xl border border-white/10 bg-[#101218]/95 backdrop-blur-xl shadow-2xl shadow-black/60">
-                            
-                            {/* Left Column - Navigation Links */}
-                            <div className="flex w-1/3 flex-col justify-center gap-8 border-r border-white/5 bg-[#07070a]/80 p-12">
-                              {/* FIXED: Point to dedicated pages instead of hashes */}
-                              <Link
-                                href="/solutions/growth-systems"
-                                className="group flex items-center gap-3 text-2xl font-bold text-white transition-colors hover:text-[#6D7CF7]"
-                              >
-                                Growth Systems
-                                <ArrowRight className="h-5 w-5 opacity-0 transition-all group-hover:translate-x-2 group-hover:opacity-100" />
-                              </Link>
-                              <Link
-                                href="/solutions/commerce-systems"
-                                className="group flex items-center gap-3 text-2xl font-bold text-white transition-colors hover:text-[#6D7CF7]"
-                              >
-                                Commerce Systems
-                                <ArrowRight className="h-5 w-5 opacity-0 transition-all group-hover:translate-x-2 group-hover:opacity-100" />
-                              </Link>
-                              <Link
-                                href="/solutions/brand-systems"
-                                className="group flex items-center gap-3 text-2xl font-bold text-white transition-colors hover:text-[#6D7CF7]"
-                              >
-                                Brand Systems
-                                <ArrowRight className="h-5 w-5 opacity-0 transition-all group-hover:translate-x-2 group-hover:opacity-100" />
-                              </Link>
-                            </div>
-
-                            {/* Right Column - Image Graphics */}
-                              <div className="grid w-[60%] grid-cols-2 gap-5 p-6">
-                                {/* Graphic Card 1 */}
-                                <Link
-                                  href="/solutions"
-                                  className="group/card block"
-                                >
-                                  <div className="relative aspect-square w-full overflow-visible bg-transparent transition-all duration-500">
-                                    <Image
-                                      src="/header/img1.webp"
-                                      alt="The Real Reason Most D2C Brands Burn Money"
-                                      fill
-                                      className="rounded-xl object-contain transition-transform duration-700 group-hover/card:scale-105 group-hover/card:drop-shadow-2xl"
-                                    />
-                                  </div>
-                                </Link>
-
-                                {/* Graphic Card 2 */}
-                                <Link
-                                  href="/solutions"
-                                  className="group/card block"
-                                >
-                                  <div className="relative aspect-square w-full overflow-visible bg-transparent transition-all duration-500">
-                                    <Image
-                                      src="/header/img2.webp"
-                                      alt="Why Performance Marketing Alone Can't Build a Brand Anymore"
-                                      fill
-                                      className="rounded-xl object-contain transition-transform duration-700 group-hover/card:scale-105 group-hover/card:drop-shadow-2xl"
-                                    />
-                                  </div>
-                                </Link>
-                              </div>
-                          </div>
-                        </motion.div>
-                      )}
-                    </AnimatePresence>
+                  {isSolutions && (
+                    <div className="pointer-events-none absolute left-1/2 top-full w-64 -translate-x-1/2 translate-y-1 pt-3 opacity-0 transition-[opacity,transform] duration-200 group-hover/solutions:pointer-events-auto group-hover/solutions:translate-y-0 group-hover/solutions:opacity-100 group-focus-within/solutions:pointer-events-auto group-focus-within/solutions:translate-y-0 group-focus-within/solutions:opacity-100">
+                      <div className="rounded-2xl border border-white/10 bg-[#101116] p-2 shadow-2xl shadow-black/45">
+                        {solutionLinks.map((solution) => (
+                          <Link
+                            key={solution.href}
+                            href={solution.href}
+                            className="group/item flex items-center justify-between rounded-xl px-3.5 py-3 text-sm font-medium text-[#b5bac4] outline-none transition-colors hover:bg-white/[0.06] hover:text-white focus-visible:bg-white/[0.06] focus-visible:text-white"
+                          >
+                            {solution.label}
+                            <ArrowRight className="h-3.5 w-3.5 opacity-0 transition-all group-hover/item:translate-x-0.5 group-hover/item:opacity-100" />
+                          </Link>
+                        ))}
+                      </div>
+                    </div>
                   )}
                 </li>
               );
             })}
           </ul>
 
-          {/* Desktop CTA */}
-          <a
-            href="mailto:sales@tenlabs.online"
-            className="group hidden items-center gap-2 rounded-xl bg-[#6D7CF7] px-5 py-2.5 text-sm font-medium text-white transition-all hover:bg-[#5566E0] lg:inline-flex"
-          >
-            <Mail className="h-4 w-4" />
-            sales@tenlabs.online
-          </a>
+          <div className="flex items-center gap-2">
+            <Link
+              href="/contact"
+              className="hidden min-h-10 items-center gap-2 rounded-xl bg-gradient-to-r from-[#3375ed] to-[#5c69ea] px-4 py-2 text-sm font-semibold text-white shadow-[0_8px_25px_rgba(51,117,237,0.25)] transition-transform hover:-translate-y-0.5 sm:inline-flex"
+            >
+              Start a project
+              <ArrowRight className="h-3.5 w-3.5" />
+            </Link>
+            <button
+              type="button"
+              onClick={() => setMobileOpen((open) => !open)}
+              className="flex h-10 w-10 items-center justify-center rounded-xl border border-white/10 bg-white/[0.04] text-white outline-none focus-visible:ring-2 focus-visible:ring-[#6d7cf7] lg:hidden"
+              aria-expanded={mobileOpen}
+              aria-controls="mobile-navigation"
+              aria-label={mobileOpen ? "Close navigation" : "Open navigation"}
+            >
+              {mobileOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
+            </button>
+          </div>
+        </div>
 
-          {/* Mobile Hamburger Button */}
-          <button
-            onClick={() => setMobileOpen(!mobileOpen)}
-            className="flex h-10 w-10 items-center justify-center rounded-lg text-white transition-colors hover:bg-white/10 lg:hidden"
-            aria-label={mobileOpen ? "Close menu" : "Open menu"}
-          >
-            {mobileOpen ? (
-              <X className="h-5 w-5" />
-            ) : (
-              <Menu className="h-5 w-5" />
-            )}
-          </button>
-        </nav>
-      </motion.header>
-
-      {/* Mobile Menu Overlay */}
-      <AnimatePresence>
         {mobileOpen && (
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            transition={{ duration: 0.2 }}
-            className="fixed inset-0 z-40 bg-black/60 backdrop-blur-sm lg:hidden"
-            onClick={() => setMobileOpen(false)}
-          />
-        )}
-      </AnimatePresence>
-
-      {/* Mobile Menu Panel */}
-      <AnimatePresence>
-        {mobileOpen && (
-          <motion.div
-            initial={{ x: "100%" }}
-            animate={{ x: 0 }}
-            exit={{ x: "100%" }}
-            transition={{ type: "spring", damping: 30, stiffness: 300 }}
-            className="fixed right-0 top-0 z-40 flex h-full w-[75vw] max-w-sm flex-col overflow-y-auto bg-[#07070a] pt-24 lg:hidden"
+          <div
+            id="mobile-navigation"
+            className="mt-3 border-t border-white/[0.08] pt-3 lg:hidden"
           >
-            <nav className="flex flex-col gap-1 px-6 pb-20">
-              {navLinks.map((link, i) => {
-                const isActive = link.href === "/" ? pathname === "/" : pathname.startsWith(link.href);
-
-                return (
-                  <motion.div
-                    key={link.href}
-                    initial={{ opacity: 0, x: 20 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    transition={{ delay: i * 0.05, duration: 0.3 }}
-                    className="border-b border-white/5 last:border-0"
+            <div className="grid gap-1">
+              {navLinks.map((link) => (
+                <Link
+                  key={link.href}
+                  href={link.href}
+                  className={`rounded-xl px-3 py-3 text-sm font-medium ${
+                    pathname === link.href ||
+                    (link.href !== "/" && pathname.startsWith(link.href))
+                      ? "bg-white/[0.07] text-white"
+                      : "text-[#b1b6c0] hover:bg-white/[0.04] hover:text-white"
+                  }`}
+                >
+                  {link.label}
+                </Link>
+              ))}
+              <div className="ml-3 grid gap-1 border-l border-white/10 pl-3">
+                {solutionLinks.map((solution) => (
+                  <Link
+                    key={solution.href}
+                    href={solution.href}
+                    className="rounded-lg px-3 py-2 text-sm text-[#777e8b] hover:bg-white/[0.04] hover:text-white"
                   >
-                    {link.label === "Solutions" ? (
-                      <div className="flex flex-col">
-                        <button
-                          onClick={() => setMobileSolutionsOpen(!mobileSolutionsOpen)}
-                          className={`flex w-full items-center justify-between py-4 pr-4 text-lg font-medium transition-colors hover:text-[#6D7CF7] ${
-                            isActive ? "text-[#6D7CF7]" : "text-white"
-                          }`}
-                        >
-                          {link.label}
-                          <ChevronDown
-                            className={`h-5 w-5 transition-transform duration-300 ${
-                              mobileSolutionsOpen ? "rotate-180" : ""
-                            }`}
-                          />
-                        </button>
-                        <AnimatePresence>
-                          {mobileSolutionsOpen && (
-                            <motion.div
-                              initial={{ height: 0, opacity: 0 }}
-                              animate={{ height: "auto", opacity: 1 }}
-                              exit={{ height: 0, opacity: 0 }}
-                              className="overflow-hidden"
-                            >
-                              <div className="mb-4 ml-4 flex flex-col gap-3 border-l border-white/10 pl-4">
-                                {/* FIXED: Mobile Links pointing to specific pages */}
-                                <Link href="/solutions/growth-systems" className="text-base text-gray-400 hover:text-white">
-                                  Growth Systems
-                                </Link>
-                                <Link href="/solutions/commerce-systems" className="text-base text-gray-400 hover:text-white">
-                                  Commerce Systems
-                                </Link>
-                                <Link href="/solutions/brand-systems" className="text-base text-gray-400 hover:text-white">
-                                  Brand Systems
-                                </Link>
-                              </div>
-                            </motion.div>
-                          )}
-                        </AnimatePresence>
-                      </div>
-                    ) : (
-                      <Link
-                        href={link.href}
-                        onClick={() => {
-                          setMobileOpen(false);
-                          if (link.href === "/") handleHomeClick();
-                        }}
-                        className={`block py-4 pr-4 text-lg font-medium transition-colors hover:text-[#6D7CF7] ${
-                          isActive ? "text-[#6D7CF7]" : "text-white"
-                        }`}
-                      >
-                        {link.label}
-                      </Link>
-                    )}
-                  </motion.div>
-                );
-              })}
-            </nav>
-
-            <div className="mt-auto border-t border-white/10 px-6 py-6">
-              <a
-                href="mailto:sales@tenlabs.online"
-                onClick={() => setMobileOpen(false)}
-                className="group flex w-full items-center justify-center gap-2 rounded-xl bg-[#6D7CF7] px-6 py-3.5 text-sm font-bold text-white transition-all hover:bg-[#5566E0] active:scale-[0.98]"
+                    {solution.label}
+                  </Link>
+                ))}
+              </div>
+              <Link
+                href="/contact"
+                className="mt-2 inline-flex items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-[#3375ed] to-[#5c69ea] px-4 py-3 text-sm font-semibold text-white sm:hidden"
               >
-                <Mail className="h-4 w-4" />
-                sales@tenlabs.online
-              </a>
+                Start a project
+                <ArrowRight className="h-3.5 w-3.5" />
+              </Link>
             </div>
-          </motion.div>
+          </div>
         )}
-      </AnimatePresence>
-    </>
+      </nav>
+    </header>
   );
 }

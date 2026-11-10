@@ -144,6 +144,7 @@ function TiltCard({
                 src={image}
                 alt={brand}
                 fill
+                sizes="(min-width: 1024px) 340px, (min-width: 768px) 400px, 85vw"
                 className="object-cover transition-transform duration-700 group-hover:scale-105 opacity-90 group-hover:opacity-100"
               />
             ) : (
@@ -194,7 +195,7 @@ export function FeaturedWork({ projects = [] }: { projects?: Project[] }) {
       const cardElement = scrollRef.current.firstElementChild as HTMLElement;
       // Scroll by card width + 20px gap
       const scrollAmount = cardElement ? cardElement.clientWidth + 20 : 340;
-      scrollRef.current.scrollBy({ left: scrollAmount, behavior: "smooth" });
+      scrollRef.current.scrollBy({ left: scrollAmount });
     }
   };
 
@@ -202,7 +203,7 @@ export function FeaturedWork({ projects = [] }: { projects?: Project[] }) {
     if (scrollRef.current) {
       const cardElement = scrollRef.current.firstElementChild as HTMLElement;
       const scrollAmount = cardElement ? cardElement.clientWidth + 20 : 340;
-      scrollRef.current.scrollBy({ left: -scrollAmount, behavior: "smooth" });
+      scrollRef.current.scrollBy({ left: -scrollAmount });
     }
   };
 
