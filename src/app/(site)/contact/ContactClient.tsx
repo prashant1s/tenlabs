@@ -100,15 +100,15 @@ export default function ContactClient({ splineSlot }: { splineSlot: React.ReactN
 
   return (
     <main
-      className="min-h-screen bg-[#14281C] overflow-hidden font-sans selection:bg-[#8B5CF6] selection:text-[#E8DCC4]"
+      className="min-h-screen bg-[#1F3D2B] overflow-hidden font-sans selection:bg-[#8B5CF6] selection:text-[#E8DCC4]"
       onMouseMove={handleMouseMove}
     >
         {/* HERO SECTION */}
         <section
           ref={heroRef}
-          className="relative h-screen min-h-[600px] w-full flex flex-col items-center justify-start pt-28 md:pt-36 bg-[#274B36] overflow-hidden"
+          className="relative h-screen min-h-[600px] w-full flex flex-col items-center justify-start pt-28 md:pt-36 bg-[#173324] overflow-hidden"
         >
-          <div className="absolute inset-0 bg-gradient-to-b from-[#274B36] via-[#315B43] to-[#14281C] z-0" />
+          <div className="absolute inset-0 bg-gradient-to-b from-[#173324] via-[#254A34] to-[#1F3D2B] z-0" />
           <div className="absolute top-[20%] left-1/2 -translate-x-1/2 w-[800px] h-[500px] bg-[#8B5CF6]/15 rounded-full blur-[120px] pointer-events-none z-0" />
           <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-20 mix-blend-overlay pointer-events-none z-0" />
           <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[600px] h-[300px] bg-[#8B5CF6]/10 rounded-full blur-[140px] pointer-events-none z-0" />
@@ -125,7 +125,7 @@ export default function ContactClient({ splineSlot }: { splineSlot: React.ReactN
             <div ref={buttonsRef} className="flex flex-col sm:flex-row items-center gap-5">
               <button
                 onClick={() => document.getElementById('contact-form')?.scrollIntoView()}
-                className="group relative inline-flex items-center justify-center gap-2 px-6 py-3 bg-[#E8DCC4] text-[#14281C] rounded-full font-bold text-sm hover:scale-105 transition-all duration-300 shadow-[0_0_30px_rgba(255,255,255,0.15)]"
+                className="group relative inline-flex items-center justify-center gap-2 px-6 py-3 bg-[#E8DCC4] text-[#1F3D2B] rounded-full font-bold text-sm hover:scale-105 transition-all duration-300 shadow-[0_0_30px_rgba(255,255,255,0.15)]"
               >
                 Send Message
                 <Send className="w-4 h-4 transition-transform group-hover:translate-x-1 group-hover:-translate-y-1" />
@@ -163,12 +163,12 @@ export default function ContactClient({ splineSlot }: { splineSlot: React.ReactN
         </section>
 
         {/* CONTACT FORM SECTION */}
-        <section id="contact-form" className="relative py-24 md:py-32 px-6 bg-[#14281C]">
+        <section id="contact-form" className="relative py-24 md:py-32 px-6 bg-[#1F3D2B]">
           <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8">
 
             <div className="lg:col-span-5 flex flex-col justify-center text-[#E8DCC4]">
               <h2 className="text-4xl md:text-5xl font-bold mb-6">Drop us a line.</h2>
-              <p className="text-[#A89C86] mb-12 text-lg">
+              <p className="text-[#C9BDA6] mb-12 text-lg">
                 Fill out the form and our team will get back to you within 24 hours. We can't wait to hear from you.
               </p>
 
@@ -178,7 +178,7 @@ export default function ContactClient({ splineSlot }: { splineSlot: React.ReactN
                     <MapPin className="w-5 h-5 text-[#8B5CF6]" />
                   </div>
                   <div>
-                    <p className="text-sm text-[#C1B59E] font-medium mb-1">Visit Studio</p>
+                    <p className="text-sm text-[#D8CDB8] font-medium mb-1">Visit Studio</p>
                     <p className="text-lg font-semibold text-[#E8DCC4]">123 Innovation Drive,<br/>Tech City, 400001</p>
                   </div>
                 </div>
@@ -186,7 +186,7 @@ export default function ContactClient({ splineSlot }: { splineSlot: React.ReactN
             </div>
 
             <div ref={formRef} className="lg:col-span-7">
-              <div className="bg-[#274B36]/80 backdrop-blur-xl border border-[#E8DCC4]/10 rounded-[2rem] p-8 md:p-12 shadow-2xl relative overflow-hidden">
+              <div className="bg-[#173324]/80 backdrop-blur-xl border border-[#E8DCC4]/10 rounded-[2rem] p-8 md:p-12 shadow-2xl relative overflow-hidden">
                 <div className="absolute top-0 right-0 w-64 h-64 bg-[#8B5CF6]/10 rounded-full blur-[80px] pointer-events-none" />
 
                 {isSuccess ? (
@@ -195,7 +195,7 @@ export default function ContactClient({ splineSlot }: { splineSlot: React.ReactN
                       <Sparkles className="w-10 h-10 text-[#8B5CF6]" />
                     </div>
                     <h3 className="text-3xl font-bold text-[#E8DCC4] mb-2">Almost there!</h3>
-                    <p className="text-[#A89C86]">
+                    <p className="text-[#C9BDA6]">
                       Your email app should now be open with your message ready to go —
                       just hit send. If nothing opened, write to us directly at{" "}
                       <a href={`mailto:${CONTACT_EMAIL}`} className="text-[#8B5CF6] underline underline-offset-2">
@@ -208,23 +208,23 @@ export default function ContactClient({ splineSlot }: { splineSlot: React.ReactN
                   <form onSubmit={handleSubmit} className="relative z-10 space-y-6">
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                       <div className="space-y-2 group">
-                        <label htmlFor="firstName" className="text-sm font-medium text-[#C1B59E] group-focus-within:text-[#8B5CF6] transition-colors">First Name</label>
-                        <input id="firstName" name="firstName" required type="text" className="w-full bg-[#E8DCC4]/5 border border-[#E8DCC4]/10 rounded-xl px-5 py-4 text-[#E8DCC4] placeholder-[#A89C86] focus:outline-none focus:ring-2 focus:ring-[#8B5CF6]/30 focus:border-[#8B5CF6] focus:bg-[#E8DCC4]/10 transition-all" placeholder="John" />
+                        <label htmlFor="firstName" className="text-sm font-medium text-[#D8CDB8] group-focus-within:text-[#8B5CF6] transition-colors">First Name</label>
+                        <input id="firstName" name="firstName" required type="text" className="w-full bg-[#E8DCC4]/5 border border-[#E8DCC4]/10 rounded-xl px-5 py-4 text-[#E8DCC4] placeholder-[#C9BDA6] focus:outline-none focus:ring-2 focus:ring-[#8B5CF6]/30 focus:border-[#8B5CF6] focus:bg-[#E8DCC4]/10 transition-all" placeholder="John" />
                       </div>
                       <div className="space-y-2 group">
-                        <label htmlFor="lastName" className="text-sm font-medium text-[#C1B59E] group-focus-within:text-[#8B5CF6] transition-colors">Last Name</label>
-                        <input id="lastName" name="lastName" required type="text" className="w-full bg-[#E8DCC4]/5 border border-[#E8DCC4]/10 rounded-xl px-5 py-4 text-[#E8DCC4] placeholder-[#A89C86] focus:outline-none focus:ring-2 focus:ring-[#8B5CF6]/30 focus:border-[#8B5CF6] focus:bg-[#E8DCC4]/10 transition-all" placeholder="Doe" />
+                        <label htmlFor="lastName" className="text-sm font-medium text-[#D8CDB8] group-focus-within:text-[#8B5CF6] transition-colors">Last Name</label>
+                        <input id="lastName" name="lastName" required type="text" className="w-full bg-[#E8DCC4]/5 border border-[#E8DCC4]/10 rounded-xl px-5 py-4 text-[#E8DCC4] placeholder-[#C9BDA6] focus:outline-none focus:ring-2 focus:ring-[#8B5CF6]/30 focus:border-[#8B5CF6] focus:bg-[#E8DCC4]/10 transition-all" placeholder="Doe" />
                       </div>
                     </div>
 
                     <div className="space-y-2 group">
-                      <label htmlFor="email" className="text-sm font-medium text-[#C1B59E] group-focus-within:text-[#8B5CF6] transition-colors">Email Address</label>
-                      <input id="email" name="email" required type="email" className="w-full bg-[#E8DCC4]/5 border border-[#E8DCC4]/10 rounded-xl px-5 py-4 text-[#E8DCC4] placeholder-[#A89C86] focus:outline-none focus:ring-2 focus:ring-[#8B5CF6]/30 focus:border-[#8B5CF6] focus:bg-[#E8DCC4]/10 transition-all" placeholder="john@company.com" />
+                      <label htmlFor="email" className="text-sm font-medium text-[#D8CDB8] group-focus-within:text-[#8B5CF6] transition-colors">Email Address</label>
+                      <input id="email" name="email" required type="email" className="w-full bg-[#E8DCC4]/5 border border-[#E8DCC4]/10 rounded-xl px-5 py-4 text-[#E8DCC4] placeholder-[#C9BDA6] focus:outline-none focus:ring-2 focus:ring-[#8B5CF6]/30 focus:border-[#8B5CF6] focus:bg-[#E8DCC4]/10 transition-all" placeholder="john@company.com" />
                     </div>
 
                     <div className="space-y-2 group">
-                      <label htmlFor="message" className="text-sm font-medium text-[#C1B59E] group-focus-within:text-[#8B5CF6] transition-colors">Your Message</label>
-                      <textarea id="message" name="message" required rows={4} className="w-full bg-[#E8DCC4]/5 border border-[#E8DCC4]/10 rounded-xl px-5 py-4 text-[#E8DCC4] placeholder-[#A89C86] focus:outline-none focus:ring-2 focus:ring-[#8B5CF6]/30 focus:border-[#8B5CF6] focus:bg-[#E8DCC4]/10 transition-all resize-none" placeholder="Tell us about your project..."></textarea>
+                      <label htmlFor="message" className="text-sm font-medium text-[#D8CDB8] group-focus-within:text-[#8B5CF6] transition-colors">Your Message</label>
+                      <textarea id="message" name="message" required rows={4} className="w-full bg-[#E8DCC4]/5 border border-[#E8DCC4]/10 rounded-xl px-5 py-4 text-[#E8DCC4] placeholder-[#C9BDA6] focus:outline-none focus:ring-2 focus:ring-[#8B5CF6]/30 focus:border-[#8B5CF6] focus:bg-[#E8DCC4]/10 transition-all resize-none" placeholder="Tell us about your project..."></textarea>
                     </div>
 
                     <button

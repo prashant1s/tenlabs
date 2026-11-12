@@ -34,11 +34,10 @@ const cardVariants: Variants = {
 export function WhyUs() {
   return (
     <section
-      // Applied the exact dark gradient background
-      className="py-6 md:py-16 relative overflow-hidden bg-gradient-to-b from-[#14281C] to-[#274B36]"
+      id="why-us"
+      className="relative overflow-hidden bg-[#1F3D2B] py-12 md:py-20"
     >
-      {/* Subtle blue accent glow on the right side */}
-      <div className="pointer-events-none absolute right-0 top-0 h-full w-1/2 bg-gradient-to-l from-[#8B5CF6]/5 to-transparent" />
+      <div className="pointer-events-none absolute right-0 top-0 h-full w-1/2 bg-gradient-to-l from-[#8B5CF6]/[0.035] to-transparent" />
 
       <div className="relative mx-auto max-w-7xl">
         {/* Section Heading Module matching other sections */}
@@ -47,7 +46,7 @@ export function WhyUs() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.3 }}
           transition={{ duration: 0.7 }}
-          className="mb-16 max-w-2xl"
+          className="mb-12 max-w-2xl px-6 md:mb-16 lg:px-8"
         >
           <p className="text-md font-semibold uppercase tracking-[0.2em] text-[#8B5CF6]">
             Why Brands Work With Us
@@ -69,20 +68,17 @@ export function WhyUs() {
             <motion.div
               variants={cardVariants}
               key={item.title}
-              // Dark cards matching the Insights/Work sections with polished glass hover states
-              className="group flex gap-6 rounded-3xl border border-[#E8DCC4]/5 bg-[#274B36]/60 p-8 backdrop-blur-sm transition-all duration-300 hover:border-[#8B5CF6]/50 hover:bg-[#274B36] hover:shadow-lg hover:shadow-[#8B5CF6]/10"
+              className="group flex flex-col gap-4 rounded-3xl border border-[#E8DCC4]/10 bg-[#173324] p-7 transition-all duration-300 hover:border-[#8B5CF6]/50 hover:shadow-lg hover:shadow-[#8B5CF6]/10 sm:flex-row sm:gap-6 sm:p-8"
             >
-              {/* Stats / Numbers: Blue */}
-              <div className="text-4xl font-bold tracking-tighter text-[#8B5CF6] transition-transform duration-300 group-hover:-translate-y-1 md:text-5xl">
+              <div className="w-16 shrink-0 text-4xl font-bold leading-none tracking-tighter text-[#8B5CF6] transition-transform duration-300 group-hover:-translate-y-1 md:text-5xl">
                 0{i + 1}
               </div>
               
-              <div>
-                {/* Text: White title, Slate-400 description */}
-                <h3 className="text-xl font-bold text-[#E8DCC4] transition-colors duration-300 group-hover:text-[#8B5CF6]">
+              <div className="min-w-0">
+                <h3 className="text-xl font-bold leading-tight text-[#E8DCC4] transition-colors duration-300 group-hover:text-[#8B5CF6]">
                   {item.title}
                 </h3>
-                <p className="mt-3 text-sm leading-relaxed text-[#C1B59E]">
+                <p className="mt-3 text-base leading-relaxed text-[#D8CDB8]">
                   {item.description}
                 </p>
               </div>

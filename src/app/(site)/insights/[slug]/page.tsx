@@ -43,7 +43,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
 
   if (!post) {
     return (
-      <div className="min-h-screen flex items-center justify-center bg-[#14281C]">
+      <div className="min-h-screen flex items-center justify-center bg-[#1F3D2B]">
         <h1 className="text-3xl font-bold text-[#E8DCC4]">Post not found.</h1>
       </div>
     );
@@ -51,11 +51,11 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
 
   return (
     <>
-      <main className="min-h-screen bg-[#14281C] pt-32 pb-24">
+      <main className="min-h-screen bg-[#1F3D2B] pt-32 pb-24">
 
         {/* Back Button */}
         <div className="mx-auto max-w-3xl px-6 mb-10">
-          <Link href="/insights" className="inline-flex items-center gap-2 text-sm font-bold text-[#A89C86] hover:text-[#8B5CF6] transition-colors">
+          <Link href="/insights" className="inline-flex items-center gap-2 text-sm font-bold text-[#C9BDA6] hover:text-[#8B5CF6] transition-colors">
             <ArrowLeft className="w-4 h-4" /> Back to Insights
           </Link>
         </div>
@@ -64,8 +64,8 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
         <header className="mx-auto max-w-3xl px-6 mb-12">
           <div className="flex items-center gap-3 text-xs font-bold uppercase tracking-widest text-[#8B5CF6] mb-6">
             <span>{post.categories?.[0] || "Insight"}</span>
-            <span className="text-[#A89C86]">•</span>
-            <span className="text-[#C1B59E]">{post.readTime || "5 min read"}</span>
+            <span className="text-[#C9BDA6]">•</span>
+            <span className="text-[#D8CDB8]">{post.readTime || "5 min read"}</span>
           </div>
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-serif text-[#E8DCC4] leading-[1.1] mb-8">
             {post.title}
@@ -73,7 +73,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
           <div className="flex items-center gap-4 border-t border-[#E8DCC4]/10 pt-6">
             <div>
               <p className="text-sm font-bold text-[#E8DCC4]">{post.author || "TenLabs Team"}</p>
-              <p className="text-xs font-medium text-[#C1B59E] mt-1">
+              <p className="text-xs font-medium text-[#D8CDB8] mt-1">
                 {new Date(post.publishedAt).toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' })}
               </p>
             </div>
@@ -85,12 +85,12 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
           <div className="prose prose-invert prose-lg prose-headings:font-serif prose-a:text-[#8B5CF6] hover:prose-a:text-[#7445DA] max-w-none">
             {post.body && post.body.length > 0 ? (
               post.body.map((paragraph, i) => (
-                <p key={i} className="text-lg text-[#C1B59E] leading-relaxed mb-6">
+                <p key={i} className="text-lg text-[#D8CDB8] leading-relaxed mb-6">
                   {paragraph}
                 </p>
               ))
             ) : (
-              <p className="text-[#C1B59E] italic">No content available for this post.</p>
+              <p className="text-[#D8CDB8] italic">No content available for this post.</p>
             )}
           </div>
         </article>

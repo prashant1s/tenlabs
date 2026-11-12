@@ -33,7 +33,7 @@ export function Header() {
 
   return (
     <header className="fixed inset-x-0 top-0 z-50 px-3 pt-3 sm:px-5 sm:pt-4">
-      <nav className="relative mx-auto max-w-6xl rounded-2xl border border-[#E8DCC4]/10 bg-[#183222]/88 px-4 py-3 shadow-[0_12px_45px_rgba(0,0,0,0.28)] backdrop-blur-xl sm:px-5">
+      <nav className="relative mx-auto max-w-6xl rounded-2xl border border-[#E8DCC4]/10 bg-[#173324]/88 px-4 py-3 shadow-[0_12px_45px_rgba(0,0,0,0.28)] backdrop-blur-xl sm:px-5">
         <div className="flex items-center justify-between">
           <Link
             href="/"
@@ -61,7 +61,7 @@ export function Header() {
                     className={`flex items-center gap-1.5 rounded-lg px-3.5 py-2 text-sm font-medium outline-none transition-colors focus-visible:ring-2 focus-visible:ring-[#8B5CF6] ${
                       active
                         ? "bg-[#E8DCC4]/[0.06] text-[#E8DCC4]"
-                        : "text-[#C1B59E] hover:bg-[#E8DCC4]/[0.04] hover:text-[#E8DCC4]"
+                        : "text-[#D8CDB8] hover:bg-[#E8DCC4]/[0.04] hover:text-[#E8DCC4]"
                     }`}
                   >
                     {link.label}
@@ -72,12 +72,12 @@ export function Header() {
 
                   {isSolutions && (
                     <div className="pointer-events-none absolute left-1/2 top-full w-64 -translate-x-1/2 translate-y-1 pt-3 opacity-0 transition-[opacity,transform] duration-200 group-hover/solutions:pointer-events-auto group-hover/solutions:translate-y-0 group-hover/solutions:opacity-100 group-focus-within/solutions:pointer-events-auto group-focus-within/solutions:translate-y-0 group-focus-within/solutions:opacity-100">
-                      <div className="rounded-2xl border border-[#E8DCC4]/10 bg-[#274B36] p-2 shadow-2xl shadow-black/45">
+                      <div className="rounded-2xl border border-[#E8DCC4]/10 bg-[#173324] p-2 shadow-2xl shadow-black/45">
                         {solutionLinks.map((solution) => (
                           <Link
                             key={solution.href}
                             href={solution.href}
-                            className="group/item flex items-center justify-between rounded-xl px-3.5 py-3 text-sm font-medium text-[#C1B59E] outline-none transition-colors hover:bg-[#E8DCC4]/[0.06] hover:text-[#E8DCC4] focus-visible:bg-[#E8DCC4]/[0.06] focus-visible:text-[#E8DCC4]"
+                            className="group/item flex items-center justify-between rounded-xl px-3.5 py-3 text-sm font-medium text-[#D8CDB8] outline-none transition-colors hover:bg-[#E8DCC4]/[0.06] hover:text-[#E8DCC4] focus-visible:bg-[#E8DCC4]/[0.06] focus-visible:text-[#E8DCC4]"
                           >
                             {solution.label}
                             <ArrowRight className="h-3.5 w-3.5 opacity-0 transition-all group-hover/item:translate-x-0.5 group-hover/item:opacity-100" />
@@ -126,7 +126,7 @@ export function Header() {
                     pathname === link.href ||
                     (link.href !== "/" && pathname.startsWith(link.href))
                       ? "bg-[#E8DCC4]/[0.07] text-[#E8DCC4]"
-                      : "text-[#C1B59E] hover:bg-[#E8DCC4]/[0.04] hover:text-[#E8DCC4]"
+                      : "text-[#D8CDB8] hover:bg-[#E8DCC4]/[0.04] hover:text-[#E8DCC4]"
                   }`}
                 >
                   {link.label}
@@ -137,7 +137,7 @@ export function Header() {
                   <Link
                     key={solution.href}
                     href={solution.href}
-                    className="rounded-lg px-3 py-2 text-sm text-[#A89C86] hover:bg-[#E8DCC4]/[0.04] hover:text-[#E8DCC4]"
+                    className="rounded-lg px-3 py-2 text-sm text-[#C9BDA6] hover:bg-[#E8DCC4]/[0.04] hover:text-[#E8DCC4]"
                   >
                     {solution.label}
                   </Link>

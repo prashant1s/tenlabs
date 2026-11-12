@@ -6,11 +6,11 @@ export function Footer() {
   return (
     <footer
       id="site-footer"
-      className="relative overflow-hidden border-t border-[#E8DCC4]/[0.07] bg-[#14281C] text-[#E8DCC4]"
+      className="relative overflow-hidden border-t border-[#E8DCC4]/[0.07] bg-[#1F3D2B] text-[#E8DCC4]"
     >
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute left-1/2 top-0 h-[420px] w-[min(900px,90vw)] -translate-x-1/2 -translate-y-1/2 rounded-full bg-[radial-gradient(circle,rgba(139,92,246,0.2)_0%,rgba(20,40,28,0)_70%)]"
+        className="pointer-events-none absolute left-1/2 top-0 h-[420px] w-[min(900px,90vw)] -translate-x-1/2 -translate-y-1/2 rounded-full bg-[radial-gradient(circle,rgba(139,92,246,0.12)_0%,rgba(31,61,43,0)_70%)]"
       />
 
       <div className="relative mx-auto max-w-6xl px-5 pb-8 pt-16 sm:px-8 sm:pt-20 lg:pt-24">
@@ -19,9 +19,9 @@ export function Footer() {
             <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[#8B5CF6]">
               Let&apos;s build what&apos;s next
             </p>
-            <p className="mt-4 max-w-xl text-balance text-2xl font-semibold leading-tight text-[#E8DCC4] sm:text-3xl">
-              Strategy, creative, performance, and commerce—built to move
-              together.
+            <p className="mt-4 max-w-2xl text-balance text-2xl font-semibold leading-tight text-[#E8DCC4] sm:text-3xl">
+              Strategy, creative, performance, and commerce.
+              <span className="block">Built to move together.</span>
             </p>
           </div>
 
@@ -49,7 +49,7 @@ export function Footer() {
                 <li key={link.href}>
                   <Link
                     href={link.href}
-                    className="text-sm font-medium text-[#C1B59E] transition-colors hover:text-[#E8DCC4]"
+                    className="text-sm font-semibold text-[#D8CDB8] transition-colors hover:text-[#E8DCC4]"
                   >
                     {link.label}
                   </Link>
@@ -58,7 +58,7 @@ export function Footer() {
             </ul>
           </nav>
 
-          <div className="text-sm leading-6 text-[#A89C86] md:text-right">
+          <div className="text-sm font-medium leading-6 text-[#D8CDB8] md:text-right">
             <p>Built with care in India.</p>
             <p>© {new Date().getFullYear()} TenLabs. All rights reserved.</p>
           </div>

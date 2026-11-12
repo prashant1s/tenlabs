@@ -98,10 +98,10 @@ function InsightTiltCard({ post }: { post: any }) {
             transformStyle: "preserve-3d",
             willChange: "transform",
           }}
-          className="group relative flex flex-col justify-between h-full w-full rounded-[24px] bg-[#274B36] overflow-hidden border border-[#E8DCC4]/5 transition-all duration-300 hover:border-[#8B5CF6]/40 hover:shadow-[0_12px_30px_rgba(0,0,0,0.15)] transform-gpu"
+          className="group relative flex flex-col justify-between h-full w-full rounded-[24px] bg-[#173324] overflow-hidden border border-[#E8DCC4]/5 transition-all duration-300 hover:border-[#8B5CF6]/40 hover:shadow-[0_12px_30px_rgba(0,0,0,0.15)] transform-gpu"
         >
           {/* Top Image Area */}
-          <div className="relative h-56 w-full bg-[#315B43] overflow-hidden shrink-0">
+          <div className="relative h-56 w-full bg-[#254A34] overflow-hidden shrink-0">
             {post.image ? (
               <Image
                 src={post.image}
@@ -125,7 +125,7 @@ function InsightTiltCard({ post }: { post: any }) {
               <span className="rounded-full border border-[#3A644B] bg-transparent px-4 py-1.5 text-[10px] font-bold uppercase tracking-widest text-[#8B5CF6]">
                 {post.categories?.[0] || "Insight"}
               </span>
-              <span className="text-[12px] font-medium text-[#C1B59E]">
+              <span className="text-[12px] font-medium text-[#D8CDB8]">
                 {post.publishedAt ? new Date(post.publishedAt).toLocaleDateString("en-US", { month: "short", day: "numeric", year: "numeric" }) : ""}
               </span>
             </div>
@@ -134,15 +134,15 @@ function InsightTiltCard({ post }: { post: any }) {
               {post.title}
             </h3>
 
-            <p className="text-sm text-[#C1B59E] leading-relaxed line-clamp-2 mb-8 font-medium">
+            <p className="text-sm text-[#D8CDB8] leading-relaxed line-clamp-2 mb-8 font-medium">
               {post.author ? `By ${post.author}` : "Discover the strategies that are driving digital growth forward."}
             </p>
 
             <div className="mt-auto flex items-center justify-between pt-4 border-t border-[#E8DCC4]/5">
-              <p className="text-sm font-bold text-[#C1B59E]">
+              <p className="text-sm font-bold text-[#D8CDB8]">
                 {post.readTime || "5 min read"}
               </p>
-              <ChevronRight className="w-5 h-5 text-[#A89C86] transition-transform duration-300 group-hover:translate-x-1 group-hover:text-[#8B5CF6]" />
+              <ChevronRight className="w-5 h-5 text-[#C9BDA6] transition-transform duration-300 group-hover:translate-x-1 group-hover:text-[#8B5CF6]" />
             </div>
           </div>
         </div>
@@ -171,7 +171,7 @@ export function Insights({ posts = [] }: { posts?: any[] }) {
   };
 
   return (
-    <section className="relative bg-[#14281C] px-6 py-10 md:py-24 overflow-hidden">
+    <section className="relative bg-[#1F3D2B] px-6 py-10 md:py-24 overflow-hidden">
       <div className="mx-auto max-w-7xl">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -198,7 +198,7 @@ export function Insights({ posts = [] }: { posts?: any[] }) {
         </motion.div>
 
         {displayPosts.length === 0 ? (
-          <div className="text-[#A89C86] py-10">No insights published yet.</div>
+          <div className="text-[#C9BDA6] py-10">No insights published yet.</div>
         ) : (
           <div className="relative group/slider">
             
@@ -206,7 +206,7 @@ export function Insights({ posts = [] }: { posts?: any[] }) {
             {displayPosts.length > 2 && (
               <button
                 onClick={scrollLeft}
-                className="absolute -left-5 md:-left-6 top-[42%] z-20 hidden md:flex h-12 w-12 -translate-y-1/2 items-center justify-center rounded-full border border-[#3A644B] bg-[#14281C]/60 backdrop-blur-md shadow-sm transition-all hover:border-[#8B5CF6] hover:text-[#8B5CF6] hover:scale-110"
+                className="absolute -left-5 md:-left-6 top-[42%] z-20 hidden md:flex h-12 w-12 -translate-y-1/2 items-center justify-center rounded-full border border-[#3A644B] bg-[#1F3D2B]/60 backdrop-blur-md shadow-sm transition-all hover:border-[#8B5CF6] hover:text-[#8B5CF6] hover:scale-110"
                 aria-label="Scroll left"
               >
                 <ChevronLeft className="h-6 w-6 text-[#D7CAB2] hover:text-[#8B5CF6]" />
@@ -233,7 +233,7 @@ export function Insights({ posts = [] }: { posts?: any[] }) {
             {displayPosts.length > 2 && (
               <button
                 onClick={scrollRight}
-                className="absolute -right-5 md:-right-6 top-[42%] z-20 hidden md:flex h-12 w-12 -translate-y-1/2 items-center justify-center rounded-full border border-[#3A644B] bg-[#14281C]/60 backdrop-blur-md shadow-sm transition-all hover:border-[#8B5CF6] hover:text-[#8B5CF6] hover:scale-110"
+                className="absolute -right-5 md:-right-6 top-[42%] z-20 hidden md:flex h-12 w-12 -translate-y-1/2 items-center justify-center rounded-full border border-[#3A644B] bg-[#1F3D2B]/60 backdrop-blur-md shadow-sm transition-all hover:border-[#8B5CF6] hover:text-[#8B5CF6] hover:scale-110"
                 aria-label="Scroll right"
               >
                 <ChevronRight className="h-6 w-6 text-[#D7CAB2] hover:text-[#8B5CF6]" />

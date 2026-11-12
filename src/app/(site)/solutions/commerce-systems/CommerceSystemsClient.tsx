@@ -48,9 +48,9 @@ export default function CommerceSystemsPage() {
   return (
     <>
       {/* <Header /> */}
-      <main className="min-h-screen bg-[#14281C]">
+      <main className="min-h-screen bg-[#1F3D2B]">
         {/* 1. HERO SECTION */}
-        <section className="relative min-h-screen w-full overflow-hidden bg-[#14281C] font-sans">
+        <section className="relative min-h-screen w-full overflow-hidden bg-[#1F3D2B] font-sans">
           <style
             dangerouslySetInnerHTML={{
               __html: `
@@ -66,7 +66,7 @@ export default function CommerceSystemsPage() {
             playsInline
             className="absolute inset-0 h-full w-full object-cover object-[70%_center]"
           />
-          <div className="absolute inset-0 bg-[#14281C]/50" />
+          <div className="absolute inset-0 bg-[#1F3D2B]/50" />
 
           <div className="relative z-10 mx-auto flex min-h-screen w-full max-w-7xl flex-col lg:flex-row items-center justify-between px-6 pt-32 pb-20 md:px-12 lg:px-6">
             <div className="w-full lg:w-1/2 flex flex-col justify-center">
@@ -96,7 +96,7 @@ export default function CommerceSystemsPage() {
               <div className="flex flex-wrap items-center gap-4 sm:gap-6 animate-[fadeSlideUp_0.8s_ease_0.9s_both]">
                 <Link
                   href="/contact"
-                  className="inline-flex items-center gap-2 rounded-xl bg-[#E8DCC4] px-5 py-2.5 sm:px-6 sm:py-3 text-sm font-medium text-[#14281C] hover:scale-105 transition-transform"
+                  className="inline-flex items-center gap-2 rounded-xl bg-[#E8DCC4] px-5 py-2.5 sm:px-6 sm:py-3 text-sm font-medium text-[#1F3D2B] hover:scale-105 transition-transform"
                 >
                   Start Building <ArrowRight className="w-4 h-4" />
                 </Link>
@@ -105,7 +105,7 @@ export default function CommerceSystemsPage() {
 
             {/* Hero Stats */}
             <div className="w-full lg:w-1/2 relative h-125 mt-12 lg:mt-0 hidden md:block animate-[fadeSlideUp_0.8s_ease_0.9s_both]">
-              <div className="absolute top-4 left-4 lg:left-12 w-64 bg-[#14281C]/50 backdrop-blur-xl border border-[#E8DCC4]/20 rounded-2xl p-5 shadow-2xl z-30 transition-transform hover:scale-105">
+              <div className="absolute top-4 left-4 lg:left-12 w-64 bg-[#1F3D2B]/50 backdrop-blur-xl border border-[#E8DCC4]/20 rounded-2xl p-5 shadow-2xl z-30 transition-transform hover:scale-105">
                 <p className="text-xs text-[#D7CAB2] mb-1 font-medium">
                   Platform GMV Processed
                 </p>
@@ -124,7 +124,7 @@ export default function CommerceSystemsPage() {
                   <circle cx="100" cy="5" r="2" fill="#8B5CF6" />
                 </svg>
               </div>
-              <div className="absolute top-55 left-0 lg:left-4 w-48 bg-[#14281C]/50 backdrop-blur-xl border border-[#E8DCC4]/20 rounded-2xl p-5 shadow-2xl z-20 transition-transform hover:scale-105">
+              <div className="absolute top-55 left-0 lg:left-4 w-48 bg-[#1F3D2B]/50 backdrop-blur-xl border border-[#E8DCC4]/20 rounded-2xl p-5 shadow-2xl z-20 transition-transform hover:scale-105">
                 <p className="text-xs text-[#D7CAB2] mb-1 font-medium">
                   Avg Conversion Uplift
                 </p>
@@ -143,14 +143,14 @@ export default function CommerceSystemsPage() {
                   <circle cx="100" cy="0" r="2" fill="#22c55e" />
                 </svg>
               </div>
-              <div className="absolute bottom-4 right-0 lg:right-4 w-64 bg-[#14281C]/50 backdrop-blur-xl border border-[#E8DCC4]/20 rounded-2xl p-5 shadow-2xl z-10 transition-transform hover:scale-105">
+              <div className="absolute bottom-4 right-0 lg:right-4 w-64 bg-[#1F3D2B]/50 backdrop-blur-xl border border-[#E8DCC4]/20 rounded-2xl p-5 shadow-2xl z-10 transition-transform hover:scale-105">
                 <p className="text-xs text-[#D7CAB2] mb-1 font-medium">
                   Tech Stack
                 </p>
                 <p className="text-2xl font-bold text-[#E8DCC4] mb-1">
                   Headless & Native
                 </p>
-                <p className="text-xs text-[#C1B59E] mb-4">Modern Frameworks</p>
+                <p className="text-xs text-[#D8CDB8] mb-4">Modern Frameworks</p>
                 <div className="flex items-center gap-3">
                   <Image
                     src="https://cdn.simpleicons.org/shopify/96BF48"
@@ -196,11 +196,11 @@ export default function CommerceSystemsPage() {
                 <h2 className="text-3xl md:text-4xl font-serif text-[#E8DCC4] leading-tight mb-6">
                   Built for scale,
                   <br />
-                  <span className="italic text-[#C1B59E] font-light">
+                  <span className="italic text-[#D8CDB8] font-light">
                     engineered for speed.
                   </span>
                 </h2>
-                <p className="text-[#C1B59E] mb-8">
+                <p className="text-[#D8CDB8] mb-8">
                   From custom storefronts to marketplace domination and backend
                   ops.
                 </p>
@@ -237,16 +237,16 @@ export default function CommerceSystemsPage() {
                     key={i}
                     className="relative z-10 flex flex-col items-center text-center w-1/2 md:w-1/4 px-2 mb-10 md:mb-0"
                   >
-                    <div className="w-12 h-12 bg-[#274B36] rounded-full flex items-center justify-center text-[#8B5CF6] shadow-md border border-[#E8DCC4]/10 mb-4">
+                    <div className="w-12 h-12 bg-[#173324] rounded-full flex items-center justify-center text-[#8B5CF6] shadow-md border border-[#E8DCC4]/10 mb-4">
                       <step.icon className="w-5 h-5" />
                     </div>
-                    <span className="text-xs font-bold text-[#A89C86] mb-2">
+                    <span className="text-xs font-bold text-[#C9BDA6] mb-2">
                       {step.num}
                     </span>
                     <h3 className="text-sm font-black text-[#E8DCC4] tracking-wider mb-2">
                       {step.title}
                     </h3>
-                    <p className="text-xs text-[#C1B59E] leading-relaxed">
+                    <p className="text-xs text-[#D8CDB8] leading-relaxed">
                       {step.desc}
                     </p>
                   </div>
@@ -257,9 +257,9 @@ export default function CommerceSystemsPage() {
         </section>
 
         {/* 3. WHAT WE DO */}
-        <section className="py-15 bg-[#14281C]">
+        <section className="py-15 bg-[#1F3D2B]">
           <div className="mx-auto max-w-7xl px-6 mt-16">
-            <div className="bg-[#274B36] rounded-[2rem] p-8 md:p-12 shadow-2xl">
+            <div className="bg-[#173324] rounded-[2rem] p-8 md:p-12 shadow-2xl">
               <span className="text-xs font-bold uppercase tracking-[0.2em] text-[#8B5CF6] mb-2 block">
                 WHAT WE DO
               </span>
@@ -270,7 +270,7 @@ export default function CommerceSystemsPage() {
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
                 {/* Shopify */}
                 {/* Shopify */}
-                <div className="bg-[#315B43] border border-[#E8DCC4]/5 rounded-2xl p-6 flex flex-col justify-between group hover:border-[#96BF48]/30 transition-colors">
+                <div className="bg-[#254A34] border border-[#E8DCC4]/5 rounded-2xl p-6 flex flex-col justify-between group hover:border-[#96BF48]/30 transition-colors">
                   <div>
                     {/* Faint/Dark icon at the top to match the screenshot */}
                     <div className="w-10 h-10 flex items-center justify-center rounded-lg bg-[#E8DCC4]/5 text-[#E8DCC4] mb-6">
@@ -280,7 +280,7 @@ export default function CommerceSystemsPage() {
                       Shopify Development
                     </h3>
                     {/* Added space-y-2 for better line spacing between bullets */}
-                    <ul className="text-sm text-[#C1B59E] leading-relaxed mb-8 space-y-2">
+                    <ul className="text-sm text-[#D8CDB8] leading-relaxed mb-8 space-y-2">
                       <li>• Custom Shopify Stores</li>
                       <li>• Theme Development</li>
                       <li>• Shopify CRO</li>
@@ -302,7 +302,7 @@ export default function CommerceSystemsPage() {
                 </div>
 
                 {/* Custom Dev */}
-                <div className="bg-[#315B43] border border-[#E8DCC4]/5 rounded-2xl p-6 flex flex-col justify-between group hover:border-[#8B5CF6]/30 transition-colors">
+                <div className="bg-[#254A34] border border-[#E8DCC4]/5 rounded-2xl p-6 flex flex-col justify-between group hover:border-[#8B5CF6]/30 transition-colors">
                   <div>
                     <div className="w-10 h-10 flex items-center justify-center rounded-lg bg-[#8B5CF6]/10 text-[#BFA8FF] mb-6">
                       <Code className="w-5 h-5" />
@@ -310,7 +310,7 @@ export default function CommerceSystemsPage() {
                     <h3 className="text-[#E8DCC4] font-bold mb-2">
                       Custom & Web Dev
                     </h3>
-                    <ul className="text-sm text-[#C1B59E] leading-relaxed mb-6 space-y-1">
+                    <ul className="text-sm text-[#D8CDB8] leading-relaxed mb-6 space-y-1">
                       <li>• Next.js & React Apps</li>
                       <li>• Headless Commerce</li>
                       <li>• WordPress Sites</li>
@@ -346,13 +346,13 @@ export default function CommerceSystemsPage() {
                 </div>
 
                 {/* Marketplaces */}
-                <div className="bg-[#315B43] border border-[#E8DCC4]/5 rounded-2xl p-6 flex flex-col justify-between group hover:border-orange-500/30 transition-colors">
+                <div className="bg-[#254A34] border border-[#E8DCC4]/5 rounded-2xl p-6 flex flex-col justify-between group hover:border-orange-500/30 transition-colors">
                   <div>
                     <div className="w-10 h-10 flex items-center justify-center rounded-lg bg-orange-500/10 text-orange-400 mb-6">
                       <Store className="w-5 h-5" />
                     </div>
                     <h3 className="text-[#E8DCC4] font-bold mb-2">Marketplaces</h3>
-                    <ul className="text-sm text-[#C1B59E] leading-relaxed mb-8 space-y-1">
+                    <ul className="text-sm text-[#D8CDB8] leading-relaxed mb-8 space-y-1">
                       <li>• Amazon Growth & PPC</li>
                       <li>• Flipkart Growth</li>
                       <li>• Listing Optimization</li>
@@ -380,7 +380,7 @@ export default function CommerceSystemsPage() {
                 </div>
 
                 {/* Operations */}
-                <div className="bg-[#315B43] border border-[#E8DCC4]/5 rounded-2xl p-6 flex flex-col justify-between group hover:border-[#8B5CF6]/30 transition-colors">
+                <div className="bg-[#254A34] border border-[#E8DCC4]/5 rounded-2xl p-6 flex flex-col justify-between group hover:border-[#8B5CF6]/30 transition-colors">
                   <div>
                     <div className="w-10 h-10 flex items-center justify-center rounded-lg bg-[#8B5CF6]/10 text-[#BFA8FF] mb-6">
                       <Settings className="w-5 h-5" />
@@ -388,7 +388,7 @@ export default function CommerceSystemsPage() {
                     <h3 className="text-[#E8DCC4] font-bold mb-2">
                       Operations & Tech
                     </h3>
-                    <ul className="text-sm text-[#C1B59E] leading-relaxed mb-8 space-y-1">
+                    <ul className="text-sm text-[#D8CDB8] leading-relaxed mb-8 space-y-1">
                       <li>• ERP Integration</li>
                       <li>• D2C Ops Setup</li>
                       <li>• Inventory Flow Management</li>
@@ -407,7 +407,7 @@ export default function CommerceSystemsPage() {
         {/* ========================================= */}
         {/* 4. RESULTS THAT MATTER (CASE STUDIES) */}
         {/* ========================================= */}
-        <section className="bg-[#14281C] px-6 py-24 md:py-32">
+        <section className="bg-[#1F3D2B] px-6 py-24 md:py-32">
           <div className="mx-auto max-w-7xl">
             <motion.div
               initial="hidden"
@@ -427,7 +427,7 @@ export default function CommerceSystemsPage() {
                 <h2 className="text-4xl md:text-5xl font-serif text-[#E8DCC4] leading-[1.1] mb-6">
                   Systems that <br /> create real impact.
                 </h2>
-                <p className="text-sm text-[#C1B59E] mb-10 leading-relaxed font-medium">
+                <p className="text-sm text-[#D8CDB8] mb-10 leading-relaxed font-medium">
                   Across platforms. Across industries. <br />
                   One purpose - growth.
                 </p>
@@ -452,7 +452,7 @@ export default function CommerceSystemsPage() {
                     <Link
                       href={`/work/${item.slug}`}
                       key={idx}
-                      className="group relative aspect-4/3 md:aspect-5/4 w-full overflow-hidden bg-[#274B36] block border border-[#E8DCC4]/5"
+                      className="group relative aspect-4/3 md:aspect-5/4 w-full overflow-hidden bg-[#173324] block border border-[#E8DCC4]/5"
                     >
                       {item.img && (
                         <Image
@@ -464,7 +464,7 @@ export default function CommerceSystemsPage() {
                       )}
 
                       {/* Dark overlay for readability */}
-                      <div className="absolute inset-0 bg-gradient-to-b from-[#14281C]/80 via-transparent to-[#14281C]/30 pointer-events-none z-0" />
+                      <div className="absolute inset-0 bg-gradient-to-b from-[#1F3D2B]/80 via-transparent to-[#1F3D2B]/30 pointer-events-none z-0" />
 
                       {/* Text content with increased z-index */}
                       <div className="absolute inset-0 p-6 flex flex-col justify-start z-10">
@@ -483,7 +483,7 @@ export default function CommerceSystemsPage() {
                     Array.from({ length: 6 }).map((_, idx) => (
                       <div
                         key={`skeleton-${idx}`}
-                        className="relative aspect-4/3 md:aspect-5/4 w-full bg-[#274B36] animate-pulse border border-[#E8DCC4]/5"
+                        className="relative aspect-4/3 md:aspect-5/4 w-full bg-[#173324] animate-pulse border border-[#E8DCC4]/5"
                       />
                     ))}
                 </div>
@@ -497,7 +497,7 @@ export default function CommerceSystemsPage() {
         {/* ========================================= */}
         <section className="py-16 md:py-24 bg-[#1F3D2B]">
           <div className="mx-auto max-w-7xl px-6">
-            <div className="bg-[#274B36] rounded-[2rem] p-10 md:p-16 flex flex-col md:flex-row items-center justify-between gap-10 relative overflow-hidden shadow-2xl">
+            <div className="bg-[#173324] rounded-[2rem] p-10 md:p-16 flex flex-col md:flex-row items-center justify-between gap-10 relative overflow-hidden shadow-2xl">
               <div className="absolute right-0 top-0 bottom-0 w-1/2 pointer-events-none opacity-40 mix-blend-screen">
                 <div className="absolute top-1/2 left-1/2 -translate-y-1/2 w-75 h-50 bg-[#8B5CF6] rounded-full blur-[100px]"></div>
                 <svg
@@ -532,7 +532,7 @@ export default function CommerceSystemsPage() {
                   <br />
                   commerce engine?
                 </h2>
-                <p className="text-[#C1B59E] text-sm md:text-base leading-relaxed">
+                <p className="text-[#D8CDB8] text-sm md:text-base leading-relaxed">
                   Let's build a commerce system that drives real, measurable
                   results.
                 </p>

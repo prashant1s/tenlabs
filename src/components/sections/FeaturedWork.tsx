@@ -127,8 +127,8 @@ function TiltCard({
             overflow-hidden
             rounded-[20px]
             border
-            border-[#315B43]
-            bg-[#274B36]
+            border-[#254A34]
+            bg-[#173324]
             shadow-xl
             shadow-black/10
             transition-colors
@@ -138,7 +138,7 @@ function TiltCard({
           "
         >
           {/* Top Image Section (Proportioned beautifully so text isn't crushed) */}
-          <div className="relative h-[220px] w-full shrink-0 border-b border-[#315B43] bg-[#315B43]">
+          <div className="relative h-[220px] w-full shrink-0 border-b border-[#254A34] bg-[#254A34]">
             {image ? (
               <Image
                 src={image}
@@ -148,7 +148,7 @@ function TiltCard({
                 className="object-cover transition-transform duration-700 group-hover:scale-105 opacity-90 group-hover:opacity-100"
               />
             ) : (
-              <div className="absolute inset-0 flex items-center justify-center text-sm font-medium text-[#A89C86] transition-transform duration-700 group-hover:scale-105">
+              <div className="absolute inset-0 flex items-center justify-center text-sm font-medium text-[#C9BDA6] transition-transform duration-700 group-hover:scale-105">
                 [ Image Placeholder ]
               </div>
             )}
@@ -158,7 +158,7 @@ function TiltCard({
           </div>
 
           {/* Bottom Content Section */}
-          <div className="relative z-20 flex flex-1 flex-col p-6 bg-[#274B36]">
+          <div className="relative z-20 flex flex-1 flex-col p-6 bg-[#173324]">
             {/* Category / Industry */}
             <span className="mb-2 text-[11px] font-extrabold uppercase tracking-[0.1em] text-[#8B5CF6]">
               {industry || "Retail"}
@@ -170,7 +170,7 @@ function TiltCard({
             </h3>
 
             {/* Sales Figure / Result */}
-            <p className="mb-8 text-[15px] text-[#C1B59E] font-medium line-clamp-2 leading-relaxed">
+            <p className="mb-8 text-[15px] text-[#D8CDB8] font-medium line-clamp-2 leading-relaxed">
               {result}
             </p>
 
@@ -208,7 +208,7 @@ export function FeaturedWork({ projects = [] }: { projects?: Project[] }) {
   };
 
   return (
-    <section className="relative bg-[#14281C] px-6 py-24 md:py-32 overflow-hidden">
+    <section className="relative bg-[#1F3D2B] px-6 py-24 md:py-32 overflow-hidden">
       <div className="mx-auto max-w-7xl">
         <div className="flex flex-col gap-10 lg:flex-row lg:gap-8">
           
@@ -225,7 +225,7 @@ export function FeaturedWork({ projects = [] }: { projects?: Project[] }) {
               <span className="text-[#8B5CF6]">Business<br/>Growth.</span>
             </h2>
 
-            <p className="mt-4 text-sm leading-relaxed text-[#C1B59E] xl:text-base pr-4">
+            <p className="mt-4 text-sm leading-relaxed text-[#D8CDB8] xl:text-base pr-4">
               We partner with ambitious brands to solve growth challenges through
               strategy, performance marketing, creative execution, and commerce
               systems.
@@ -236,7 +236,7 @@ export function FeaturedWork({ projects = [] }: { projects?: Project[] }) {
           <div className="flex w-full flex-col lg:w-[72%] xl:w-[75%] relative group/slider">
             
             {projects.length === 0 ? (
-              <div className="text-[#C1B59E] py-10 pl-4">No projects published yet.</div>
+              <div className="text-[#D8CDB8] py-10 pl-4">No projects published yet.</div>
             ) : (
               <>
                 {/* Floating Hollow "<" Left Arrow Button */}
