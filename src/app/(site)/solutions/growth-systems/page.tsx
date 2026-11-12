@@ -2,21 +2,21 @@ import type { Metadata } from "next";
 import GrowthSystemsClient from "./GrowthSystemsClient";
 
 export const metadata: Metadata = {
-  title: "Growth Systems",
-  description: "We build data-driven growth systems that acquire the right customers, improve conversions, and generate predictable, compounding growth.",
+  title: "Website Growth & Conversion Systems",
+  description: "Improve website performance with conversion-focused landing pages, analytics, SEO, experimentation, and growth systems that turn traffic into customers.",
   alternates: {
     canonical: "https://tenlabs.online/solutions/growth-systems",
   },
   openGraph: {
-    title: "Growth Systems | TenLabs",
-    description: "We build data-driven growth systems that acquire the right customers, improve conversions, and generate predictable, compounding growth.",
+    title: "Website Growth & Conversion Systems | TenLabs",
+    description: "Conversion-focused websites, landing pages, analytics, and optimization systems built to turn traffic into customers.",
     url: "https://tenlabs.online/solutions/growth-systems",
     images: ["/og-image.png"],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Growth Systems | TenLabs",
-    description: "We build data-driven growth systems that acquire the right customers, improve conversions, and generate predictable, compounding growth.",
+    title: "Website Growth & Conversion Systems | TenLabs",
+    description: "Conversion-focused websites, landing pages, analytics, and optimization systems built to turn traffic into customers.",
     images: ["/og-image.png"],
   },
 };

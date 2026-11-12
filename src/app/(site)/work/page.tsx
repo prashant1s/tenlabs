@@ -3,21 +3,21 @@ import WorkClient from "./WorkClient";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Our Work & Case Studies",
-  description: "Explore our portfolio of systems that create real impact across platforms and industries. One purpose - growth.",
+  title: "Web Design Portfolio & Case Studies",
+  description: "Explore TenLabs web design and development projects, including high-converting websites, ecommerce experiences, and digital products built for growth.",
   alternates: {
     canonical: "/work",
   },
   openGraph: {
-    title: "Our Work & Case Studies | TenLabs",
-    description: "Explore our portfolio of systems that create real impact across platforms and industries. One purpose - growth.",
+    title: "Web Design Portfolio & Case Studies | TenLabs",
+    description: "Explore websites, ecommerce experiences, and digital products designed and developed by TenLabs.",
     url: "https://tenlabs.online/work",
     images: ["/og-image.png"],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Our Work & Case Studies | TenLabs",
-    description: "Explore our portfolio of systems that create real impact across platforms and industries. One purpose - growth.",
+    title: "Web Design Portfolio & Case Studies | TenLabs",
+    description: "Explore websites, ecommerce experiences, and digital products designed and developed by TenLabs.",
     images: ["/og-image.png"],
   },
 };
