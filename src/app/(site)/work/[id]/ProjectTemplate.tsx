@@ -45,7 +45,7 @@ function YouTubeShowcase({ url }: { url: string }) {
 
   if (!videoId) {
     return (
-      <div className="w-full aspect-21/9 bg-[#101218] rounded-[2rem] flex items-center justify-center border border-white/10 text-[#9aa0ac] font-medium">
+      <div className="w-full aspect-21/9 bg-[#274B36] rounded-[2rem] flex items-center justify-center border border-[#E8DCC4]/10 text-[#C1B59E] font-medium">
         Valid YouTube URL required.
       </div>
     );
@@ -55,8 +55,8 @@ function YouTubeShowcase({ url }: { url: string }) {
   // Landscape videos now use aspect-[21/9] which is significantly shorter in height than aspect-video (16:9).
   // Shorts remain aspect-[9/16] so they don't distort, but get a max-height so they aren't overly tall.
   const containerClasses = isShort
-    ? "relative w-full max-w-[350px] mx-auto aspect-[9/16] bg-[#101218] rounded-[2rem] overflow-hidden shadow-2xl shadow-black/40 border border-white/10"
-    : "relative w-full aspect-21/9 bg-[#101218] rounded-[2rem] overflow-hidden shadow-2xl shadow-black/40 border border-white/10";
+    ? "relative w-full max-w-[350px] mx-auto aspect-[9/16] bg-[#274B36] rounded-[2rem] overflow-hidden shadow-2xl shadow-black/40 border border-[#E8DCC4]/10"
+    : "relative w-full aspect-21/9 bg-[#274B36] rounded-[2rem] overflow-hidden shadow-2xl shadow-black/40 border border-[#E8DCC4]/10";
 
   return (
     <motion.div
@@ -91,7 +91,7 @@ export default function ProjectTemplate({ project }: { project: any }) {
 
   return (
     <>
-      <main className="min-h-screen bg-[#07070a]">
+      <main className="min-h-screen bg-[#14281C]">
 
         {/* 1. INITIAL TEXT SECTION */}
         <section className="pt-32 md:pt-44 pb-12 px-4 md:px-8 mx-auto w-full max-w-325 flex flex-col items-start">
@@ -105,22 +105,22 @@ export default function ProjectTemplate({ project }: { project: any }) {
               {(project.services || []).map((service: string) => (
                 <span
                   key={service}
-                  className="rounded-full border border-[#6D7CF7]/25 bg-[#6D7CF7]/10 px-4 py-1.5 text-xs font-bold uppercase tracking-widest text-[#9fb0ff]"
+                  className="rounded-full border border-[#8B5CF6]/25 bg-[#8B5CF6]/10 px-4 py-1.5 text-xs font-bold uppercase tracking-widest text-[#BFA8FF]"
                 >
                   {service}
                 </span>
               ))}
             </motion.div>
 
-            <motion.h1 variants={fadeUpVariant} className="text-3xl font-extrabold tracking-tight text-[#f3f4f6] md:text-4xl lg:text-5xl leading-[1.2]">
+            <motion.h1 variants={fadeUpVariant} className="text-3xl font-extrabold tracking-tight text-[#E8DCC4] md:text-4xl lg:text-5xl leading-[1.2]">
               {project.heroPreTitle}
               {project.heroHighlight && (
-                <span className="text-[#6D7CF7]"> {project.heroHighlight} </span>
+                <span className="text-[#8B5CF6]"> {project.heroHighlight} </span>
               )}
               {project.heroPostTitle}
             </motion.h1>
 
-            <motion.p variants={fadeUpVariant} className="mt-6 w-full text-base md:text-lg font-medium text-[#9aa0ac] leading-relaxed">
+            <motion.p variants={fadeUpVariant} className="mt-6 w-full text-base md:text-lg font-medium text-[#C1B59E] leading-relaxed">
               {project.description}
             </motion.p>
           </motion.div>
@@ -133,7 +133,7 @@ export default function ProjectTemplate({ project }: { project: any }) {
             whileInView={{ opacity: 1, scale: 1, y: 0 }}
             viewport={{ once: true, amount: 0.2 }}
             transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
-            className="relative isolate flex min-h-100 md:min-h-162.5 flex-col justify-center overflow-hidden rounded-[2.5rem] bg-[#101218] shadow-2xl shadow-black/40 border border-white/10"
+            className="relative isolate flex min-h-100 md:min-h-162.5 flex-col justify-center overflow-hidden rounded-[2.5rem] bg-[#274B36] shadow-2xl shadow-black/40 border border-[#E8DCC4]/10"
           >
             {hasBannerImage && (
               <>
@@ -145,7 +145,7 @@ export default function ProjectTemplate({ project }: { project: any }) {
                   sizes="100vw"
                   className="absolute inset-0 z-0 object-cover"
                 />
-                <div className="absolute inset-0 z-1 bg-linear-to-t from-black/20 to-transparent pointer-events-none" />
+                <div className="absolute inset-0 z-1 bg-linear-to-t from-[#14281C]/20 to-transparent pointer-events-none" />
               </>
             )}
           </motion.section>
@@ -159,14 +159,14 @@ export default function ProjectTemplate({ project }: { project: any }) {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.8 }}
-              className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 rounded-[2rem] bg-[#101218] p-8 md:p-12 shadow-xl shadow-black/40 border border-white/10"
+              className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 rounded-[2rem] bg-[#274B36] p-8 md:p-12 shadow-xl shadow-black/40 border border-[#E8DCC4]/10"
             >
               {project.stats.map((result: any, i: number) => (
                 <div key={i} className="flex flex-col">
-                  <span className="text-3xl font-bold text-[#6D7CF7] md:text-4xl mb-2">
+                  <span className="text-3xl font-bold text-[#8B5CF6] md:text-4xl mb-2">
                     {result.stat}
                   </span>
-                  <span className="text-base font-medium text-[#9aa0ac] leading-snug">
+                  <span className="text-base font-medium text-[#C1B59E] leading-snug">
                     {result.label}
                   </span>
                 </div>
@@ -187,13 +187,13 @@ export default function ProjectTemplate({ project }: { project: any }) {
                 className="mb-24 grid gap-12 md:grid-cols-12 md:gap-20"
               >
                 <motion.div variants={fadeUpVariant} className="md:col-span-4">
-                  <h2 className="text-3xl font-bold tracking-tight text-[#f3f4f6] md:text-5xl">The Challenge</h2>
+                  <h2 className="text-3xl font-bold tracking-tight text-[#E8DCC4] md:text-5xl">The Challenge</h2>
                 </motion.div>
                 <motion.div variants={fadeUpVariant} className="grid gap-8 md:col-span-8 md:grid-cols-2">
                   {project.challenges.map((challenge: any, i: number) => (
                     <div key={i}>
-                      <h3 className="text-xl font-bold text-[#f3f4f6]">{challenge.title}</h3>
-                      <p className="mt-3 text-[#9aa0ac]">{challenge.desc}</p>
+                      <h3 className="text-xl font-bold text-[#E8DCC4]">{challenge.title}</h3>
+                      <p className="mt-3 text-[#C1B59E]">{challenge.desc}</p>
                     </div>
                   ))}
                 </motion.div>
@@ -206,16 +206,16 @@ export default function ProjectTemplate({ project }: { project: any }) {
                 whileInView="visible"
                 viewport={{ once: true, amount: 0.3 }}
                 variants={staggerContainer}
-                className="grid gap-12 border-t border-white/10 pt-24 md:grid-cols-12 md:gap-20"
+                className="grid gap-12 border-t border-[#E8DCC4]/10 pt-24 md:grid-cols-12 md:gap-20"
               >
                 <motion.div variants={fadeUpVariant} className="md:col-span-4">
-                  <h2 className="text-3xl font-bold tracking-tight text-[#f3f4f6] md:text-5xl">Our Strategy</h2>
+                  <h2 className="text-3xl font-bold tracking-tight text-[#E8DCC4] md:text-5xl">Our Strategy</h2>
                 </motion.div>
                 <motion.div variants={fadeUpVariant} className="grid gap-8 md:col-span-8 md:grid-cols-2">
                   {project.strategies.map((strat: any, i: number) => (
-                    <div key={i} className="rounded-2xl bg-[#101218] p-8 border border-white/10">
-                      <h3 className="text-xl font-bold text-[#f3f4f6]">{strat.title}</h3>
-                      <p className="mt-3 text-[#9aa0ac] leading-relaxed">{strat.desc}</p>
+                    <div key={i} className="rounded-2xl bg-[#274B36] p-8 border border-[#E8DCC4]/10">
+                      <h3 className="text-xl font-bold text-[#E8DCC4]">{strat.title}</h3>
+                      <p className="mt-3 text-[#C1B59E] leading-relaxed">{strat.desc}</p>
                     </div>
                   ))}
                 </motion.div>
@@ -226,7 +226,7 @@ export default function ProjectTemplate({ project }: { project: any }) {
 
         {/* 5. FEATURED MEDIA (Images + Conditional Video) */}
         {((project.images && project.images.length > 0) || project.videoUrl) && (
-          <section className="bg-[#0a0a0e] px-6 py-14 md:py-12">
+          <section className="bg-[#1F3D2B] px-6 py-14 md:py-12">
             <div className="mx-auto max-w-7xl">
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
@@ -234,7 +234,7 @@ export default function ProjectTemplate({ project }: { project: any }) {
                 viewport={{ once: true }}
                 className="mb-12 text-center"
               >
-                <h2 className="text-3xl font-bold tracking-tight text-[#f3f4f6] md:text-4xl">Featured Work</h2>
+                <h2 className="text-3xl font-bold tracking-tight text-[#E8DCC4] md:text-4xl">Featured Work</h2>
               </motion.div>
               <div className="grid gap-8 md:grid-cols-2 items-start">
 
@@ -251,14 +251,14 @@ export default function ProjectTemplate({ project }: { project: any }) {
                           className="w-full h-auto object-contain"
                         />
                       ) : (
-                        <div className="aspect-video w-full flex items-center justify-center bg-[#161925] rounded-3xl">
-                           <span className="text-[#6e7480] font-medium">[ Image Placeholder ]</span>
+                        <div className="aspect-video w-full flex items-center justify-center bg-[#315B43] rounded-3xl">
+                           <span className="text-[#A89C86] font-medium">[ Image Placeholder ]</span>
                         </div>
                       )}
                     </div>
                     <div>
-                      <h4 className="font-bold text-[#f3f4f6]">{img.title}</h4>
-                      <p className="text-sm text-[#9aa0ac]">{img.desc}</p>
+                      <h4 className="font-bold text-[#E8DCC4]">{img.title}</h4>
+                      <p className="text-sm text-[#C1B59E]">{img.desc}</p>
                     </div>
                   </div>
                 ))}
@@ -268,8 +268,8 @@ export default function ProjectTemplate({ project }: { project: any }) {
                   <div className="flex flex-col gap-4 w-full h-full justify-center">
                     <YouTubeShowcase url={project.videoUrl} />
                     <div>
-                      {/* <h4 className="font-bold text-[#f3f4f6]">Project Video</h4>
-                      <p className="text-sm text-[#9aa0ac]">Watch the final outcome</p> */}
+                      {/* <h4 className="font-bold text-[#E8DCC4]">Project Video</h4>
+                      <p className="text-sm text-[#C1B59E]">Watch the final outcome</p> */}
                     </div>
                   </div>
                 )}
@@ -280,7 +280,7 @@ export default function ProjectTemplate({ project }: { project: any }) {
 
         {/* 6. YOUTUBE VIDEO SHOWCASE (Fallback if 2+ images exist) */}
         {project.videoUrl && project.images && project.images.length >= 2 && (
-          <section className="bg-[#07070a] py-12 md:py-16 px-4 md:px-8">
+          <section className="bg-[#14281C] py-12 md:py-16 px-4 md:px-8">
             <div className="mx-auto max-w-7xl flex justify-center">
               <motion.div
                 initial={{ opacity: 0 }}
@@ -306,24 +306,24 @@ export default function ProjectTemplate({ project }: { project: any }) {
               className="grid gap-16 md:grid-cols-2 md:gap-24"
             >
               <motion.div variants={fadeUpVariant}>
-                <h2 className="mb-8 text-3xl font-bold tracking-tight text-[#f3f4f6] md:text-4xl">The Outcome</h2>
+                <h2 className="mb-8 text-3xl font-bold tracking-tight text-[#E8DCC4] md:text-4xl">The Outcome</h2>
                 <ul className="space-y-6">
                   {(project.outcomes || []).map((item: any, i: number) => (
                     <li key={i} className="flex flex-col">
-                      <span className="font-bold text-[#6D7CF7]">{item.title}</span>
-                      <span className="text-[#9aa0ac] font-medium">{item.desc}</span>
+                      <span className="font-bold text-[#8B5CF6]">{item.title}</span>
+                      <span className="text-[#C1B59E] font-medium">{item.desc}</span>
                     </li>
                   ))}
                 </ul>
               </motion.div>
 
               <motion.div variants={fadeUpVariant}>
-                <h2 className="mb-8 text-3xl font-bold tracking-tight text-[#f3f4f6] md:text-4xl">Key Learnings</h2>
+                <h2 className="mb-8 text-3xl font-bold tracking-tight text-[#E8DCC4] md:text-4xl">Key Learnings</h2>
                 <div className="space-y-8">
                   {(project.learnings || []).map((learning: any, i: number) => (
                     <div key={i}>
-                      <h4 className="font-bold text-[#f3f4f6]">{learning.title}</h4>
-                      <p className="mt-1 text-[#9aa0ac]">{learning.desc}</p>
+                      <h4 className="font-bold text-[#E8DCC4]">{learning.title}</h4>
+                      <p className="mt-1 text-[#C1B59E]">{learning.desc}</p>
                     </div>
                   ))}
                 </div>
@@ -334,7 +334,7 @@ export default function ProjectTemplate({ project }: { project: any }) {
 
         {/* 8. BOTTOM QUOTE */}
         {project.quote && (
-          <section className="bg-[#07070a] px-6 py-20 md:py-22">
+          <section className="bg-[#14281C] px-6 py-20 md:py-22">
             <div className="mx-auto max-w-4xl text-center">
               <motion.div
                 initial={{ opacity: 0, scale: 0.95 }}
@@ -342,10 +342,10 @@ export default function ProjectTemplate({ project }: { project: any }) {
                 viewport={{ once: true }}
                 transition={{ duration: 0.8 }}
               >
-                <svg className="mx-auto mb-8 h-7 w-12 text-[#6D7CF7]/50" fill="currentColor" viewBox="0 0 24 24">
+                <svg className="mx-auto mb-8 h-7 w-12 text-[#8B5CF6]/50" fill="currentColor" viewBox="0 0 24 24">
                   <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z" />
                 </svg>
-                <h2 className="text-2xl font-medium leading-relaxed text-white md:text-2xl md:leading-snug">
+                <h2 className="text-2xl font-medium leading-relaxed text-[#E8DCC4] md:text-2xl md:leading-snug">
                   "{project.quote}"
                 </h2>
               </motion.div>

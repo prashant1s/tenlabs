@@ -35,10 +35,10 @@ export function WhyUs() {
   return (
     <section
       // Applied the exact dark gradient background
-      className="py-6 md:py-16 relative overflow-hidden bg-gradient-to-b from-[#07070a] to-[#101218]"
+      className="py-6 md:py-16 relative overflow-hidden bg-gradient-to-b from-[#14281C] to-[#274B36]"
     >
       {/* Subtle blue accent glow on the right side */}
-      <div className="pointer-events-none absolute right-0 top-0 h-full w-1/2 bg-gradient-to-l from-[#6D7CF7]/5 to-transparent" />
+      <div className="pointer-events-none absolute right-0 top-0 h-full w-1/2 bg-gradient-to-l from-[#8B5CF6]/5 to-transparent" />
 
       <div className="relative mx-auto max-w-7xl">
         {/* Section Heading Module matching other sections */}
@@ -49,10 +49,10 @@ export function WhyUs() {
           transition={{ duration: 0.7 }}
           className="mb-16 max-w-2xl"
         >
-          <p className="text-md font-semibold uppercase tracking-[0.2em] text-[#6D7CF7]">
+          <p className="text-md font-semibold uppercase tracking-[0.2em] text-[#8B5CF6]">
             Why Brands Work With Us
           </p>
-          <h2 className="mt-2 text-3xl font-bold tracking-tight text-white md:text-5xl">
+          <h2 className="mt-2 text-3xl font-bold tracking-tight text-[#E8DCC4] md:text-5xl">
             One partner. Every capability.
           </h2>
         </motion.div>
@@ -70,19 +70,19 @@ export function WhyUs() {
               variants={cardVariants}
               key={item.title}
               // Dark cards matching the Insights/Work sections with polished glass hover states
-              className="group flex gap-6 rounded-3xl border border-white/5 bg-[#101218]/60 p-8 backdrop-blur-sm transition-all duration-300 hover:border-[#6D7CF7]/50 hover:bg-[#101218] hover:shadow-lg hover:shadow-[#6D7CF7]/10"
+              className="group flex gap-6 rounded-3xl border border-[#E8DCC4]/5 bg-[#274B36]/60 p-8 backdrop-blur-sm transition-all duration-300 hover:border-[#8B5CF6]/50 hover:bg-[#274B36] hover:shadow-lg hover:shadow-[#8B5CF6]/10"
             >
               {/* Stats / Numbers: Blue */}
-              <div className="text-4xl font-bold tracking-tighter text-[#6D7CF7] transition-transform duration-300 group-hover:-translate-y-1 md:text-5xl">
+              <div className="text-4xl font-bold tracking-tighter text-[#8B5CF6] transition-transform duration-300 group-hover:-translate-y-1 md:text-5xl">
                 0{i + 1}
               </div>
               
               <div>
                 {/* Text: White title, Slate-400 description */}
-                <h3 className="text-xl font-bold text-white transition-colors duration-300 group-hover:text-[#6D7CF7]">
+                <h3 className="text-xl font-bold text-[#E8DCC4] transition-colors duration-300 group-hover:text-[#8B5CF6]">
                   {item.title}
                 </h3>
-                <p className="mt-3 text-sm leading-relaxed text-gray-400">
+                <p className="mt-3 text-sm leading-relaxed text-[#C1B59E]">
                   {item.description}
                 </p>
               </div>

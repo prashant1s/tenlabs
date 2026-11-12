@@ -67,16 +67,16 @@ function IndustryCard({
   return (
     <motion.div
       variants={cardVariants}
-      className={`industry-card group relative overflow-hidden rounded-2xl border border-white/5 bg-[#101218] p-6 shadow-sm transition-all duration-500 hover:border-[#6D7CF7]/40 hover:shadow-lg hover:shadow-[#6D7CF7]/10 ${className}`}
+      className={`industry-card group relative overflow-hidden rounded-2xl border border-[#E8DCC4]/5 bg-[#274B36] p-6 shadow-sm transition-all duration-500 hover:border-[#8B5CF6]/40 hover:shadow-lg hover:shadow-[#8B5CF6]/10 ${className}`}
     >
       {/* Simple radial glow fading in on hover */}
       <div className="industry-card-glow absolute inset-0 opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
 
-      <div className="relative z-10 flex h-12 w-12 items-center justify-center rounded-xl bg-[#6D7CF7]/10 text-[#6D7CF7] transition-all duration-500 group-hover:scale-110 group-hover:bg-[#6D7CF7]/15 group-hover:text-white">
+      <div className="relative z-10 flex h-12 w-12 items-center justify-center rounded-xl bg-[#8B5CF6]/10 text-[#8B5CF6] transition-all duration-500 group-hover:scale-110 group-hover:bg-[#8B5CF6]/15 group-hover:text-[#E8DCC4]">
         {Icon && <Icon className="h-6 w-6" strokeWidth={1.75} />}
       </div>
 
-      <h3 className="relative z-10 mt-4 text-base font-semibold text-gray-200 transition-colors duration-300 group-hover:text-[#6D7CF7]">
+      <h3 className="relative z-10 mt-4 text-base font-semibold text-[#E8DCC4] transition-colors duration-300 group-hover:text-[#8B5CF6]">
         {name}
       </h3>
     </motion.div>
@@ -88,7 +88,7 @@ export function Industries() {
     <section
       id="industries"
       // Section background set to pure dark
-      className="py-10 md:py-16 bg-[#07070a]"
+      className="py-10 md:py-16 bg-[#14281C]"
     >
       <div className="mx-auto max-w-6xl">
         {/* Section Heading Module matching FeaturedWork scroll reveal */}
@@ -110,13 +110,13 @@ export function Industries() {
           }}
           className="mb-10 text-center"
         >
-          <p className="text-md font-semibold uppercase tracking-[0.2em] text-[#6D7CF7]">
+          <p className="text-md font-semibold uppercase tracking-[0.2em] text-[#8B5CF6]">
             Industries
           </p>
-          <h2 className="mt-4 text-3xl font-bold tracking-tight text-white md:text-4xl">
+          <h2 className="mt-4 text-3xl font-bold tracking-tight text-[#E8DCC4] md:text-4xl">
             Deep expertise across verticals.
           </h2>
-          <p className="mx-auto mt-4 max-w-5xl text-gray-300">
+          <p className="mx-auto mt-4 max-w-5xl text-[#D7CAB2]">
             From boutique hospitality to fast scaling D2C - we understand the
             nuances that drive growth in your category.
           </p>

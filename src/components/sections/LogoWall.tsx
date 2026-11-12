@@ -15,7 +15,7 @@ export function LogoWall() {
         ease: [0.22, 1, 0.36, 1],
       }}
       // Replaced 'section-padding' with explicit smaller padding (py-12 md:py-16)
-      className="border-y border-white/8 bg-[#07070a] py-12 md:py-12"
+      className="border-y border-[#E8DCC4]/8 bg-[#14281C] py-12 md:py-12"
     >
       <div className="mx-auto max-w-8xl">
         <motion.p
@@ -24,7 +24,7 @@ export function LogoWall() {
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
           // Reduced margin-bottom from mb-12 to mb-8
-          className="mb-8 text-center text-sm font-semibold uppercase tracking-[0.2em] text-[#6e7480]"
+          className="mb-8 text-center text-sm font-semibold uppercase tracking-[0.2em] text-[#A89C86]"
         >
           Our Partners
         </motion.p>
@@ -38,7 +38,7 @@ export function LogoWall() {
             return (
               <div
                 key={`${partner.name}-${i}`}
-                className="flex shrink-0 items-center justify-center rounded-xl bg-white/95 px-4 py-2 backdrop-blur-sm transition-opacity hover:opacity-90"
+                className="flex shrink-0 items-center justify-center rounded-xl bg-[#E8DCC4]/95 px-4 py-2 backdrop-blur-sm transition-opacity hover:opacity-90"
               >
                 <Image
                   src={partner.logo}

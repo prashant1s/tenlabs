@@ -127,18 +127,18 @@ function TiltCard({
             overflow-hidden
             rounded-[20px]
             border
-            border-[#161925]
-            bg-[#101218]
+            border-[#315B43]
+            bg-[#274B36]
             shadow-xl
             shadow-black/10
             transition-colors
             duration-300
-            hover:border-[#6D7CF7]/50
+            hover:border-[#8B5CF6]/50
             transform-gpu
           "
         >
           {/* Top Image Section (Proportioned beautifully so text isn't crushed) */}
-          <div className="relative h-[220px] w-full shrink-0 border-b border-[#161925] bg-[#161925]">
+          <div className="relative h-[220px] w-full shrink-0 border-b border-[#315B43] bg-[#315B43]">
             {image ? (
               <Image
                 src={image}
@@ -148,34 +148,34 @@ function TiltCard({
                 className="object-cover transition-transform duration-700 group-hover:scale-105 opacity-90 group-hover:opacity-100"
               />
             ) : (
-              <div className="absolute inset-0 flex items-center justify-center text-sm font-medium text-[#6e7480] transition-transform duration-700 group-hover:scale-105">
+              <div className="absolute inset-0 flex items-center justify-center text-sm font-medium text-[#A89C86] transition-transform duration-700 group-hover:scale-105">
                 [ Image Placeholder ]
               </div>
             )}
             
             {/* Subtle Glass Reflection Overlay for 3D effect */}
-            <div className="pointer-events-none absolute inset-0 z-10 bg-gradient-to-br from-[#6D7CF7]/10 via-transparent to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
+            <div className="pointer-events-none absolute inset-0 z-10 bg-gradient-to-br from-[#8B5CF6]/10 via-transparent to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
           </div>
 
           {/* Bottom Content Section */}
-          <div className="relative z-20 flex flex-1 flex-col p-6 bg-[#101218]">
+          <div className="relative z-20 flex flex-1 flex-col p-6 bg-[#274B36]">
             {/* Category / Industry */}
-            <span className="mb-2 text-[11px] font-extrabold uppercase tracking-[0.1em] text-[#6D7CF7]">
+            <span className="mb-2 text-[11px] font-extrabold uppercase tracking-[0.1em] text-[#8B5CF6]">
               {industry || "Retail"}
             </span>
 
             {/* Title / Brand */}
-            <h3 className="mb-2 text-xl xl:text-[22px] font-bold text-white tracking-tight line-clamp-2 leading-snug">
+            <h3 className="mb-2 text-xl xl:text-[22px] font-bold text-[#E8DCC4] tracking-tight line-clamp-2 leading-snug">
               {brand}
             </h3>
 
             {/* Sales Figure / Result */}
-            <p className="mb-8 text-[15px] text-[#9aa0ac] font-medium line-clamp-2 leading-relaxed">
+            <p className="mb-8 text-[15px] text-[#C1B59E] font-medium line-clamp-2 leading-relaxed">
               {result}
             </p>
 
             {/* Footer Action */}
-            <div className="mt-auto flex items-center gap-2 text-[14px] font-bold text-white transition-colors group-hover:text-[#6D7CF7]">
+            <div className="mt-auto flex items-center gap-2 text-[14px] font-bold text-[#E8DCC4] transition-colors group-hover:text-[#8B5CF6]">
               View Case Study
               <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" strokeWidth={2.5} />
             </div>
@@ -208,7 +208,7 @@ export function FeaturedWork({ projects = [] }: { projects?: Project[] }) {
   };
 
   return (
-    <section className="relative bg-[#07070a] px-6 py-24 md:py-32 overflow-hidden">
+    <section className="relative bg-[#14281C] px-6 py-24 md:py-32 overflow-hidden">
       <div className="mx-auto max-w-7xl">
         <div className="flex flex-col gap-10 lg:flex-row lg:gap-8">
           
@@ -220,12 +220,12 @@ export function FeaturedWork({ projects = [] }: { projects?: Project[] }) {
             transition={{ duration: 0.7 }}
             className="flex flex-col items-start lg:w-[28%] xl:w-[25%] shrink-0"
           >
-            <h2 className="text-xl font-bold leading-tight tracking-tight text-[#f3f4f6] lg:text-5xl xl:text-[3.5rem] xl:leading-[1.1]">
+            <h2 className="text-xl font-bold leading-tight tracking-tight text-[#E8DCC4] lg:text-5xl xl:text-[3.5rem] xl:leading-[1.1]">
               Work That Drives <br />
-              <span className="text-[#6D7CF7]">Business<br/>Growth.</span>
+              <span className="text-[#8B5CF6]">Business<br/>Growth.</span>
             </h2>
 
-            <p className="mt-4 text-sm leading-relaxed text-[#9aa0ac] xl:text-base pr-4">
+            <p className="mt-4 text-sm leading-relaxed text-[#C1B59E] xl:text-base pr-4">
               We partner with ambitious brands to solve growth challenges through
               strategy, performance marketing, creative execution, and commerce
               systems.
@@ -236,17 +236,17 @@ export function FeaturedWork({ projects = [] }: { projects?: Project[] }) {
           <div className="flex w-full flex-col lg:w-[72%] xl:w-[75%] relative group/slider">
             
             {projects.length === 0 ? (
-              <div className="text-[#9aa0ac] py-10 pl-4">No projects published yet.</div>
+              <div className="text-[#C1B59E] py-10 pl-4">No projects published yet.</div>
             ) : (
               <>
                 {/* Floating Hollow "<" Left Arrow Button */}
                 {/* {projects.length > 2 && ( */}
                   {/*  <button
                      onClick={scrollLeft}
-                     className="absolute -left-5 md:-left-6 top-[42%] z-20 hidden md:flex h-12 w-12 -translate-y-1/2 items-center justify-center rounded-full border border-white/15 bg-white/5 backdrop-blur-md shadow-sm transition-all hover:border-[#6D7CF7] hover:text-[#6D7CF7] hover:bg-white hover:scale-110"
+                     className="absolute -left-5 md:-left-6 top-[42%] z-20 hidden md:flex h-12 w-12 -translate-y-1/2 items-center justify-center rounded-full border border-[#E8DCC4]/15 bg-[#E8DCC4]/5 backdrop-blur-md shadow-sm transition-all hover:border-[#8B5CF6] hover:text-[#8B5CF6] hover:bg-[#E8DCC4] hover:scale-110"
                      aria-label="Scroll left to view previous projects"
                    >
-                     <ChevronLeft className="h-6 w-6 text-gray-300 hover:text-[#6D7CF7]" strokeWidth={1.5} />
+                     <ChevronLeft className="h-6 w-6 text-[#D7CAB2] hover:text-[#8B5CF6]" strokeWidth={1.5} />
                    </button>
                  )} */}
 
@@ -279,10 +279,10 @@ export function FeaturedWork({ projects = [] }: { projects?: Project[] }) {
                 {projects.length > 2 && (
                   <button
                     onClick={scrollRight}
-                    className="absolute -right-5 md:-right-6 top-[42%] z-20 hidden md:flex h-12 w-12 -translate-y-1/2 items-center justify-center rounded-full border border-white/15 bg-white/5 backdrop-blur-md shadow-sm transition-all hover:border-[#6D7CF7] hover:bg-white/10 hover:scale-110"
+                    className="absolute -right-5 md:-right-6 top-[42%] z-20 hidden md:flex h-12 w-12 -translate-y-1/2 items-center justify-center rounded-full border border-[#E8DCC4]/15 bg-[#E8DCC4]/5 backdrop-blur-md shadow-sm transition-all hover:border-[#8B5CF6] hover:bg-[#E8DCC4]/10 hover:scale-110"
                     aria-label="Scroll right to view more projects"
                   >
-                    <ChevronRight className="h-6 w-6 text-gray-300 hover:text-[#6D7CF7]" strokeWidth={1.5} />
+                    <ChevronRight className="h-6 w-6 text-[#D7CAB2] hover:text-[#8B5CF6]" strokeWidth={1.5} />
                   </button>
                 )}
               </>
@@ -298,7 +298,7 @@ export function FeaturedWork({ projects = [] }: { projects?: Project[] }) {
             >
               <Link
                 href="/work"
-                className="group flex items-center gap-2 text-[13px] font-bold uppercase tracking-wide text-[#f3f4f6] transition-colors hover:text-[#6D7CF7]"
+                className="group flex items-center gap-2 text-[13px] font-bold uppercase tracking-wide text-[#E8DCC4] transition-colors hover:text-[#8B5CF6]"
               >
                 View All Work
                 <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" strokeWidth={2.5} />

@@ -5,7 +5,7 @@ import { Renderer, Camera, Geometry, Program, Mesh } from 'ogl';
 
 import './Particles.css';
 
-const defaultColors = ['#ffffff', '#ffffff', '#ffffff'];
+const defaultColors = ['#E8DCC4', '#8B5CF6', '#C1B59E'];
 
 const hexToRgb = hex => {
   hex = hex.replace(/^#/, '');
