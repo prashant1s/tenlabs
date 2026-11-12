@@ -35,7 +35,7 @@ export function WhyUs() {
   return (
     <section
       id="why-us"
-      className="relative overflow-hidden bg-[#1F3D2B] py-12 md:py-20"
+      className="relative overflow-hidden bg-[#0A1C13] py-12 md:py-20"
     >
       <div className="pointer-events-none absolute right-0 top-0 h-full w-1/2 bg-gradient-to-l from-[#8B5CF6]/[0.035] to-transparent" />
 
@@ -68,7 +68,7 @@ export function WhyUs() {
             <motion.div
               variants={cardVariants}
               key={item.title}
-              className="group flex flex-col gap-4 rounded-3xl border border-[#E8DCC4]/10 bg-[#173324] p-7 transition-all duration-300 hover:border-[#8B5CF6]/50 hover:shadow-lg hover:shadow-[#8B5CF6]/10 sm:flex-row sm:gap-6 sm:p-8"
+              className="group flex flex-col gap-4 rounded-3xl border border-[#E8DCC4]/10 bg-[#102D1E] p-7 transition-all duration-300 hover:border-[#8B5CF6]/50 hover:shadow-lg hover:shadow-[#8B5CF6]/10 sm:flex-row sm:gap-6 sm:p-8"
             >
               <div className="w-16 shrink-0 text-4xl font-bold leading-none tracking-tighter text-[#8B5CF6] transition-transform duration-300 group-hover:-translate-y-1 md:text-5xl">
                 0{i + 1}

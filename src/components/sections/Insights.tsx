@@ -98,10 +98,10 @@ function InsightTiltCard({ post }: { post: any }) {
             transformStyle: "preserve-3d",
             willChange: "transform",
           }}
-          className="group relative flex flex-col justify-between h-full w-full rounded-[24px] bg-[#173324] overflow-hidden border border-[#E8DCC4]/5 transition-all duration-300 hover:border-[#8B5CF6]/40 hover:shadow-[0_12px_30px_rgba(0,0,0,0.15)] transform-gpu"
+          className="group relative flex flex-col justify-between h-full w-full rounded-[24px] bg-[#102D1E] overflow-hidden border border-[#E8DCC4]/5 transition-all duration-300 hover:border-[#8B5CF6]/40 hover:shadow-[0_12px_30px_rgba(0,0,0,0.15)] transform-gpu"
         >
           {/* Top Image Area */}
-          <div className="relative h-56 w-full bg-[#254A34] overflow-hidden shrink-0">
+          <div className="relative h-56 w-full bg-[#1F3D2B] overflow-hidden shrink-0">
             {post.image ? (
               <Image
                 src={post.image}
@@ -122,7 +122,7 @@ function InsightTiltCard({ post }: { post: any }) {
           {/* Bottom Content Area */}
           <div className="flex flex-1 flex-col p-6 md:p-8 relative z-20">
             <div className="flex items-center justify-between mb-6">
-              <span className="rounded-full border border-[#3A644B] bg-transparent px-4 py-1.5 text-[10px] font-bold uppercase tracking-widest text-[#8B5CF6]">
+              <span className="rounded-full border border-[#28543A] bg-transparent px-4 py-1.5 text-[10px] font-bold uppercase tracking-widest text-[#8B5CF6]">
                 {post.categories?.[0] || "Insight"}
               </span>
               <span className="text-[12px] font-medium text-[#D8CDB8]">
@@ -171,7 +171,7 @@ export function Insights({ posts = [] }: { posts?: any[] }) {
   };
 
   return (
-    <section className="relative bg-[#1F3D2B] px-6 py-10 md:py-24 overflow-hidden">
+    <section className="relative bg-[#0A1C13] px-6 py-10 md:py-24 overflow-hidden">
       <div className="mx-auto max-w-7xl">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -206,7 +206,7 @@ export function Insights({ posts = [] }: { posts?: any[] }) {
             {displayPosts.length > 2 && (
               <button
                 onClick={scrollLeft}
-                className="absolute -left-5 md:-left-6 top-[42%] z-20 hidden md:flex h-12 w-12 -translate-y-1/2 items-center justify-center rounded-full border border-[#3A644B] bg-[#1F3D2B]/60 backdrop-blur-md shadow-sm transition-all hover:border-[#8B5CF6] hover:text-[#8B5CF6] hover:scale-110"
+                className="absolute -left-5 md:-left-6 top-[42%] z-20 hidden md:flex h-12 w-12 -translate-y-1/2 items-center justify-center rounded-full border border-[#28543A] bg-[#0A1C13]/60 backdrop-blur-md shadow-sm transition-all hover:border-[#8B5CF6] hover:text-[#8B5CF6] hover:scale-110"
                 aria-label="Scroll left"
               >
                 <ChevronLeft className="h-6 w-6 text-[#D7CAB2] hover:text-[#8B5CF6]" />
@@ -233,7 +233,7 @@ export function Insights({ posts = [] }: { posts?: any[] }) {
             {displayPosts.length > 2 && (
               <button
                 onClick={scrollRight}
-                className="absolute -right-5 md:-right-6 top-[42%] z-20 hidden md:flex h-12 w-12 -translate-y-1/2 items-center justify-center rounded-full border border-[#3A644B] bg-[#1F3D2B]/60 backdrop-blur-md shadow-sm transition-all hover:border-[#8B5CF6] hover:text-[#8B5CF6] hover:scale-110"
+                className="absolute -right-5 md:-right-6 top-[42%] z-20 hidden md:flex h-12 w-12 -translate-y-1/2 items-center justify-center rounded-full border border-[#28543A] bg-[#0A1C13]/60 backdrop-blur-md shadow-sm transition-all hover:border-[#8B5CF6] hover:text-[#8B5CF6] hover:scale-110"
                 aria-label="Scroll right"
               >
                 <ChevronRight className="h-6 w-6 text-[#D7CAB2] hover:text-[#8B5CF6]" />

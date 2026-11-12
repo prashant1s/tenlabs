@@ -45,7 +45,7 @@ function YouTubeShowcase({ url }: { url: string }) {
 
   if (!videoId) {
     return (
-      <div className="w-full aspect-21/9 bg-[#173324] rounded-[2rem] flex items-center justify-center border border-[#E8DCC4]/10 text-[#D8CDB8] font-medium">
+      <div className="w-full aspect-21/9 bg-[#102D1E] rounded-[2rem] flex items-center justify-center border border-[#E8DCC4]/10 text-[#D8CDB8] font-medium">
         Valid YouTube URL required.
       </div>
     );
@@ -55,8 +55,8 @@ function YouTubeShowcase({ url }: { url: string }) {
   // Landscape videos now use aspect-[21/9] which is significantly shorter in height than aspect-video (16:9).
   // Shorts remain aspect-[9/16] so they don't distort, but get a max-height so they aren't overly tall.
   const containerClasses = isShort
-    ? "relative w-full max-w-[350px] mx-auto aspect-[9/16] bg-[#173324] rounded-[2rem] overflow-hidden shadow-2xl shadow-black/40 border border-[#E8DCC4]/10"
-    : "relative w-full aspect-21/9 bg-[#173324] rounded-[2rem] overflow-hidden shadow-2xl shadow-black/40 border border-[#E8DCC4]/10";
+    ? "relative w-full max-w-[350px] mx-auto aspect-[9/16] bg-[#102D1E] rounded-[2rem] overflow-hidden shadow-2xl shadow-black/40 border border-[#E8DCC4]/10"
+    : "relative w-full aspect-21/9 bg-[#102D1E] rounded-[2rem] overflow-hidden shadow-2xl shadow-black/40 border border-[#E8DCC4]/10";
 
   return (
     <motion.div
@@ -91,7 +91,7 @@ export default function ProjectTemplate({ project }: { project: any }) {
 
   return (
     <>
-      <main className="min-h-screen bg-[#1F3D2B]">
+      <main className="min-h-screen bg-[#0A1C13]">
 
         {/* 1. INITIAL TEXT SECTION */}
         <section className="pt-32 md:pt-44 pb-12 px-4 md:px-8 mx-auto w-full max-w-325 flex flex-col items-start">
@@ -133,7 +133,7 @@ export default function ProjectTemplate({ project }: { project: any }) {
             whileInView={{ opacity: 1, scale: 1, y: 0 }}
             viewport={{ once: true, amount: 0.2 }}
             transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
-            className="relative isolate flex min-h-100 md:min-h-162.5 flex-col justify-center overflow-hidden rounded-[2.5rem] bg-[#173324] shadow-2xl shadow-black/40 border border-[#E8DCC4]/10"
+            className="relative isolate flex min-h-100 md:min-h-162.5 flex-col justify-center overflow-hidden rounded-[2.5rem] bg-[#102D1E] shadow-2xl shadow-black/40 border border-[#E8DCC4]/10"
           >
             {hasBannerImage && (
               <>
@@ -145,7 +145,7 @@ export default function ProjectTemplate({ project }: { project: any }) {
                   sizes="100vw"
                   className="absolute inset-0 z-0 object-cover"
                 />
-                <div className="absolute inset-0 z-1 bg-linear-to-t from-[#1F3D2B]/20 to-transparent pointer-events-none" />
+                <div className="absolute inset-0 z-1 bg-linear-to-t from-[#0A1C13]/20 to-transparent pointer-events-none" />
               </>
             )}
           </motion.section>
@@ -159,7 +159,7 @@ export default function ProjectTemplate({ project }: { project: any }) {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.8 }}
-              className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 rounded-[2rem] bg-[#173324] p-8 md:p-12 shadow-xl shadow-black/40 border border-[#E8DCC4]/10"
+              className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 rounded-[2rem] bg-[#102D1E] p-8 md:p-12 shadow-xl shadow-black/40 border border-[#E8DCC4]/10"
             >
               {project.stats.map((result: any, i: number) => (
                 <div key={i} className="flex flex-col">
@@ -213,7 +213,7 @@ export default function ProjectTemplate({ project }: { project: any }) {
                 </motion.div>
                 <motion.div variants={fadeUpVariant} className="grid gap-8 md:col-span-8 md:grid-cols-2">
                   {project.strategies.map((strat: any, i: number) => (
-                    <div key={i} className="rounded-2xl bg-[#173324] p-8 border border-[#E8DCC4]/10">
+                    <div key={i} className="rounded-2xl bg-[#102D1E] p-8 border border-[#E8DCC4]/10">
                       <h3 className="text-xl font-bold text-[#E8DCC4]">{strat.title}</h3>
                       <p className="mt-3 text-[#D8CDB8] leading-relaxed">{strat.desc}</p>
                     </div>
@@ -226,7 +226,7 @@ export default function ProjectTemplate({ project }: { project: any }) {
 
         {/* 5. FEATURED MEDIA (Images + Conditional Video) */}
         {((project.images && project.images.length > 0) || project.videoUrl) && (
-          <section className="bg-[#1F3D2B] px-6 py-14 md:py-12">
+          <section className="bg-[#0A1C13] px-6 py-14 md:py-12">
             <div className="mx-auto max-w-7xl">
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
@@ -251,7 +251,7 @@ export default function ProjectTemplate({ project }: { project: any }) {
                           className="w-full h-auto object-contain"
                         />
                       ) : (
-                        <div className="aspect-video w-full flex items-center justify-center bg-[#254A34] rounded-3xl">
+                        <div className="aspect-video w-full flex items-center justify-center bg-[#1F3D2B] rounded-3xl">
                            <span className="text-[#C9BDA6] font-medium">[ Image Placeholder ]</span>
                         </div>
                       )}
@@ -280,7 +280,7 @@ export default function ProjectTemplate({ project }: { project: any }) {
 
         {/* 6. YOUTUBE VIDEO SHOWCASE (Fallback if 2+ images exist) */}
         {project.videoUrl && project.images && project.images.length >= 2 && (
-          <section className="bg-[#1F3D2B] py-12 md:py-16 px-4 md:px-8">
+          <section className="bg-[#0A1C13] py-12 md:py-16 px-4 md:px-8">
             <div className="mx-auto max-w-7xl flex justify-center">
               <motion.div
                 initial={{ opacity: 0 }}
@@ -334,7 +334,7 @@ export default function ProjectTemplate({ project }: { project: any }) {
 
         {/* 8. BOTTOM QUOTE */}
         {project.quote && (
-          <section className="bg-[#1F3D2B] px-6 py-20 md:py-22">
+          <section className="bg-[#0A1C13] px-6 py-20 md:py-22">
             <div className="mx-auto max-w-4xl text-center">
               <motion.div
                 initial={{ opacity: 0, scale: 0.95 }}

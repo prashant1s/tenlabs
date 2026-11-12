@@ -6,11 +6,11 @@ export function Footer() {
   return (
     <footer
       id="site-footer"
-      className="relative overflow-hidden border-t border-[#E8DCC4]/[0.07] bg-[#1F3D2B] text-[#E8DCC4]"
+      className="relative overflow-hidden border-t border-[#E8DCC4]/[0.07] bg-[#0A1C13] text-[#E8DCC4]"
     >
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute left-1/2 top-0 h-[420px] w-[min(900px,90vw)] -translate-x-1/2 -translate-y-1/2 rounded-full bg-[radial-gradient(circle,rgba(139,92,246,0.12)_0%,rgba(31,61,43,0)_70%)]"
+        className="pointer-events-none absolute left-1/2 top-0 h-[420px] w-[min(900px,90vw)] -translate-x-1/2 -translate-y-1/2 rounded-full bg-[radial-gradient(circle,rgba(139,92,246,0.12)_0%,rgba(10,28,19,0)_70%)]"
       />
 
       <div className="relative mx-auto max-w-6xl px-5 pb-8 pt-16 sm:px-8 sm:pt-20 lg:pt-24">
@@ -37,7 +37,7 @@ export function Footer() {
         <Link
           href="/"
           aria-label="TenLabs home"
-          className="mt-12 block w-fit text-[clamp(5rem,14vw,11rem)] font-black leading-[0.78] tracking-[-0.075em] text-[#E8DCC4]"
+          className="mx-auto mt-12 block w-fit text-center text-[clamp(5rem,14vw,11rem)] font-black leading-[0.78] tracking-[-0.075em] text-[#E8DCC4]"
         >
           Ten<span className="text-[#8B5CF6]">Labs</span>
         </Link>

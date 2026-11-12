@@ -37,12 +37,12 @@ export default function AboutPage() {
     <>
 
 
-      <main className="min-h-screen bg-[#1F3D2B]">
+      <main className="min-h-screen bg-[#0A1C13]">
 
         {/* ========================================= */}
         {/* 1. HERO SECTION (FIXED) */}
         {/* ========================================= */}
-        <section className="relative min-h-screen bg-[#1F3D2B] overflow-hidden">
+        <section className="relative min-h-screen bg-[#0A1C13] overflow-hidden">
 
           {/* Background Image */}
           <div className="absolute inset-0 z-0">
@@ -98,7 +98,7 @@ export default function AboutPage() {
         {/* ========================================= */}
         {/* 2. PHILOSOPHY SECTION (LIGHT) */}
         {/* ========================================= */}
-        <section className="bg-[#1F3D2B] px-6 py-24 md:py-32">
+        <section className="bg-[#0A1C13] px-6 py-24 md:py-32">
           <div className="mx-auto max-w-7xl">
             <motion.div
               initial="hidden"
@@ -154,7 +154,7 @@ export default function AboutPage() {
         {/* ========================================= */}
         {/* 3. OUR WORK SECTION (DARK) */}
         {/* ========================================= */}
-        <section className="bg-[#1F3D2B] px-6 py-24 md:py-32">
+        <section className="bg-[#0A1C13] px-6 py-24 md:py-32">
           <div className="mx-auto max-w-7xl">
             <motion.div initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.2 }} variants={staggerContainer} className="grid grid-cols-1 md:grid-cols-12 gap-12 lg:gap-8">
 
@@ -185,7 +185,7 @@ export default function AboutPage() {
                     <Link
                       href={`/work/${item.slug}`}
                       key={idx}
-                      className="group relative aspect-[4/3] md:aspect-[5/4] w-full overflow-hidden bg-[#173324] block border border-[#E8DCC4]/5"
+                      className="group relative aspect-[4/3] md:aspect-[5/4] w-full overflow-hidden bg-[#102D1E] block border border-[#E8DCC4]/5"
                     >
                       {item.img && (
                         <Image
@@ -197,7 +197,7 @@ export default function AboutPage() {
                       )}
 
                       {/* Dark overlay for readability */}
-                      <div className="absolute inset-0 bg-gradient-to-b from-[#1F3D2B]/80 via-transparent to-[#1F3D2B]/30 pointer-events-none z-0" />
+                      <div className="absolute inset-0 bg-gradient-to-b from-[#0A1C13]/80 via-transparent to-[#0A1C13]/30 pointer-events-none z-0" />
 
                       {/* Text content with increased z-index */}
                       <div className="absolute inset-0 p-6 flex flex-col justify-start z-10">
@@ -213,7 +213,7 @@ export default function AboutPage() {
 
                   {/* Show empty placeholder cards if data is still loading */}
                   {projects.length === 0 && Array.from({ length: 6 }).map((_, idx) => (
-                    <div key={`skeleton-${idx}`} className="relative aspect-[4/3] md:aspect-[5/4] w-full bg-[#173324] animate-pulse border border-[#E8DCC4]/5" />
+                    <div key={`skeleton-${idx}`} className="relative aspect-[4/3] md:aspect-[5/4] w-full bg-[#102D1E] animate-pulse border border-[#E8DCC4]/5" />
                   ))}
                 </div>
               </motion.div>
@@ -225,7 +225,7 @@ export default function AboutPage() {
         {/* ========================================= */}
         {/* 6. FOUNDER'S NOTE (LIGHT) */}
         {/* ========================================= */}
-        <section className="bg-[#1F3D2B] py-24 md:py-14">
+        <section className="bg-[#0A1C13] py-24 md:py-14">
           <div className="mx-auto w-full px-4 md:px-2">
             <motion.div
               initial="hidden"
@@ -250,7 +250,7 @@ export default function AboutPage() {
         {/* ========================================= */}
         {/* 4. OPERATING SYSTEM (DARK) */}
         {/* ========================================= */}
-        <section className="bg-[#1F3D2B] px-6 pb-24 md:pb-32 pt-10 border-t border-[#E8DCC4]/5">
+        <section className="bg-[#0A1C13] px-6 pb-24 md:pb-32 pt-10 border-t border-[#E8DCC4]/5">
           <div className="mx-auto max-w-7xl">
             <motion.div initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.2 }} variants={staggerContainer} className="grid grid-cols-1 md:grid-cols-12 gap-12">
 
@@ -289,7 +289,7 @@ export default function AboutPage() {
         {/* ========================================= */}
         {/* 5. OUR JOURNEY TIMELINE (LIGHT) */}
         {/* ========================================= */}
-        <section className="bg-[#1F3D2B] px-6 py-24 md:py-32">
+        <section className="bg-[#0A1C13] px-6 py-24 md:py-32">
           <div className="mx-auto max-w-7xl">
             <motion.div initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.2 }} variants={staggerContainer} className="grid grid-cols-1 md:grid-cols-12 gap-12">
 
@@ -338,7 +338,7 @@ export default function AboutPage() {
                         whileInView={{ scale: 1 }}
                         viewport={{ once: true }}
                         transition={{ delay: idx * 0.3, duration: 0.4, type: "spring" }}
-                        className="absolute top-13 left-0 w-3 h-3 rounded-full bg-[#8B5CF6] hidden md:block ring-4 ring-[#1F3D2B] z-10"
+                        className="absolute top-13 left-0 w-3 h-3 rounded-full bg-[#8B5CF6] hidden md:block ring-4 ring-[#0A1C13] z-10"
                       />
 
                       {/* Text Content */}
@@ -358,13 +358,13 @@ export default function AboutPage() {
         {/* ========================================= */}
         {/* 7. FINAL CTA BANNER (DARK) */}
         {/* ========================================= */}
-        <section className="bg-[#1F3D2B] px-6 pb-14">
+        <section className="bg-[#0A1C13] px-6 pb-14">
           <div className="mx-auto max-w-7xl">
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="bg-[#1F3D2B] rounded-[2rem] p-10 md:p-16 flex flex-col md:flex-row items-center justify-between gap-12 shadow-2xl"
+              className="bg-[#0A1C13] rounded-[2rem] p-10 md:p-16 flex flex-col md:flex-row items-center justify-between gap-12 shadow-2xl"
             >
               <div className="flex-1">
                 <h2 className="text-2xl md:text-3xl font-bold text-[#E8DCC4] tracking-tight leading-tight">

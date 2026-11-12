@@ -67,7 +67,7 @@ function IndustryCard({
   return (
     <motion.div
       variants={cardVariants}
-      className={`industry-card group relative overflow-hidden rounded-2xl border border-[#E8DCC4]/5 bg-[#173324] p-6 shadow-sm transition-all duration-500 hover:border-[#8B5CF6]/40 hover:shadow-lg hover:shadow-[#8B5CF6]/10 ${className}`}
+      className={`industry-card group relative overflow-hidden rounded-2xl border border-[#E8DCC4]/5 bg-[#102D1E] p-6 shadow-sm transition-all duration-500 hover:border-[#8B5CF6]/40 hover:shadow-lg hover:shadow-[#8B5CF6]/10 ${className}`}
     >
       {/* Simple radial glow fading in on hover */}
       <div className="industry-card-glow absolute inset-0 opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
@@ -88,7 +88,7 @@ export function Industries() {
     <section
       id="industries"
       // Section background set to pure dark
-      className="py-10 md:py-16 bg-[#1F3D2B]"
+      className="py-10 md:py-16 bg-[#0A1C13]"
     >
       <div className="mx-auto max-w-6xl">
         {/* Section Heading Module matching FeaturedWork scroll reveal */}

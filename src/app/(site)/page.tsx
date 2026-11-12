@@ -26,7 +26,7 @@ const recentPosts = [...insightPosts].sort(
 export default function HomePage() {
   return (
     <>
-      <div className="relative z-10 bg-[#1F3D2B]">
+      <div className="relative z-10 bg-[#0A1C13]">
         {/* <Header /> */}
         <main>
           <Hero />

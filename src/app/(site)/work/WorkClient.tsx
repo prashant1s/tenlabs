@@ -80,10 +80,10 @@ export default function WorkClient({ initialCaseStudies }: { initialCaseStudies:
   return (
     <>
       {/* <Header /> */}
-      <main className="min-h-screen bg-[#1F3D2B] pb-24">
+      <main className="min-h-screen bg-[#0A1C13] pb-24">
 
         {/* HERO SECTION */}
-        <div className="bg-[#173324] pt-32 pb-20 lg:pb-32 rounded-b-[2rem] lg:rounded-b-[4rem]">
+        <div className="bg-[#102D1E] pt-32 pb-20 lg:pb-32 rounded-b-[2rem] lg:rounded-b-[4rem]">
           <section className="mx-auto max-w-7xl px-6 md:px-8">
             <div className="grid items-center gap-12 lg:grid-cols-2 lg:gap-8">
               {/* Left Content */}
@@ -129,7 +129,7 @@ export default function WorkClient({ initialCaseStudies }: { initialCaseStudies:
                 className="relative hidden h-[600px] w-full lg:block"
               >
                 <div className="absolute inset-0 flex items-center justify-center">
-                  <div className="relative h-[450px] w-[350px] overflow-hidden rounded-[3rem] bg-gradient-to-b from-[#254A34] to-[#173324] shadow-2xl shadow-black/40 border border-[#E8DCC4]/10">
+                  <div className="relative h-[450px] w-[350px] overflow-hidden rounded-[3rem] bg-gradient-to-b from-[#1F3D2B] to-[#102D1E] shadow-2xl shadow-black/40 border border-[#E8DCC4]/10">
 
                     <Image 
                       src="/header/workbanner.webp"
@@ -140,7 +140,7 @@ export default function WorkClient({ initialCaseStudies }: { initialCaseStudies:
                     />
 
                     {/* Gradient overlay to make it look premium and blend nicely */}
-                    <div className="absolute inset-0 bg-gradient-to-t from-[#1F3D2B]/40 via-transparent to-transparent pointer-events-none" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-[#0A1C13]/40 via-transparent to-transparent pointer-events-none" />
                   </div>
                 </div>
 
@@ -212,7 +212,7 @@ export default function WorkClient({ initialCaseStudies }: { initialCaseStudies:
             <div className="relative">
               <button 
                 onClick={() => setSortDropdownOpen(!sortDropdownOpen)}
-                className="flex items-center gap-2 rounded-xl border border-[#254A34] bg-[#173324] px-5 py-2.5 text-sm font-semibold text-[#E8DCC4] transition-colors hover:border-[#E8DCC4]/20"
+                className="flex items-center gap-2 rounded-xl border border-[#1F3D2B] bg-[#102D1E] px-5 py-2.5 text-sm font-semibold text-[#E8DCC4] transition-colors hover:border-[#E8DCC4]/20"
               >
                 Sort by: {sortOrder === "newest" ? "Newest" : "Oldest"}
                 <ChevronDown className={`h-4 w-4 text-[#C9BDA6] transition-transform ${sortDropdownOpen ? 'rotate-180' : ''}`} />
@@ -230,7 +230,7 @@ export default function WorkClient({ initialCaseStudies }: { initialCaseStudies:
                       animate={{ opacity: 1, y: 0 }}
                       exit={{ opacity: 0, y: 10 }}
                       transition={{ duration: 0.2 }}
-                      className="absolute right-0 top-full z-50 mt-2 w-full min-w-[160px] overflow-hidden rounded-xl border border-[#254A34] bg-[#173324] shadow-xl shadow-black/40"
+                      className="absolute right-0 top-full z-50 mt-2 w-full min-w-[160px] overflow-hidden rounded-xl border border-[#1F3D2B] bg-[#102D1E] shadow-xl shadow-black/40"
                     >
                       <button
                         onClick={() => { setSortOrder("newest"); setSortDropdownOpen(false); }}
@@ -267,11 +267,11 @@ export default function WorkClient({ initialCaseStudies }: { initialCaseStudies:
                     exit={{ opacity: 0, scale: 0.9 }}
                     transition={{ duration: 0.4 }}
                     key={study.id}
-                    className="group flex flex-col overflow-hidden rounded-3xl border border-[#E8DCC4]/5 bg-[#173324] shadow-lg shadow-black/40 transition-colors hover:border-[#8B5CF6]/40"
+                    className="group flex flex-col overflow-hidden rounded-3xl border border-[#E8DCC4]/5 bg-[#102D1E] shadow-lg shadow-black/40 transition-colors hover:border-[#8B5CF6]/40"
                   >
                     {/* Image Top Half */}
-                    <div className="relative aspect-3/2 w-full overflow-hidden bg-[#173324] border-b border-[#254A34]">
-                      <div className="absolute left-4 top-4 z-10 rounded-full border border-[#E8DCC4]/10 bg-[#1F3D2B]/40 px-3 py-1 text-xs font-semibold text-[#E8DCC4] backdrop-blur-md">
+                    <div className="relative aspect-3/2 w-full overflow-hidden bg-[#102D1E] border-b border-[#1F3D2B]">
+                      <div className="absolute left-4 top-4 z-10 rounded-full border border-[#E8DCC4]/10 bg-[#0A1C13]/40 px-3 py-1 text-xs font-semibold text-[#E8DCC4] backdrop-blur-md">
                         {study.category}
                       </div>
                       {study.image ? (
@@ -356,7 +356,7 @@ export default function WorkClient({ initialCaseStudies }: { initialCaseStudies:
 
         {/* BOTTOM CTA BAR */}
         <section className="mx-auto mt-24 max-w-7xl px-6 md:px-8">
-          <div className="flex flex-col items-center justify-between gap-8 rounded-3xl border border-[#E8DCC4]/10 bg-gradient-to-r from-[#173324] to-[#1F3D2B] p-8 shadow-2xl shadow-black/40 md:flex-row md:p-12">
+          <div className="flex flex-col items-center justify-between gap-8 rounded-3xl border border-[#E8DCC4]/10 bg-gradient-to-r from-[#102D1E] to-[#0A1C13] p-8 shadow-2xl shadow-black/40 md:flex-row md:p-12">
             <div className="flex items-center gap-6">
               <div className="flex h-16 w-16 shrink-0 items-center justify-center rounded-2xl bg-[#8B5CF6]/10">
                 <TrendingUp className="h-8 w-8 text-[#8B5CF6]" />

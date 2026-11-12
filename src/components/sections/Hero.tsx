@@ -4,13 +4,13 @@ import { ArrowRight, ArrowUpRight } from "lucide-react";
 
 export function Hero() {
   return (
-    <section className="relative overflow-hidden border-b border-[#E8DCC4]/[0.06] bg-[#1F3D2B] pb-20 pt-32 sm:pb-24 sm:pt-36">
+    <section className="relative overflow-hidden border-b border-[#E8DCC4]/[0.06] bg-[#0A1C13] pb-20 pt-32 sm:pb-24 sm:pt-36">
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute inset-0 opacity-70"
+        className="pointer-events-none absolute inset-0 opacity-40"
         style={{
           backgroundImage:
-            "linear-gradient(rgba(232,220,196,0.045) 1px, transparent 1px), linear-gradient(90deg, rgba(232,220,196,0.045) 1px, transparent 1px)",
+            "linear-gradient(rgba(232,220,196,0.035) 1px, transparent 1px), linear-gradient(90deg, rgba(232,220,196,0.035) 1px, transparent 1px)",
           backgroundSize: "56px 56px",
           WebkitMaskImage:
             "radial-gradient(ellipse 82% 68% at 50% 26%, black 15%, transparent 78%)",
@@ -20,11 +20,11 @@ export function Hero() {
       />
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute left-1/2 top-20 h-[560px] w-[min(94vw,1100px)] -translate-x-1/2 rounded-full bg-[radial-gradient(circle,rgba(139,92,246,0.19)_0%,rgba(31,61,43,0)_70%)]"
+        className="pointer-events-none absolute left-1/2 top-20 h-[500px] w-[min(88vw,900px)] -translate-x-1/2 rounded-full bg-[radial-gradient(circle,rgba(139,92,246,0.1)_0%,rgba(10,28,19,0)_68%)]"
       />
 
       <div className="relative mx-auto flex w-full max-w-6xl flex-col items-center px-5 text-center sm:px-8">
-        <div className="inline-flex max-w-full items-center rounded-full border border-[#BFA8FF]/35 bg-gradient-to-r from-[#7445DA] to-[#9A6CFF] px-4 py-2 text-center text-[10px] font-semibold uppercase tracking-[0.12em] text-[#E8DCC4] shadow-[0_10px_35px_rgba(139,92,246,0.28)] sm:text-xs sm:tracking-[0.14em]">
+        <div className="inline-flex max-w-full items-center rounded-full border border-[#BFA8FF]/30 bg-[#8B5CF6] px-4 py-2 text-center text-[10px] font-semibold uppercase tracking-[0.12em] text-[#FFF9EE] shadow-[0_10px_35px_rgba(139,92,246,0.24)] sm:text-xs sm:tracking-[0.14em]">
           <span className="sm:hidden">Strategy · Creative · Growth</span>
           <span className="hidden sm:inline">
             Strategy · Creative · Performance · Commerce
@@ -43,8 +43,8 @@ export function Hero() {
           together—so every touchpoint moves the same business goal.
         </p>
 
-        <figure className="mt-10 w-full overflow-hidden rounded-[1.35rem] border border-[#E8DCC4]/12 bg-[#173324] p-1.5 shadow-[0_30px_100px_-35px_rgba(139,92,246,0.55)] sm:mt-12 sm:rounded-[1.75rem] sm:p-2.5">
-          <div className="flex h-10 items-center justify-between rounded-t-[0.95rem] border-b border-[#E8DCC4]/[0.07] bg-[#173324] px-4 sm:h-12 sm:rounded-t-[1.2rem] sm:px-5">
+        <figure className="mt-10 w-full overflow-hidden rounded-[1.35rem] border border-[#E8DCC4]/12 bg-[#102D1E] p-1.5 shadow-[0_30px_100px_-35px_rgba(139,92,246,0.55)] sm:mt-12 sm:rounded-[1.75rem] sm:p-2.5">
+          <div className="flex h-10 items-center justify-between rounded-t-[0.95rem] border-b border-[#E8DCC4]/[0.07] bg-[#102D1E] px-4 sm:h-12 sm:rounded-t-[1.2rem] sm:px-5">
             <div className="flex items-center gap-1.5" aria-hidden="true">
               <span className="h-2.5 w-2.5 rounded-full bg-[#ff665c]" />
               <span className="h-2.5 w-2.5 rounded-full bg-[#f5bf4f]" />
@@ -55,7 +55,7 @@ export function Hero() {
             </figcaption>
             <span className="h-2.5 w-11" aria-hidden="true" />
           </div>
-          <div className="relative aspect-[2/1] overflow-hidden rounded-b-[0.95rem] bg-[#1F3D2B] sm:rounded-b-[1.2rem]">
+          <div className="relative aspect-[2/1] overflow-hidden rounded-b-[0.95rem] bg-[#0A1C13] sm:rounded-b-[1.2rem]">
             <Image
               src="/design2.webp"
               alt="A polished digital product interface designed by TenLabs"
@@ -71,7 +71,7 @@ export function Hero() {
         <div className="mt-8 flex w-full flex-col items-center gap-3 sm:w-auto sm:flex-row">
           <Link
             href="/contact"
-            className="group inline-flex min-h-13 w-full items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-[#7445DA] to-[#9A6CFF] px-7 py-3.5 text-sm font-semibold text-[#E8DCC4] shadow-[0_14px_38px_rgba(139,92,246,0.32)] transition-[transform,box-shadow] duration-200 hover:-translate-y-0.5 hover:shadow-[0_18px_45px_rgba(139,92,246,0.45)] sm:w-auto sm:text-base"
+            className="group inline-flex min-h-13 w-full items-center justify-center gap-2 rounded-xl bg-[#8B5CF6] px-7 py-3.5 text-sm font-semibold text-[#FFF9EE] shadow-[0_14px_38px_rgba(139,92,246,0.28)] transition-[background-color,transform,box-shadow] duration-200 hover:-translate-y-0.5 hover:bg-[#7445DA] hover:shadow-[0_18px_45px_rgba(139,92,246,0.38)] sm:w-auto sm:text-base"
           >
             Start a growth conversation
             <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />

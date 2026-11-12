@@ -71,9 +71,9 @@ export default function InsightsClient({
   return (
     <>
       {/* <Header /> */}
-      <main className="min-h-screen bg-[#1F3D2B]">
+      <main className="min-h-screen bg-[#0A1C13]">
         {/* 1. HERO SECTION */}
-        <section className="relative min-h-[80vh] overflow-hidden bg-[#1F3D2B]">
+        <section className="relative min-h-[80vh] overflow-hidden bg-[#0A1C13]">
           {/* Background Image */}
           <div className="absolute inset-0 z-0">
             <Image
@@ -87,7 +87,7 @@ export default function InsightsClient({
           </div>
 
           {/* Optional Dark Overlay */}
-          <div className="absolute inset-0 z-[1] bg-[#1F3D2B]/40" />
+          <div className="absolute inset-0 z-[1] bg-[#0A1C13]/40" />
 
           {/* Content */}
           <div className="relative z-10 mx-auto flex min-h-[80vh] max-w-7xl items-center px-6 md:px-4 lg:px-3">
@@ -114,7 +114,7 @@ export default function InsightsClient({
 
         {/* 1. LIGHT HERO SECTION */}
 
-        {/* <section className="bg-[#1F3D2B] pt-32 pb-20 md:pt-40 md:pb-24 px-6 rounded-b-[2rem] md:rounded-b-[4rem]">
+        {/* <section className="bg-[#0A1C13] pt-32 pb-20 md:pt-40 md:pb-24 px-6 rounded-b-[2rem] md:rounded-b-[4rem]">
 
           <div className="mx-auto max-w-7xl">
             <p className="text-sm font-bold uppercase tracking-[0.2em] text-[#8B5CF6]">
@@ -158,7 +158,7 @@ export default function InsightsClient({
             <div className="relative shrink-0 z-20">
               <button
                 onClick={() => setSortDropdownOpen(!sortDropdownOpen)}
-                className="flex items-center gap-4 rounded-2xl border border-[#254A34] bg-[#173324] px-5 py-3 transition-colors hover:border-[#E8DCC4]/20 text-left shadow-lg"
+                className="flex items-center gap-4 rounded-2xl border border-[#1F3D2B] bg-[#102D1E] px-5 py-3 transition-colors hover:border-[#E8DCC4]/20 text-left shadow-lg"
               >
                 <div className="flex flex-col">
                   <span className="text-[12px] font-semibold text-[#E8DCC4]/60 leading-none mb-1">
@@ -185,7 +185,7 @@ export default function InsightsClient({
                       animate={{ opacity: 1, y: 0 }}
                       exit={{ opacity: 0, y: 10 }}
                       transition={{ duration: 0.2 }}
-                      className="absolute right-0 top-full z-40 mt-2 w-full min-w-[160px] overflow-hidden rounded-xl border border-[#254A34] bg-[#173324] shadow-2xl"
+                      className="absolute right-0 top-full z-40 mt-2 w-full min-w-[160px] overflow-hidden rounded-xl border border-[#1F3D2B] bg-[#102D1E] shadow-2xl"
                     >
                       <button
                         onClick={() => {
@@ -236,11 +236,11 @@ export default function InsightsClient({
                   >
                     <Link
                       href={`/insights/${post.slug}`}
-                      className="group relative flex flex-col justify-between h-full w-full rounded-[24px] bg-[#173324] overflow-hidden border border-[#E8DCC4]/5 transition-all duration-300 hover:border-[#8B5CF6]/40 hover:-translate-y-1 hover:shadow-[0_12px_30px_rgba(0,0,0,0.15)]"
+                      className="group relative flex flex-col justify-between h-full w-full rounded-[24px] bg-[#102D1E] overflow-hidden border border-[#E8DCC4]/5 transition-all duration-300 hover:border-[#8B5CF6]/40 hover:-translate-y-1 hover:shadow-[0_12px_30px_rgba(0,0,0,0.15)]"
                     >
                       {/* Top Image Area */}
 
-                      <div className="relative h-56 w-full bg-[#254A34] overflow-hidden shrink-0">
+                      <div className="relative h-56 w-full bg-[#1F3D2B] overflow-hidden shrink-0">
                         {post.image && (
                           <Image
                             src={post.image}
@@ -254,7 +254,7 @@ export default function InsightsClient({
                       {/* Bottom Content Area */}
                       <div className="flex flex-1 flex-col p-6 md:p-8">
                         <div className="flex items-center justify-between mb-6">
-                          <span className="rounded-full border border-[#3A644B] bg-transparent px-4 py-1.5 text-[10px] font-bold uppercase tracking-widest text-[#8B5CF6]">
+                          <span className="rounded-full border border-[#28543A] bg-transparent px-4 py-1.5 text-[10px] font-bold uppercase tracking-widest text-[#8B5CF6]">
                             {post.categories?.[0] || "Insight"}
                           </span>
                           <span className="text-[12px] font-medium text-[#C9BDA6]">
@@ -326,7 +326,7 @@ export default function InsightsClient({
 
         {/* 4. NEWSLETTER BANNER */}
         <section className="mx-auto mt-14 max-w-7xl px-6 md:px-8">
-          <div className="flex flex-col items-center justify-between gap-8 rounded-3xl border border-[#E8DCC4]/10 bg-gradient-to-r from-[#173324] to-[#1F3D2B] p-8 shadow-2xl md:flex-row md:p-12">
+          <div className="flex flex-col items-center justify-between gap-8 rounded-3xl border border-[#E8DCC4]/10 bg-gradient-to-r from-[#102D1E] to-[#0A1C13] p-8 shadow-2xl md:flex-row md:p-12">
             <div className="flex items-center gap-6">
               <div className="flex h-16 w-16 shrink-0 items-center justify-center rounded-2xl bg-[#8B5CF6]/10">
                 <TrendingUp className="h-8 w-8 text-[#8B5CF6]" />

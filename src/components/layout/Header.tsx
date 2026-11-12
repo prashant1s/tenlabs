@@ -33,7 +33,7 @@ export function Header() {
 
   return (
     <header className="fixed inset-x-0 top-0 z-50 px-3 pt-3 sm:px-5 sm:pt-4">
-      <nav className="relative mx-auto max-w-6xl rounded-2xl border border-[#E8DCC4]/10 bg-[#173324]/88 px-4 py-3 shadow-[0_12px_45px_rgba(0,0,0,0.28)] backdrop-blur-xl sm:px-5">
+      <nav className="relative mx-auto max-w-6xl rounded-2xl border border-[#E8DCC4]/10 bg-[#102D1E]/88 px-4 py-3 shadow-[0_12px_45px_rgba(0,0,0,0.28)] backdrop-blur-xl sm:px-5">
         <div className="flex items-center justify-between">
           <Link
             href="/"
@@ -72,7 +72,7 @@ export function Header() {
 
                   {isSolutions && (
                     <div className="pointer-events-none absolute left-1/2 top-full w-64 -translate-x-1/2 translate-y-1 pt-3 opacity-0 transition-[opacity,transform] duration-200 group-hover/solutions:pointer-events-auto group-hover/solutions:translate-y-0 group-hover/solutions:opacity-100 group-focus-within/solutions:pointer-events-auto group-focus-within/solutions:translate-y-0 group-focus-within/solutions:opacity-100">
-                      <div className="rounded-2xl border border-[#E8DCC4]/10 bg-[#173324] p-2 shadow-2xl shadow-black/45">
+                      <div className="rounded-2xl border border-[#E8DCC4]/10 bg-[#102D1E] p-2 shadow-2xl shadow-black/45">
                         {solutionLinks.map((solution) => (
                           <Link
                             key={solution.href}
@@ -94,7 +94,7 @@ export function Header() {
           <div className="flex items-center gap-2">
             <Link
               href="/contact"
-              className="hidden min-h-10 items-center gap-2 rounded-xl bg-gradient-to-r from-[#7445DA] to-[#9A6CFF] px-4 py-2 text-sm font-semibold text-[#E8DCC4] shadow-[0_8px_25px_rgba(139,92,246,0.28)] transition-transform hover:-translate-y-0.5 sm:inline-flex"
+              className="hidden min-h-10 items-center gap-2 rounded-xl bg-[#8B5CF6] px-4 py-2 text-sm font-semibold text-[#FFF9EE] shadow-[0_8px_25px_rgba(139,92,246,0.24)] transition-[background-color,transform] hover:-translate-y-0.5 hover:bg-[#7445DA] sm:inline-flex"
             >
               Start a project
               <ArrowRight className="h-3.5 w-3.5" />
@@ -145,7 +145,7 @@ export function Header() {
               </div>
               <Link
                 href="/contact"
-                className="mt-2 inline-flex items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-[#7445DA] to-[#9A6CFF] px-4 py-3 text-sm font-semibold text-[#E8DCC4] sm:hidden"
+                className="mt-2 inline-flex items-center justify-center gap-2 rounded-xl bg-[#8B5CF6] px-4 py-3 text-sm font-semibold text-[#FFF9EE] hover:bg-[#7445DA] sm:hidden"
               >
                 Start a project
                 <ArrowRight className="h-3.5 w-3.5" />

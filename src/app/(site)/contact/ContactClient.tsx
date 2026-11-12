@@ -100,15 +100,15 @@ export default function ContactClient({ splineSlot }: { splineSlot: React.ReactN
 
   return (
     <main
-      className="min-h-screen bg-[#1F3D2B] overflow-hidden font-sans selection:bg-[#8B5CF6] selection:text-[#E8DCC4]"
+      className="min-h-screen bg-[#0A1C13] overflow-hidden font-sans selection:bg-[#8B5CF6] selection:text-[#E8DCC4]"
       onMouseMove={handleMouseMove}
     >
         {/* HERO SECTION */}
         <section
           ref={heroRef}
-          className="relative h-screen min-h-[600px] w-full flex flex-col items-center justify-start pt-28 md:pt-36 bg-[#173324] overflow-hidden"
+          className="relative h-screen min-h-[600px] w-full flex flex-col items-center justify-start pt-28 md:pt-36 bg-[#102D1E] overflow-hidden"
         >
-          <div className="absolute inset-0 bg-gradient-to-b from-[#173324] via-[#254A34] to-[#1F3D2B] z-0" />
+          <div className="absolute inset-0 bg-gradient-to-b from-[#102D1E] via-[#1F3D2B] to-[#0A1C13] z-0" />
           <div className="absolute top-[20%] left-1/2 -translate-x-1/2 w-[800px] h-[500px] bg-[#8B5CF6]/15 rounded-full blur-[120px] pointer-events-none z-0" />
           <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-20 mix-blend-overlay pointer-events-none z-0" />
           <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[600px] h-[300px] bg-[#8B5CF6]/10 rounded-full blur-[140px] pointer-events-none z-0" />
@@ -125,7 +125,7 @@ export default function ContactClient({ splineSlot }: { splineSlot: React.ReactN
             <div ref={buttonsRef} className="flex flex-col sm:flex-row items-center gap-5">
               <button
                 onClick={() => document.getElementById('contact-form')?.scrollIntoView()}
-                className="group relative inline-flex items-center justify-center gap-2 px-6 py-3 bg-[#E8DCC4] text-[#1F3D2B] rounded-full font-bold text-sm hover:scale-105 transition-all duration-300 shadow-[0_0_30px_rgba(255,255,255,0.15)]"
+                className="group relative inline-flex items-center justify-center gap-2 px-6 py-3 bg-[#E8DCC4] text-[#0A1C13] rounded-full font-bold text-sm hover:scale-105 transition-all duration-300 shadow-[0_0_30px_rgba(255,255,255,0.15)]"
               >
                 Send Message
                 <Send className="w-4 h-4 transition-transform group-hover:translate-x-1 group-hover:-translate-y-1" />
@@ -163,7 +163,7 @@ export default function ContactClient({ splineSlot }: { splineSlot: React.ReactN
         </section>
 
         {/* CONTACT FORM SECTION */}
-        <section id="contact-form" className="relative py-24 md:py-32 px-6 bg-[#1F3D2B]">
+        <section id="contact-form" className="relative py-24 md:py-32 px-6 bg-[#0A1C13]">
           <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8">
 
             <div className="lg:col-span-5 flex flex-col justify-center text-[#E8DCC4]">
@@ -186,7 +186,7 @@ export default function ContactClient({ splineSlot }: { splineSlot: React.ReactN
             </div>
 
             <div ref={formRef} className="lg:col-span-7">
-              <div className="bg-[#173324]/80 backdrop-blur-xl border border-[#E8DCC4]/10 rounded-[2rem] p-8 md:p-12 shadow-2xl relative overflow-hidden">
+              <div className="bg-[#102D1E]/80 backdrop-blur-xl border border-[#E8DCC4]/10 rounded-[2rem] p-8 md:p-12 shadow-2xl relative overflow-hidden">
                 <div className="absolute top-0 right-0 w-64 h-64 bg-[#8B5CF6]/10 rounded-full blur-[80px] pointer-events-none" />
 
                 {isSuccess ? (

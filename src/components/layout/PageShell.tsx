@@ -11,7 +11,7 @@ export function PageShell({ title, subtitle, children }: PageShellProps) {
   return (
     <>
       <Header />
-      <main className="min-h-screen bg-[#1F3D2B] pt-28">
+      <main className="min-h-screen bg-[#0A1C13] pt-28">
         <div className="section-padding relative mx-auto max-w-7xl">
           <div className="glow-accent pointer-events-none absolute -left-40 -top-40 z-0 h-105 w-105 rounded-full" />
           <p className="relative text-sm font-semibold uppercase tracking-[0.2em] text-brand">

@@ -127,8 +127,8 @@ function TiltCard({
             overflow-hidden
             rounded-[20px]
             border
-            border-[#254A34]
-            bg-[#173324]
+            border-[#1F3D2B]
+            bg-[#102D1E]
             shadow-xl
             shadow-black/10
             transition-colors
@@ -138,7 +138,7 @@ function TiltCard({
           "
         >
           {/* Top Image Section (Proportioned beautifully so text isn't crushed) */}
-          <div className="relative h-[220px] w-full shrink-0 border-b border-[#254A34] bg-[#254A34]">
+          <div className="relative h-[220px] w-full shrink-0 border-b border-[#1F3D2B] bg-[#1F3D2B]">
             {image ? (
               <Image
                 src={image}
@@ -158,7 +158,7 @@ function TiltCard({
           </div>
 
           {/* Bottom Content Section */}
-          <div className="relative z-20 flex flex-1 flex-col p-6 bg-[#173324]">
+          <div className="relative z-20 flex flex-1 flex-col p-6 bg-[#102D1E]">
             {/* Category / Industry */}
             <span className="mb-2 text-[11px] font-extrabold uppercase tracking-[0.1em] text-[#8B5CF6]">
               {industry || "Retail"}
@@ -208,7 +208,7 @@ export function FeaturedWork({ projects = [] }: { projects?: Project[] }) {
   };
 
   return (
-    <section className="relative bg-[#1F3D2B] px-6 py-24 md:py-32 overflow-hidden">
+    <section className="relative bg-[#0A1C13] px-6 py-24 md:py-32 overflow-hidden">
       <div className="mx-auto max-w-7xl">
         <div className="flex flex-col gap-10 lg:flex-row lg:gap-8">
           

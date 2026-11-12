@@ -20,7 +20,7 @@ export default async function Image({ params }: { params: Promise<{ slug: string
     (
       <div
         style={{
-          background: '#1F3D2B', // Dark background
+          background: '#0A1C13', // Dark background
           width: '100%',
           height: '100%',
           display: 'flex',

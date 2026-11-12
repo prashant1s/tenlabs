@@ -43,7 +43,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
 
   if (!post) {
     return (
-      <div className="min-h-screen flex items-center justify-center bg-[#1F3D2B]">
+      <div className="min-h-screen flex items-center justify-center bg-[#0A1C13]">
         <h1 className="text-3xl font-bold text-[#E8DCC4]">Post not found.</h1>
       </div>
     );
@@ -51,7 +51,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
 
   return (
     <>
-      <main className="min-h-screen bg-[#1F3D2B] pt-32 pb-24">
+      <main className="min-h-screen bg-[#0A1C13] pt-32 pb-24">
 
         {/* Back Button */}
         <div className="mx-auto max-w-3xl px-6 mb-10">
